@@ -25,7 +25,7 @@ Projet réalisé au **Collège du Sacré-Cœur d'Halluin** (Nord).
 ## Utilisation
 
 1. Ouvrez `index.html` dans un navigateur récent (Chrome, Edge, Firefox).
-   - Version en ligne : https://lefebvrepascal.github.io/atelier-360/
+   - Version en ligne : https://atelier360-editeur.netlify.app (mise à jour automatiquement à chaque modification du dépôt)
 2. Créez ou modifiez un cours. Vos cours sont enregistrés **dans votre navigateur**. Pensez à utiliser régulièrement « Fichier › Enregistrer le cours (.json) » pour en garder une copie.
 3. Cliquez sur **Exporter pour le casque › Site complet**, puis décompressez le fichier .zip.
 4. Mettez le dossier en ligne sur un hébergement **https**, obligatoire pour le mode réalité virtuelle. Par exemple : glissez le dossier dans l'onglet *Deploys* d'un projet [Netlify](https://app.netlify.com/drop).
@@ -49,6 +49,7 @@ Ces boutons sont masqués lorsqu'ils ne sont pas disponibles. Les versions simpl
 | Fichier | Rôle |
 |---|---|
 | `index.html` | L'Atelier : éditeur, lecteur 360° et export, dans un seul fichier |
+| `netlify.toml` | Configuration de la mise en ligne automatique sur Netlify |
 | `aframe.min.js` | Moteur WebXR [A-Frame 1.6.0](https://aframe.io) (licence MIT), intégré aux exports pour qu'ils fonctionnent même sur un réseau filtré |
 
 Bibliothèques chargées depuis un CDN :
