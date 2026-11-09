@@ -3,7 +3,7 @@ from PIL import Image
 Image.MAX_IMAGE_PIXELS = None
 UA = {"User-Agent": "Atelier360-medias/1.0 (cours d'histoire; https://github.com/lefebvrepascal/atelier-360)"}
 PANOS = {}
-ARTS = {"jeu_de_paume": "Jacques Louis David - Le serment du Jeu de Paume - Google Art Project.jpg"}
+ARTS = {"jeu_de_paume": "Jacques‑Louis David, Le Serment du Jeu de Paume, 1791, Versailles, Château de Versailles.jpg"}
 def get(url):
     for k in range(5):
         try:
