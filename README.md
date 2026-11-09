@@ -33,6 +33,20 @@ Projet réalisé au **Collège du Sacré-Cœur d'Halluin** (Nord).
 
 Pour recevoir les résultats des élèves, activez la détection des formulaires dans le projet Netlify (*Forms › Enable form detection*). Les résultats apparaissent dans *Forms › resultats*, et un export CSV est possible.
 
+## Voix dans le casque Meta Quest
+
+Le navigateur du Meta Quest ne dispose pas de voix de synthèse : un texte lu « par l'appareil » y reste muet. Le lecteur utilise donc en priorité des **fichiers audio pré-enregistrés** (`cours/<nom>/audio/*.mp3` et `audio/voix.js`), avec une voix neuronale française [Piper](https://github.com/rhasspy/piper) (voix *siwis*, licence CC BY 4.0).
+
+Pour les fabriquer après un export du site complet :
+
+```bash
+pip install piper-tts playwright && playwright install chromium
+# voix : https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-fr_FR-siwis-medium.tar.bz2
+python3 outils/voix360.py <dossier-du-site> fr_FR-siwis-medium.onnx fr_FR-siwis-medium.onnx.json
+```
+
+Le script ouvre chaque cours, récupère toutes les phrases que le lecteur peut prononcer (textes, consignes, réponses, bilans) et crée un fichier par phrase. Sur ordinateur, sans ces fichiers, la voix du système prend le relais. Les enregistrements faits par l'enseignant sont toujours prioritaires.
+
 ## Fonctions réservées à la version Claude
 
 L'Atelier a été conçu avec l'assistant Claude d'Anthropic. Ouvert directement depuis GitHub, il fonctionne entièrement, **sauf** les fonctions qui font appel à Claude ou à son espace de partage :
@@ -49,6 +63,7 @@ Ces boutons sont masqués lorsqu'ils ne sont pas disponibles. Les versions simpl
 | Fichier | Rôle |
 |---|---|
 | `index.html` | L'Atelier : éditeur, lecteur 360° et export, dans un seul fichier |
+| `outils/voix360.py` | Fabrique les fichiers audio des cours pour le casque |
 | `netlify.toml` | Configuration de la mise en ligne automatique sur Netlify |
 | `aframe.min.js` | Moteur WebXR [A-Frame 1.6.0](https://aframe.io) (licence MIT), intégré aux exports pour qu'ils fonctionnent même sur un réseau filtré |
 

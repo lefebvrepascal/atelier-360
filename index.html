@@ -2769,10 +2769,40 @@ function createPlayer(container,course,opts){
     return m.filter(function(v){return v.localService;})[0]||m[0]||null;}
   function duck(on){if(!vid)return;if(on){if(vid._vol==null)vid._vol=vid.volume;vid.volume=Math.min(vid._vol,0.2);}else if(vid._vol!=null){vid.volume=vid._vol;vid._vol=null;}}
   function stopSpeak(){try{if(window.speechSynthesis)speechSynthesis.cancel();}catch(e){}if(curAudio){try{curAudio.pause();}catch(e){}curAudio=null;}duck(false);}
+  /* voix pré-enregistrées (fichiers audio/<empreinte>.mp3) : prioritaires sur la synthèse de l'appareil */
+  function normT(t){return String(t==null?'':t).replace(/\s+/g,' ').trim();}
+  function hsh(t){var b=new TextEncoder().encode(t),h=0x811c9dc5;for(var i=0;i<b.length;i++){h^=b[i];h=Math.imul(h,0x01000193)>>>0;}return('0000000'+h.toString(16)).slice(-8);}
+  function sentences(t){return(normT(t).match(/[^.!?…]+[.!?…]*/g)||[]).map(function(x){return x.trim();}).filter(function(x){return /[0-9A-Za-zÀ-ÿœŒ]/.test(x);});}
+  var ttsMiss=[];
+  function clipsFor(t){var M=course.tts||window.ATL_TTS||null;if(!M)return null;var parts=sentences(t),out=[];for(var i=0;i<parts.length;i++){var u=M[hsh(parts[i])];if(!u){ttsMiss.push(parts[i]);return null;}out.push(u);}return out.length?out:null;}
+  var seqTok=0;
+  function playSeq(urls,job){var tok=++seqTok,i=0;duck(true);
+    function next(){if(tok!==seqTok)return;if(i>=urls.length){curAudio=null;duck(false);return;}var a=new Audio(urls[i++]);curAudio=a;try{a.playbackRate=prefs.slow?0.8:1;a.preservesPitch=true;}catch(e){}
+      a.onended=next;a.onerror=next;var pr=a.play();if(pr&&pr.then)pr.then(function(){job.done=true;}).catch(function(){if(tok===seqTok){duck(false);}});else job.done=true;}
+    next();}
   function say(text,audioUrl,force){if(aMode()==='off'&&!force)return;stopSpeak();var job={t:text,a:audioUrl,done:false};lastSp=job;
-    if(audioUrl){var a=new Audio(audioUrl);curAudio=a;duck(true);a.onended=function(){if(curAudio===a){curAudio=null;duck(false);}};var pr=a.play();if(pr&&pr.then)pr.then(function(){job.done=true;}).catch(function(){duck(false);});else job.done=true;return;}
+    if(audioUrl){var a=new Audio(audioUrl);curAudio=a;duck(true);try{a.playbackRate=prefs.slow?0.8:1;}catch(e){}a.onended=function(){if(curAudio===a){curAudio=null;duck(false);}};var pr=a.play();if(pr&&pr.then)pr.then(function(){job.done=true;}).catch(function(){duck(false);});else job.done=true;return;}
+    var cl=clipsFor(text);if(cl){playSeq(cl,job);return;}
     if(!window.speechSynthesis||!text)return;try{var u=new SpeechSynthesisUtterance(String(text).replace(/\s+/g,' '));u.lang=langCode();var v=pickVoice();if(v)u.voice=v;u.rate=prefs.slow?0.72:0.95;
       u.onstart=function(){job.done=true;};u.onend=function(){duck(false);};u.onerror=function(){duck(false);};duck(true);speechSynthesis.speak(u);}catch(e){}}
+  /* liste de tout ce que le lecteur peut dire, pour fabriquer les fichiers audio */
+  function speechUnits(){var L=[],add=function(t){sentences(t).forEach(function(x){L.push(x);});};var sv=prefs.simple;
+    [false,true].forEach(function(simple){prefs.simple=simple;
+      add((course.title||'')+'. '+(course.objectif||''));
+      add('Choisissez d\'abord un élément à gauche.');add('Leçon terminée, bravo !');
+      (course.scenes||[]).forEach(function(s){add((s.name||'')+'. '+T(s,'intro'));
+        (s.hotspots||[]).forEach(function(h){var q=T(h,'question')||h.title||'',ex=T(h,'explanation');
+          if(h.type==='info')add((h.title?h.title+'. ':'')+T(h,'text'));
+          else if(h.type==='quiz'){var o2=(h.options||[]).map(function(o,k){return{o:String(o||'').trim(),k:k};}).filter(function(x){return x.o;});var good=o2.filter(function(x){return x.k===h.answer;})[0];
+            add((q||'Question')+' '+o2.map(function(x){return(h.vf?'':String.fromCharCode(65+x.k)+'. ')+x.o+'.';}).join(' '));add('Bonne réponse ! '+ex);add('Pas tout à fait. La bonne réponse était : '+(good?good.o:'')+'. '+ex);}
+          else if(h.type==='order'){var it=(h.items||[]).map(function(x){return String(x||'').trim();}).filter(Boolean),n=it.length;q=q||"Remets dans l'ordre";add(q+'. Touchez les éléments dans le bon ordre, du premier au dernier.');add("Bravo, c'est le bon ordre ! "+ex);
+            for(var nb=0;nb<n;nb++)add('Pas tout à fait : '+nb+' sur '+n+' bien placés. Le bon ordre : '+it.join(', puis ')+'. '+ex);}
+          else if(h.type==='match'){q=q||'Associe';add(q+'. Touchez un élément à gauche, puis celui qui lui correspond à droite.');add('Bravo, toutes les paires sont justes ! '+ex);for(var e=1;e<=8;e++)add('Toutes les paires sont trouvées, avec '+e+' erreur'+(e>1?'s':'')+'. '+ex);}
+          else if(h.type==='find'){q=q||'Trouve-le';add(q);add(q+'. Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et appuyez sur la gâchette. Vous avez 3 essais.');
+            add('Bravo, vous avez trouvé ! '+ex);add('Voici où se trouvait la réponse (cercle jaune). '+ex);[1,2].forEach(function(l){add('Tout près ! Encore '+l+' essai'+(l>1?'s':''));add('Pas ici. Encore '+l+' essai'+(l>1?'s':''));});}});});});
+    prefs.simple=sv;var tot=0,g=0;(course.scenes||[]).forEach(function(s){(s.hotspots||[]).forEach(function(h){if(h.type==='goto')return;tot++;if(graded(h))g++;});});
+    for(var x=0;x<=tot;x++)add('Points découverts : '+x+' sur '+tot+'.');for(var a=0;a<=g;a++)add('Activités réussies : '+a+' sur '+g+'.');
+    var seen={},out=[];L.forEach(function(t){var k=hsh(t);if(!seen[k]){seen[k]=1;out.push({h:k,t:t});}});return out;}
   function autoSay(text,audioUrl){if(aMode()==='auto')say(text,audioUrl);else lastSp={t:text,a:audioUrl,done:true};}
   function listenBtn(text,audioUrl){return aMode()==='off'?null:{label:'Écouter',variant:'dark',onClick:function(){say(text,audioUrl,true);}};}
   function withListen(text,audioUrl,main){var l=listenBtn(text,audioUrl);return l?{row:[l,main],h:0.14}:Object.assign({w:0.8,h:0.14},main);}
@@ -2951,13 +2981,13 @@ function createPlayer(container,course,opts){
     var o=st.ord[h.id]||(st.ord[h.id]={seq:[],perm:shuffle(n,h.id)});var res=st.res[h.id];
     if(res&&o.seq.length===n){var nb=o.seq.filter(function(v,k){return v===k;}).length,ok=nb===n;
       var corr=items.map(function(t,k){return(k+1)+'. '+t;}).join('\n');
-      var note=(ok?"Bravo, c'est le bon ordre ! ":'Pas tout à fait : '+nb+' sur '+n+' bien placés. Le bon ordre : '+items.map(function(t,k){return(k+1)+'. '+t;}).join(', ')+'. ')+ex;
+      var note=(ok?"Bravo, c'est le bon ordre ! ":'Pas tout à fait : '+nb+' sur '+n+' bien placés. Le bon ordre : '+items.join(', puis ')+'. ')+ex;
       var bt=o.seq.map(function(v,k){return{label:(k+1)+'.  '+items[v],variant:v===k?'good':'bad',h:0.12,onClick:null};});
       bt.push(withListen(note,null,{label:'Continuer',variant:'primary',onClick:closePanel}));
       panelAt(P.az,P.el,{eyebrow:'ORDRE',title:q,body:ok?'':'Ordre attendu :\n'+corr,note:note,tone:ok?'good':'bad'},bt,keep);if(!keep)autoSay(note,null);else say(note,null);return;}
     var bt2=o.perm.map(function(v){var pos=o.seq.indexOf(v);return pos>=0?{label:(pos+1)+'.  '+items[v],variant:'dim',h:0.12,onClick:null}:{label:items[v],variant:'plain',h:0.12,onClick:function(){o.seq.push(v);if(o.seq.length===n){var nb2=o.seq.filter(function(x,k){return x===k;}).length;setRes(h,nb2===n,nb2+'/'+n);seen(h);}openOrder(h,true);}};});
     var intro='Touchez les éléments dans le bon ordre, du premier au dernier.';
-    bt2.push({row:[listenBtn(q+'. '+intro+' '+o.perm.map(function(v){return items[v];}).join(', ')+'.',prefs.simple&&h.questionS?null:(h.audio||null)),o.seq.length?{label:'Recommencer',variant:'plain',onClick:function(){o.seq=[];openOrder(h,true);}}:null,{label:'Fermer',variant:'plain',onClick:closePanel}],h:0.13});
+    bt2.push({row:[listenBtn(q+'. '+intro,prefs.simple&&h.questionS?null:(h.audio||null)),o.seq.length?{label:'Recommencer',variant:'plain',onClick:function(){o.seq=[];openOrder(h,true);}}:null,{label:'Fermer',variant:'plain',onClick:closePanel}],h:0.13});
     panelAt(P.az,P.el,{eyebrow:'ORDRE · '+o.seq.length+' / '+n,title:q,body:intro},bt2,keep);
     if(!keep)autoSay(q+'. '+intro,prefs.simple&&h.questionS?null:(h.audio||null));}
 
@@ -3037,7 +3067,7 @@ function createPlayer(container,course,opts){
   function finish(){stopFin();endSearch();var sm=summary(true);var body='Points découverts : '+sm.seen+' sur '+sm.tot+(sm.tq?'\nActivités réussies : '+sm.ok+' sur '+sm.tq:'');
     var cam=camAngles(),az=norm(cam.az+worldYaw),left=10;
     function draw(){panelAt(az,2,{eyebrow:'BILAN',title:'Leçon terminée, bravo !',body:body,note:'La leçon se ferme dans '+left+' seconde'+(left>1?'s':'')+'.',tone:'good'},[{row:[{label:'Recommencer',variant:'plain',onClick:restart},{label:'Quitter maintenant',variant:'primary',onClick:function(){quit(true);}}],h:0.15}],true);}
-    draw();autoSay('Leçon terminée, bravo ! '+body.replace(/\n/g,'. '),null);finT=setInterval(function(){left--;if(left<=0){stopFin();quit(true);}else draw();},1000);}
+    draw();autoSay('Leçon terminée, bravo ! Points découverts : '+sm.seen+' sur '+sm.tot+'.'+(sm.tq?' Activités réussies : '+sm.ok+' sur '+sm.tq+'.':''),null);finT=setInterval(function(){left--;if(left<=0){stopFin();quit(true);}else draw();},1000);}
 
   function lookAt(az,el){var lc=camEl.components&&camEl.components['look-controls'];if(!lc||!lc.yawObject)return;lc.yawObject.rotation.y=-az*Math.PI/180+worldYaw*Math.PI/180;lc.pitchObject.rotation.x=el*Math.PI/180;}
 
@@ -3056,7 +3086,8 @@ function createPlayer(container,course,opts){
     unlock:unlock,
     say:function(t,a){say(t,a,true);},
     stopSpeak:stopSpeak,
-    voiceOk:function(){return!!(window.speechSynthesis&&pickVoice());},
+    voiceOk:function(){return!!(course.tts||window.ATL_TTS)||!!(window.speechSynthesis&&pickVoice());},
+    speechUnits:speechUnits,
     quit:quit,
     setPrefs:function(p){Object.assign(prefs,p||{});loadScene(idx,false);},
     getPrefs:function(){return Object.assign({},prefs);},
@@ -3064,7 +3095,7 @@ function createPlayer(container,course,opts){
     _dbg:{open:function(id){var s=(course.scenes||[])[idx];var h=s&&(s.hotspots||[]).find(function(x){return x.id===id;});if(h)onHot(h);return!!h;},
       buttons:function(){var out=[];[panelEnt,hud].forEach(function(root){if(!root)return;Array.prototype.forEach.call(root.querySelectorAll('a-entity'),function(e){if(e._lbl!==undefined)out.push({label:e._lbl,on:e._on,click:function(){e.emit('click');}});});});return out;},
       pick:function(az,el){var P=dirPos(az,el,30);var v=new THREE.Vector3(P.x,P.y,P.z);world.object3D.localToWorld(v);onPick(v);},
-      searching:function(){return!!search;},state:function(){return st;}},
+      searching:function(){return!!search;},misses:function(){return ttsMiss.slice();},state:function(){return st;}},
     restart:restart,
     turn:function(dAz,dEl){var lc=camEl.components&&camEl.components['look-controls'];if(!lc||!lc.yawObject)return;lc.yawObject.rotation.y-=dAz*Math.PI/180;var x=lc.pitchObject.rotation.x+dEl*Math.PI/180;lc.pitchObject.rotation.x=Math.max(-1.5,Math.min(1.5,x));},
     recenter:function(){lookAt(0,0);},
@@ -3464,6 +3495,7 @@ function onQuit(sm){needRestart=true;PAD.hidden=true;E.hidden=true;var html='';
   if(RESULTS&&sm&&sm.seen>0){send(sm).then(function(ok){if(!D.hidden||!html){D.hidden=false;D.innerHTML=(html?html+'<br>':'')+(ok?'Résultats envoyés à l\\'enseignant.':'Résultats gardés sur ce casque : ils seront envoyés à la prochaine connexion.');}});}}
 if(RESULTS)setTimeout(flush,3000);
 <\/script>
+<script src="audio/voix.js"><\/script>
 ${o.afTag}
 <script>${code}
 var COURSE=${json};
@@ -3538,7 +3570,7 @@ function renderExport(){const cfg=siteCfg();$('#xName').value=cfg.name;$('#xOrg'
   $('#dlHtml').textContent=xMode==='site'?'Télécharger le site (.zip)':(vids?'Télécharger le dossier (.zip)':'Télécharger le fichier .html');
   $('#copyHtml').hidden=xMode!=='one'||vids;$('#dlHtml').hidden=!downloads&&!STANDALONE;$('#expErr').hidden=true;
   $('#xSteps').innerHTML=xMode==='site'?
-    `<li>Téléchargez le site (.zip) et décompressez-le.</li><li>Sur Netlify, ouvrez le projet du site, onglet <b>Deploys</b>, puis glissez-y <b>le dossier décompressé</b> entier.</li><li>Dans chaque casque, ouvrez <b>${esc(base)}</b> et ajoutez-le aux favoris (ou scannez le QR code). Les élèves choisissent leur cours dans la liste.</li><li>À chaque nouveau cours, cochez-le ici et redéposez le site complet : il remplace l'ancien.</li>`:
+    `<li>Téléchargez le site (.zip) et décompressez-le.</li><li>Sur Netlify, ouvrez le projet du site, onglet <b>Deploys</b>, puis glissez-y <b>le dossier décompressé</b> entier.</li><li>Dans chaque casque, ouvrez <b>${esc(base)}</b> et ajoutez-le aux favoris (ou scannez le QR code). Les élèves choisissent leur cours dans la liste.</li><li>À chaque nouveau cours, cochez-le ici et redéposez le site complet : il remplace l'ancien.</li><li><b>Voix dans le casque :</b> le navigateur du Meta Quest n'a pas de voix de synthèse. Demandez à Claude « mets le site sur Netlify » : il ajoute les fichiers audio de tous les textes avant la mise en ligne. Vos propres enregistrements fonctionnent toujours.</li>`:
     `<li>Téléchargez le fichier${vids?' (.zip, à décompresser)':''}.</li><li>Déposez-le dans l'onglet <b>Deploys</b> d'un projet Netlify${vids?' (le dossier entier)':''}. Attention : il remplace le contenu actuel du site.</li><li>Dans le casque, ouvrez l'adresse du site puis touchez <b>Entrer en réalité virtuelle</b>.</li>`;}
 $('#exportBtn').addEventListener('click',()=>{if(!courses.some(c=>c.scenes.length)){toast('Ajoutez au moins une scène avant d\'exporter.');return;}renderExport();openModal('#expModal');});
 document.querySelectorAll('[data-xm]').forEach(b=>b.addEventListener('click',()=>{xMode=b.dataset.xm;renderExport();}));
