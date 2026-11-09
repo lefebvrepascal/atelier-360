@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install pillow
-      - run: python3 outils_tmp/fetch.py
+      - run: python3 outils_tmp/fetch_ny.py
       - run: |
           git config user.name "github-actions" && git config user.email "actions@github.com"
           git checkout --orphan medias-revolution-360-out3 && git rm -rq --cached . && git add medias && git commit -qm "médias" && git push -f origin medias-revolution-360-out3
