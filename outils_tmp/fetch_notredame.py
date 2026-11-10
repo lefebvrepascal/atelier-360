@@ -25,6 +25,7 @@ ARTS = {"facade": "Cathédrale Notre-Dame de Paris, 20 March 2014.jpg", "portail
  "bascote": "Cathédrale Notre-Dame de Paris - Gothic rib vaults and side aisle.jpg"}
 CPANOS = {"parvis_nuit": "Panorama Notre-Dame de Paris.jpg", "cite": "Île de la Cité, Paris 18 November 2006.jpg", "seine_nuit": "The Seine in Paris, 25 February 2007.jpg"}
 HDRI = []
+AUDIO = {}
 for d in ("arts", "audio", "panos"): os.makedirs("medias/" + d, exist_ok=True)
 credits = {}
 for key, title in ARTS.items():
