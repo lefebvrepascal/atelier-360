@@ -23,10 +23,10 @@ _all = json.loads(get("https://api.polyhaven.com/assets?t=hdris"))
 import re
 cand = [i for i, a in _all.items() if re.search(r"stadium|gym|sport|track|court|pitch|football|basket|tennis|athlet|running|field_", i + " " + a.get("name", "") + " " + " ".join(a.get("tags", [])), re.I)]
 print("CANDIDATS", cand)
-HDRI = cand[:14]
+HDRI = ["stadium_01", "orlando_stadium", "gym_01", "suburban_football_field", "netball_court", "squash_court", "gym_entrance"]
 for d in ("arts", "audio", "panos"): os.makedirs("medias/" + d, exist_ok=True)
 credits = {}
-for key, title in ARTS.items():
+for key, title in ([] if os.environ.get("NOARTS") else ARTS.items()):
     ii = info(title); im = Image.open(io.BytesIO(get(ii["url"]))).convert("RGB")
     s = min(1, 2400 / max(im.size)); im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS); im.save(f"medias/arts/{key}.jpg", quality=92)
     m = ii.get("extmetadata", {}); credits[key] = {"file": title, "artist": m.get("Artist", {}).get("value", ""), "license": m.get("LicenseShortName", {}).get("value", "")}
