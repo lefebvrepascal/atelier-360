@@ -17,7 +17,10 @@ os.makedirs("medias/videos", exist_ok=True); cr = {}
 for k, t in V.items():
     try:
         ii = info(t); b = get(ii["url"]); ext = t.rsplit(".", 1)[1]
-        open(f"medias/videos/{k}.{ext}", "wb").write(b); m = ii.get("extmetadata", {})
+        src = f"/tmp/{k}.{ext}"; open(src, "wb").write(b); m = ii.get("extmetadata", {})
+        h = 480 if "popper" in k else 720; crf = "30" if "popper" in k else "24"
+        os.system(f'ffmpeg -loglevel error -y -i "{src}" -vf "scale=-2:{h}" -c:v libx264 -preset veryfast -crf {crf} -pix_fmt yuv420p -c:a aac -b:a 96k "medias/videos/{k}.mp4"')
+        print(k, os.path.getsize(f"medias/videos/{k}.mp4"))
         cr[k] = {"file": t, "artist": m.get("Artist", {}).get("value", ""), "license": m.get("LicenseShortName", {}).get("value", "")}; print(k, len(b))
     except Exception as e: print("ECHEC", k, e)
 json.dump(cr, open("medias/credits.json", "w"), ensure_ascii=False, indent=1)
