@@ -1,0 +1,82 @@
+{
+ "mw_art": {
+  "file": "Artist’s impression of the Milky Way.jpg",
+  "artist": "NASA/JPL-Caltech/ESO/R. Hurt",
+  "license": "Public domain"
+ },
+ "hudf": {
+  "file": "Hubble ultra deep field high rez edit1.jpg",
+  "artist": "NASA and the European Space Agency. Edited by <a href=\"//commons.wikimedia.org/wiki/User:Noodle_snacks\" class=\"mw-redirect\" title=\"User:Noodle snacks\">Noodle snacks</a>",
+  "license": "Public domain"
+ },
+ "cosmicweb": {
+  "file": "The \"cosmic web\" predicted by numerical simulations of formation of structures in the universe (geminiann04007a).jpg",
+  "artist": "International Gemini Observatory/NOIRLab/<a rel=\"nofollow\" class=\"external text\" href=\"https://www.nsf.gov/\">NSF</a>/AURA/G. L. Bryan/M. L. Norman",
+  "license": "CC BY 4.0"
+ },
+ "cmb": {
+  "file": "Cosmic Microwave Background (CMB).jpeg",
+  "artist": "ESA and the Planck Collaboration",
+  "license": "CC BY 4.0"
+ },
+ "sun_tex": {
+  "file": "Solarsystemscope texture 2k sun.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0"
+ },
+ "earth_tex": {
+  "file": "Solarsystemscope texture 2k earth daymap.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0"
+ },
+ "france": {
+  "file": "Satellite image of France in August 2002.jpg",
+  "artist": "Jacques Descloitres, MODIS Rapid Response Team, NASA/GSFC",
+  "license": "Public domain"
+ },
+ "lille": {
+  "file": "Lille - Vue aérienne 04.JPG",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:J%C3%84NNICK_J%C3%A9r%C3%A9my\" class=\"mw-redirect\" title=\"User:JÄNNICK Jérémy\">JÄNNICK Jérémy</a>",
+  "license": "Public domain"
+ },
+ "fourmi": {
+  "file": "Portrait of an ant, full face view.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Retro_Lenses&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Retro Lenses (page does not exist)\">Retro Lenses</a>",
+  "license": "CC BY 4.0"
+ },
+ "cheveu": {
+  "file": "Human hair 1.png",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Foreade\" title=\"User:Foreade\">Foreade</a>",
+  "license": "CC BY-SA 4.0"
+ },
+ "globules": {
+  "file": "Red White Blood cells.jpg",
+  "artist": "Electron Microscopy Facility at The National Cancer Institute at Frederick (NCI-Frederick)",
+  "license": "Public domain"
+ },
+ "ecoli": {
+  "file": "E. coli Bacteria (7316101966).jpg",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/54591706@N02\">NIAID</a>",
+  "license": "Public domain"
+ },
+ "virus": {
+  "file": "Influenza virus particle color.jpg",
+  "artist": "<ul><li>Photo Credit: Cynthia Goldsmith</li>\n<li>Content Providers(s): CDC/ Dr. Erskine. L. Palmer; Dr. M. L. Martin</li></ul>",
+  "license": "Public domain"
+ },
+ "eso_mw": {
+  "file": "ESO - Milky Way.jpg",
+  "artist": "ESO/<a href=\"https://en.wikipedia.org/wiki/Serge_Brunier\" class=\"extiw\" title=\"w:Serge Brunier\">S. Brunier</a>",
+  "license": "CC BY 4.0"
+ },
+ "school_quad": {
+  "file": "school_quad",
+  "artist": "Poly Haven",
+  "license": "CC0"
+ },
+ "kloofendal_48d_partly_cloudy_puresky": {
+  "file": "kloofendal_48d_partly_cloudy_puresky",
+  "artist": "Poly Haven",
+  "license": "CC0"
+ }
+}
