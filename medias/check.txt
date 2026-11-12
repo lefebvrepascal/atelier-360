@@ -1,0 +1,6 @@
+accueil 200 carte=True section=['Anglais<span>4 cours</span>']
+https://atelier360-sacre-coeur.netlify.app/cours/hello-words-for-school-and-home/ 200 11186030 CORS=None
+https://atelier360-sacre-coeur.netlify.app/cours/hello-words-for-school-and-home/audio/voix.js 200 11849 CORS=None
+https://atelier360-medias.netlify.app/asr/vosk.js 200 5804767 CORS=*
+https://atelier360-medias.netlify.app/asr/vosk-model-small-en-us-0.15.tar.gz 200 41184862 CORS=*
+https://atelier360-medias.netlify.app/asr/LISEZMOI.txt 200 310 CORS=*
