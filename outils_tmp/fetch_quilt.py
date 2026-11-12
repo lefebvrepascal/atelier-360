@@ -10,8 +10,7 @@ def get(url):
 def info(title):
     q = urllib.parse.urlencode({"action": "query", "format": "json", "titles": "File:" + title, "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiextmetadatafilter": "Artist|LicenseShortName"})
     return list(json.loads(get("https://commons.wikimedia.org/w/api.php?" + q))["query"]["pages"].values())[0]["imageinfo"][0]
-ARTS = {"localgroup": "The Local Group Top View.jpg", "mw_annot": "236084main MilkyWay-full-annotated.jpg", "europe": "Europe satellite orthographic.jpg",
- "cheek": "Human cheek cells from science class.jpg", "hela": "Multicolor fluorescence image of a living HeLa cell.jpg"}
+ARTS = {}
 CPANOS = {}
 AUDIO = {}
 HDRI = []
@@ -37,20 +36,27 @@ for h in HDRI:
     im = Image.open(io.BytesIO(get(url))).convert("RGB"); im = im.resize((8192, 4096), Image.LANCZOS) if im.width > 8192 else im
     im.save(f"medias/panos/{h}.jpg", quality=90); im.resize((1024, 512)).save(f"medias/panos/{h}_p.jpg", quality=80); credits[h] = {"file": h, "artist": "Poly Haven", "license": "CC0"}
 json.dump(credits, open("medias/credits.json", "w"), ensure_ascii=False, indent=1)
-# --- Orthophotos IGN (Licence Ouverte Etalab 2.0) centrées sur le collège
+# --- Orthophotos IGN (Licence Ouverte Etalab 2.0) et Sentinel-2 cloudless 2016 (EOX, CC BY 4.0), centrées sur le collège
 import math
 os.makedirs("medias/ign", exist_ok=True)
-g = json.loads(get("https://data.geopf.fr/geocodage/search?q=" + urllib.parse.quote("26 rue Marthe Nollet 59250 Halluin") + "&limit=1"))
-lon, lat = g["features"][0]["geometry"]["coordinates"]; print("géocodage", lat, lon, g["features"][0]["properties"].get("label"))
-meta = {"lat": lat, "lon": lon, "levels": {}}
-for z in (9, 11, 13, 15, 17, 19, 20):
+lat, lon = 50.782043, 3.122895
+def tile(u):
+    for k in range(6):
+        try: return Image.open(io.BytesIO(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60).read())).convert("RGB")
+        except Exception as e:
+            if "404" in str(e) or "400" in str(e): return None
+            time.sleep(2 + 3 * k)
+    return None
+def mosaic(fmt, z, out):
     n = 2 ** z; X = (lon + 180) / 360 * 256 * n; Y = (1 - math.log(math.tan(math.radians(lat)) + 1 / math.cos(math.radians(lat))) / math.pi) / 2 * 256 * n
-    x0, y0 = int(X - 1024), int(Y - 1024); im = Image.new("RGB", (2048, 2048), (128, 128, 128)); miss = 0
+    x0, y0 = int(X - 1024), int(Y - 1024); im = Image.new("RGB", (2048, 2048), (255, 0, 255)); miss = 0
     for tx in range(x0 // 256, (x0 + 2048) // 256 + 1):
         for ty in range(y0 // 256, (y0 + 2048) // 256 + 1):
-            u = f"https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={ty}&TILECOL={tx}&FORMAT=image/jpeg"
-            try: t = Image.open(io.BytesIO(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60).read())).convert("RGB"); im.paste(t, (tx * 256 - x0, ty * 256 - y0))
-            except Exception as e: miss += 1
-    res = 156543.03392 * math.cos(math.radians(lat)) / n
-    im.save(f"medias/ign/z{z}.jpg", quality=90); meta["levels"][z] = {"res": res, "width_m": res * 2048, "missing": miss}; print("ign", z, round(res * 2048), "m", "manquantes", miss)
-json.dump(meta, open("medias/ign/meta.json", "w"), indent=1)
+            t = tile(fmt.format(z=z, x=tx, y=ty)); time.sleep(0.05)
+            if t is None: miss += 1; continue
+            im.paste(t, (tx * 256 - x0, ty * 256 - y0))
+    im.save(out, quality=90); print(out, "manquantes", miss, flush=True)
+IGN = "https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&FORMAT=image/jpeg"
+EOX = "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/g/{z}/{y}/{x}.jpg"
+for z in (7, 9, 11, 13, 14): mosaic(EOX, z, f"medias/ign/eox{z}.jpg")
+for z in (15, 17, 19): mosaic(IGN, z, f"medias/ign/z{z}.jpg")
