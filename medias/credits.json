@@ -1,0 +1,27 @@
+{
+ "localgroup": {
+  "file": "The Local Group Top View.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Unmismoobjetivo\" title=\"User:Unmismoobjetivo\">Pablo Carlos Budassi</a>",
+  "license": "CC BY 4.0"
+ },
+ "mw_annot": {
+  "file": "236084main MilkyWay-full-annotated.jpg",
+  "artist": "NASA/JPL-Caltech/R. Hurt",
+  "license": "Public domain"
+ },
+ "europe": {
+  "file": "Europe satellite orthographic.jpg",
+  "artist": "",
+  "license": "Public domain"
+ },
+ "cheek": {
+  "file": "Human cheek cells from science class.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Kyreb\" title=\"User:Kyreb\">Kyreb</a>",
+  "license": "CC0"
+ },
+ "hela": {
+  "file": "Multicolor fluorescence image of a living HeLa cell.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:8x57is&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:8x57is (page does not exist)\">8x57is</a>",
+  "license": "CC BY-SA 4.0"
+ }
+}
