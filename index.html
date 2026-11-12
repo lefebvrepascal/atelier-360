@@ -2759,6 +2759,7 @@ function createPlayer(container,course,opts){
   function newState(){return{visited:{},answers:{},res:{},ord:{},mt:{},t0:Date.now()};}
   var st=newState(),search=null,pickEnt=null;
   var prefs=Object.assign({simple:false,big:false,hc:false,slow:false,auto:null},opts.prefs||{});
+  function EN(){return String(course&&course.voix||'').slice(0,2)==='en';}
   function T(o,k){return(prefs.simple&&o&&o[k+'S'])?o[k+'S']:((o&&o[k])||'');}
   var skyCache={},skyKey='',disposables=[],hotEls={},panelEnt=null,vid=null,vidTex=null,vidNeedsUnlock=false,quitArmed=false,quitT=null;
   var curAudio=null,lastSp=null;
@@ -2799,13 +2800,16 @@ function createPlayer(container,course,opts){
           else if(h.type==='order'){var it=(h.items||[]).map(function(x){return String(x||'').trim();}).filter(Boolean),n=it.length;q=q||"Remets dans l'ordre";add(q+'. Touchez les éléments dans le bon ordre, du premier au dernier.');add("Bravo, c'est le bon ordre ! "+ex);
             for(var nb=0;nb<n;nb++)add('Pas tout à fait : '+nb+' sur '+n+' bien placés. Le bon ordre : '+it.join(', puis ')+'. '+ex);}
           else if(h.type==='match'){q=q||'Associe';add(q+'. Touchez un élément à gauche, puis celui qui lui correspond à droite.');add('Bravo, toutes les paires sont justes ! '+ex);for(var e=1;e<=8;e++)add('Toutes les paires sont trouvées, avec '+e+' erreur'+(e>1?'s':'')+'. '+ex);}
+          else if(h.type==='say'){var Ls=SL(),ph=T(h,'question')||h.title||'';add(Ls.lr+' '+ph);add(ph);[Ls.ok,Ls.ko,Ls.last,Ls.none,Ls.nomic].forEach(function(x){add(x+' '+ph);add(x);});if(ex)add(Ls.ok+' '+ex);}
+          else if(h.type==='find'&&EN()){q=q||'Find it!';add(q);add(q+'. Look all around you. When you find it, point at it and pinch your fingers, or press the trigger. You have 3 tries.');
+            add('Well done, you found it! '+ex);add('Look! It is here, in the yellow circle. '+ex);[1,2].forEach(function(l){add('Very close! '+l+' more tr'+(l>1?'ies':'y')+'.');add('Not here. '+l+' more tr'+(l>1?'ies':'y')+'.');});}
           else if(h.type==='find'){q=q||'Trouve-le';add(q);add(q+'. Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et pincez les doigts, ou appuyez sur la gâchette. Vous avez 3 essais.');
             add('Bravo, vous avez trouvé ! '+ex);add('Voici où se trouvait la réponse (cercle jaune). '+ex);[1,2].forEach(function(l){add('Tout près ! Encore '+l+' essai'+(l>1?'s':''));add('Pas ici. Encore '+l+' essai'+(l>1?'s':''));});}});});});
     prefs.simple=sv;var tot=0,g=0;(course.scenes||[]).forEach(function(s){(s.hotspots||[]).forEach(function(h){if(h.type==='goto')return;tot++;if(graded(h))g++;});});
-    for(var x=0;x<=tot;x++)add('Points découverts : '+x+' sur '+tot+'.');for(var a=0;a<=g;a++)add('Activités réussies : '+a+' sur '+g+'.');
+    for(var x=0;x<=tot;x++)add('Points découverts : '+x+' sur '+tot+'.');for(var a=0;a<=g;a++)add('Activités réussies : '+a+' sur '+g+'.');if(EN()){add('Well done! The lesson is finished.');for(var a2=0;a2<=g;a2++)add('You did '+a2+' activities out of '+g+'.');}
     var seen={},out=[];L.forEach(function(t){var k=hsh(t);if(!seen[k]){seen[k]=1;out.push({h:k,t:t});}});return out;}
   function autoSay(text,audioUrl){if(aMode()==='auto')say(text,audioUrl);else lastSp={t:text,a:audioUrl,done:true};}
-  function listenBtn(text,audioUrl){return aMode()==='off'?null:{label:'Écouter',variant:'dark',onClick:function(){say(text,audioUrl,true);}};}
+  function listenBtn(text,audioUrl){return aMode()==='off'?null:{label:EN()?'Listen':'Écouter',variant:'dark',onClick:function(){say(text,audioUrl,true);}};}
   function withListen(text,audioUrl,main){var l=listenBtn(text,audioUrl);return l?{row:[l,main],h:0.14}:Object.assign({w:0.8,h:0.14},main);}
   if(window.speechSynthesis&&speechSynthesis.addEventListener){try{speechSynthesis.addEventListener('voiceschanged',function(){});speechSynthesis.getVoices();}catch(e){}}
   function quit(done){var sm=summary(done===true);stopSpeak();removeMol();stopFin();endSearch();quitArmed=false;closePanel();if(vid)vid.pause();try{if(sc.is('vr-mode'))sc.exitVR();}catch(e){}if(opts.onQuit)opts.onQuit(sm);}
@@ -2906,6 +2910,7 @@ function createPlayer(container,course,opts){
     else if(h.type==='find'){g.lineWidth=S*0.055;g.beginPath();g.arc(c-S*0.04,c-S*0.04,S*0.12,0,7);g.stroke();g.beginPath();g.moveTo(c+S*0.05,c+S*0.05);g.lineTo(c+S*0.16,c+S*0.16);g.stroke();}
     else if(h.type==='order'){g.font='700 '+Math.round(S*0.12)+'px '+FONT;g.textAlign='center';g.textBaseline='middle';[-1,0,1].forEach(function(k){g.fillText(String(k+2),c-S*0.12,c+k*S*0.12);g.fillRect(c-S*0.04,c+k*S*0.12-S*0.022,S*0.2,S*0.044);});}
     else if(h.type==='mol'){g.lineWidth=S*0.04;var pts=[[0,-0.13],[-0.13,0.09],[0.13,0.09]];g.beginPath();g.moveTo(c+pts[0][0]*S,c+pts[0][1]*S);g.lineTo(c+pts[1][0]*S,c+pts[1][1]*S);g.moveTo(c+pts[0][0]*S,c+pts[0][1]*S);g.lineTo(c+pts[2][0]*S,c+pts[2][1]*S);g.stroke();pts.forEach(function(q,k){g.beginPath();g.arc(c+q[0]*S,c+q[1]*S,S*(k?0.055:0.08),0,7);g.fill();});}
+    else if(h.type==='say'){rr(g,c-S*0.07,c-S*0.2,S*0.14,S*0.24,S*0.07);g.fill();g.lineWidth=S*0.04;g.beginPath();g.arc(c,c-S*0.02,S*0.13,0.15,Math.PI-0.15);g.stroke();g.beginPath();g.moveTo(c,c+S*0.11);g.lineTo(c,c+S*0.18);g.moveTo(c-S*0.07,c+S*0.18);g.lineTo(c+S*0.07,c+S*0.18);g.stroke();}
     else if(h.type==='match'){g.lineWidth=S*0.045;[-1,1].forEach(function(k){g.beginPath();g.arc(c+k*S*0.12,c,S*0.07,0,7);g.stroke();});g.beginPath();g.moveTo(c-S*0.05,c);g.lineTo(c+S*0.05,c);g.stroke();}
     else{g.font='700 '+Math.round(S*0.4)+'px '+FONT;g.textAlign='center';g.textBaseline='middle';g.fillText(h.type==='quiz'?'?':'i',c,c+S*0.02);}
     if(cv._mesh)cv._mesh.material.map.needsUpdate=true;}
@@ -2983,7 +2988,7 @@ function createPlayer(container,course,opts){
     if(mode==='play'){buildHud();}
     if(opts.onScene)opts.onScene(idx);
   }
-  function defTitle(h){if(h.title)return h.title;if(h.type==='quiz')return h.vf?'Vrai ou faux':'Question';if(h.type==='find')return'Défi';if(h.type==='mol')return'Molécule 3D';if(h.type==='order')return"Remets dans l'ordre";if(h.type==='match')return'Associe';if(h.type==='goto'){var t=(course.scenes||[]).find(function(x){return x.id===h.target;});return t?'Aller : '+t.name:'Aller à une scène';}return'Information';}
+  function defTitle(h){if(h.title)return h.title;if(h.type==='quiz')return h.vf?'Vrai ou faux':'Question';if(h.type==='find')return'Défi';if(h.type==='say')return'Répète';if(h.type==='mol')return'Molécule 3D';if(h.type==='order')return"Remets dans l'ordre";if(h.type==='match')return'Associe';if(h.type==='goto'){var t=(course.scenes||[]).find(function(x){return x.id===h.target;});return t?'Aller : '+t.name:'Aller à une scène';}return'Information';}
   function buildHot(h){var e=makeEnt(world,h.az||0,h.el||0,R_HOT);
     var ring=new THREE.Mesh(new THREE.RingGeometry(0.34,0.47,48),new THREE.MeshBasicMaterial({color:COL.accent,transparent:true,opacity:0.42,depthWrite:false}));disposables.push(ring);e.setObject3D('ring',ring);e.setAttribute('atl-pulse','');
     var cv=document.createElement('canvas');cv.width=cv.height=256;var m=planeMesh(cv,0.64);cv._mesh=m;drawHot(cv,h,selected===h.id);
@@ -3013,6 +3018,7 @@ function createPlayer(container,course,opts){
   function openPanel(h,answered){var P=panelPos(h),az=P.az,el=P.el;
     if(h.type==='mol')return openMol(h);
     if(h.type==='find')return openFind(h);
+    if(h.type==='say')return openSay(h);
     if(h.type==='order')return openOrder(h);
     if(h.type==='match')return openMatch(h);
     if(h.type==='quiz'){var opts2=(h.options||[]).map(function(o,k){return{o:String(o||'').trim(),k:k};}).filter(function(x){return x.o;}),ans=st.answers[h.id];var shown=answered!==undefined?answered:(ans!==undefined?ans:null);
@@ -3025,7 +3031,7 @@ function createPlayer(container,course,opts){
       btns.push(withListen(spT,spA,shown!==null?{label:'Continuer',variant:'primary',onClick:closePanel}:{label:'Fermer',variant:'plain',onClick:closePanel}));
       panelAt(az,el,{eyebrow:h.vf?'VRAI OU FAUX':'QUIZ',title:q,note:shown!==null?((ok?'Bonne réponse ! ':'Pas tout à fait. ')+ex):null,tone:ok?'good':'bad'},btns);autoSay(spT,spA);return;}
     var tx=T(h,'text'),iTxt=(h.title?h.title+'. ':'')+tx,iA=prefs.simple&&h.textS?null:(h.audio||null);
-    var showInfo=function(img){panelAt(az,el,{eyebrow:'INFORMATION',title:h.title||'Information',body:tx,img:img},[withListen(iTxt,iA,{label:"J'ai compris",variant:'primary',onClick:function(){seen(h);closePanel();}})]);autoSay(iTxt,iA);};
+    var showInfo=function(img){panelAt(az,el,{eyebrow:'INFORMATION',title:h.title||'Information',body:tx,img:img},[withListen(iTxt,iA,{label:EN()?'OK':"J'ai compris",variant:'primary',onClick:function(){seen(h);closePanel();}})]);autoSay(iTxt,iA);};
     if(h.image){var im=new Image();im.onload=function(){showInfo(im);};im.onerror=function(){showInfo(null);};im.src=h.image;}else showInfo(null);}
 
   /* --- Remettre dans l'ordre --- */
@@ -3065,9 +3071,103 @@ function createPlayer(container,course,opts){
   function angDist(a1,e1,a2,e2){var p=Math.PI/180,A=dirPos(a1,e1,1),B=dirPos(a2,e2,1);var d=(A.x*B.x+(A.y-EYE)*(B.y-EYE)+A.z*B.z);return Math.acos(Math.max(-1,Math.min(1,d)))/p;}
   function openFind(h){var P=panelPos(h),q=T(h,'question')||h.title||'Trouve-le',ex=T(h,'explanation'),r=st.res[h.id];
     if(r){revealFind(h,r.ok);return;}
-    var intro='Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et pincez les doigts, ou appuyez sur la gâchette. Vous avez 3 essais.';
-    panelAt(P.az,P.el,{eyebrow:'DÉFI · TROUVE-LE',title:q,body:intro},[withListen(q+'. '+intro,prefs.simple&&h.questionS?null:(h.audio||null),{label:'Je cherche',variant:'primary',onClick:function(){startSearch(h);}})]);
+    var intro=EN()?'Look all around you. When you find it, point at it and pinch your fingers, or press the trigger. You have 3 tries.':'Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et pincez les doigts, ou appuyez sur la gâchette. Vous avez 3 essais.';
+    panelAt(P.az,P.el,{eyebrow:EN()?'FIND IT!':'DÉFI · TROUVE-LE',title:q,body:intro},[withListen(q+'. '+intro,prefs.simple&&h.questionS?null:(h.audio||null),{label:EN()?'Search':'Je cherche',variant:'primary',onClick:function(){startSearch(h);}})]);
     autoSay(q,prefs.simple&&h.questionS?null:(h.audio||null));}
+
+  /* --- Répète à voix haute : écoute du modèle, micro, reconnaissance vocale, correction --- */
+  var SAYL={en:{eb:'LISTEN AND REPEAT',lr:'Listen and repeat.',listen:'Listen',speak:'Speak',stop:'Stop',me:'My voice',close:'Close',cont:'Continue',rec:'I am listening. Speak now!',wait:'Please wait.',ok:'Well done!',ko:'Try again!',last:'Good try! Listen once more.',heard:'I heard: ',none:'I did not hear you. Speak louder!',good:'I said it well',again:'Again',nomic:'There is no microphone. Listen and repeat aloud.',self:'Listen to your voice. Did you say it well?',tr:'Try'},
+    fr:{eb:'ÉCOUTE ET RÉPÈTE',lr:'Écoute et répète.',listen:'Écouter',speak:'Parler',stop:'Arrêter',me:'Ma voix',close:'Fermer',cont:'Continuer',rec:'Je t\'écoute. Parle maintenant !',wait:'Patiente un instant.',ok:'Bravo !',ko:'Essaie encore !',last:'Bien essayé ! Écoute encore une fois.',heard:'J\'ai entendu : ',none:'Je ne t\'ai pas entendu. Parle plus fort !',good:'Je l\'ai bien dit',again:'Encore',nomic:'Pas de micro. Écoute et répète à voix haute.',self:'Écoute ta voix. L\'as-tu bien dit ?',tr:'Essai'},
+    es:{eb:'ESCUCHA Y REPITE',lr:'Escucha y repite.',listen:'Escuchar',speak:'Hablar',stop:'Parar',me:'Mi voz',close:'Cerrar',cont:'Continuar',rec:'Te escucho. ¡Habla ahora!',wait:'Espera un momento.',ok:'¡Muy bien!',ko:'¡Inténtalo otra vez!',last:'¡Buen intento! Escucha otra vez.',heard:'He oído: ',none:'No te he oído. ¡Habla más fuerte!',good:'Lo he dicho bien',again:'Otra vez',nomic:'No hay micrófono. Escucha y repite en voz alta.',self:'Escucha tu voz. ¿Lo has dicho bien?',tr:'Intento'},
+    de:{eb:'HÖR ZU UND SPRICH NACH',lr:'Hör zu und sprich nach.',listen:'Anhören',speak:'Sprechen',stop:'Stopp',me:'Meine Stimme',close:'Schließen',cont:'Weiter',rec:'Ich höre zu. Sprich jetzt!',wait:'Einen Moment, bitte.',ok:'Super!',ko:'Versuch es noch einmal!',last:'Gut versucht! Hör noch einmal zu.',heard:'Ich habe gehört: ',none:'Ich habe dich nicht gehört. Sprich lauter!',good:'Ich habe es gut gesagt',again:'Noch einmal',nomic:'Kein Mikrofon. Hör zu und sprich laut nach.',self:'Hör deine Stimme. Hast du es gut gesagt?',tr:'Versuch'},
+    it:{eb:'ASCOLTA E RIPETI',lr:'Ascolta e ripeti.',listen:'Ascolta',speak:'Parla',stop:'Basta',me:'La mia voce',close:'Chiudi',cont:'Continua',rec:'Ti ascolto. Parla adesso!',wait:'Aspetta un momento.',ok:'Bravo!',ko:'Prova ancora!',last:'Bel tentativo! Ascolta ancora una volta.',heard:'Ho sentito: ',none:'Non ti ho sentito. Parla più forte!',good:'L\'ho detto bene',again:'Ancora',nomic:'Nessun microfono. Ascolta e ripeti ad alta voce.',self:'Ascolta la tua voce. L\'hai detto bene?',tr:'Tentativo'}};
+  function SL(){return SAYL[langCode().slice(0,2)]||SAYL.fr;}
+  var ARTS={en:['a','an','the'],fr:['le','la','les','un','une','des','l','du','de'],es:['el','la','los','las','un','una'],de:['der','die','das','ein','eine','einen'],it:['il','lo','la','i','gli','le','un','una','uno']};
+  function sayNorm(t){return String(t||'').toLowerCase().replace(/\[unk\]/g,' ').replace(/[’`]/g,"'").replace(/[^a-z0-9à-ÿœæß' ]+/g,' ').replace(/\s+/g,' ').trim();}
+  function sayWords(t){var A=ARTS[langCode().slice(0,2)]||[];return sayNorm(t).split(' ').filter(function(w){return w&&A.indexOf(w)<0;});}
+  function lev(a,b,eq){var m=a.length,n=b.length,d=[],i,j;for(i=0;i<=m;i++){d[i]=[i];}for(j=0;j<=n;j++)d[0][j]=j;
+    for(i=1;i<=m;i++)for(j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(eq(a[i-1],b[j-1])?0:1));return d[m][n];}
+  function wordEq(x,y){if(x===y)return true;if(x.length<4||y.length<4)return false;return lev(x.split(''),y.split(''),function(p,q){return p===q;})<=1;}
+  function saySim(heard,target){var a=sayWords(heard),b=sayWords(target);if(!b.length)b=sayNorm(target).split(' ');if(!a.length)return 0;return 1-lev(a,b,wordEq)/Math.max(a.length,b.length);}
+  function sayTargets(h){return[T(h,'question')||h.title||''].concat(h.question&&h.question!==T(h,'question')?[h.question]:[]).concat(h.accept||[]).filter(Boolean);}
+  function sayScore(h,heard){var best=0;(Array.isArray(heard)?heard:[heard]).forEach(function(x){sayTargets(h).forEach(function(t){best=Math.max(best,saySim(x,t));});});return best;}
+  var ASR=window.ATL_ASR||(window.ATL_ASR={});
+  var ASR_MODELS={en:'vosk-model-small-en-us-0.15.tar.gz'};
+  function asrBase(){return(course.asr&&course.asr.base)||'https://atelier360-medias.netlify.app/asr/';}
+  function hasSay(){return(course.scenes||[]).some(function(s){return(s.hotspots||[]).some(function(h){return h.type==='say';});});}
+  function audioCtx(){if(!ASR.ctx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;try{ASR.ctx=new AC();}catch(e){return null;}}if(ASR.ctx.state==='suspended'){try{ASR.ctx.resume();}catch(e){}}return ASR.ctx;}
+  function loadVosk(){if(ASR.vosk)return ASR.vosk;var mf=ASR_MODELS[langCode().slice(0,2)];if(!mf)return(ASR.vosk=Promise.reject(new Error('pas de modèle')));
+    ASR.vosk=new Promise(function(ok,ko){function go(){window.Vosk.createModel(asrBase()+mf).then(function(m){ASR.model=m;ok(m);}).catch(ko);}
+      if(window.Vosk)return go();var sc2=document.createElement('script');sc2.src=asrBase()+'vosk.js';sc2.onload=function(){if(window.Vosk)go();else ko(new Error('vosk'));};sc2.onerror=function(){ko(new Error('vosk.js'));};document.head.appendChild(sc2);
+      setTimeout(function(){ko(new Error('délai'));},90000);});
+    ASR.vosk.catch(function(){});return ASR.vosk;}
+  function prepareMic(){audioCtx();if(!ASR.micP){ASR.micP=(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia?navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true,channelCount:1}}):Promise.reject(new Error('micro')))
+      .then(function(sm){ASR.stream=sm;return sm;});ASR.micP.catch(function(){ASR.micP=null;ASR.noMic=true;});}
+    loadVosk();return ASR.micP||Promise.reject(new Error('micro'));}
+  function nativeRec(){var R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R||ASR.nativeBad||/OculusBrowser|Quest/i.test(navigator.userAgent))return null;return R;}
+  function chime(kind){var c=audioCtx();if(!c)return;try{var t=c.currentTime+0.02,f=kind==='ok'?[660,880,1100]:kind==='go'?[740]:[330,262];f.forEach(function(fr,i){var o=c.createOscillator(),g=c.createGain();o.type='sine';o.frequency.value=fr;o.connect(g);g.connect(c.destination);var t0=t+i*0.13;g.gain.setValueAtTime(0.0001,t0);g.gain.exponentialRampToValueAtTime(0.22,t0+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t0+(kind==='go'?0.18:0.32));o.start(t0);o.stop(t0+0.36);});}catch(e){}}
+  function toWav(chunks,sr){var n=0;chunks.forEach(function(c){n+=c.length;});if(!n)return null;var step=sr>24000?3:1,r2=sr/step,m=Math.floor(n/step),b=new ArrayBuffer(44+m*2),v=new DataView(b),k=0,j=0;
+    function w(o,s){for(var i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i));}w(0,'RIFF');v.setUint32(4,36+m*2,true);w(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,r2,true);v.setUint32(28,r2*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,'data');v.setUint32(40,m*2,true);
+    var pk=0.01;chunks.forEach(function(c){for(var i=0;i<c.length;i++)pk=Math.max(pk,Math.abs(c[i]));});var gn=Math.min(4,0.9/pk);
+    chunks.forEach(function(c){for(var i=0;i<c.length;i++){if(j++%step)continue;if(k>=m)return;var x=Math.max(-1,Math.min(1,c[i]*gn));v.setInt16(44+k*2,x<0?x*0x8000:x*0x7fff,true);k++;}});
+    try{return URL.createObjectURL(new Blob([b],{type:'audio/wav'}));}catch(e){return null;}}
+  function grammarFor(){var g={};(course.scenes||[]).forEach(function(s){(s.hotspots||[]).forEach(function(h){if(h.type!=='say')return;sayTargets(h).forEach(function(t){var x=sayNorm(t);if(x){g[x]=1;x.split(' ').forEach(function(w){if(w.length>2)g[w]=1;});}});});});var L=Object.keys(g);L.push('[unk]');return L;}
+  /* une écoute : capture du micro, détection de la parole et du silence, reconnaissance (Vosk, sinon navigateur), enregistrement de la voix */
+  function listenOnce(done){var c=audioCtx(),sm=ASR.stream,res=false,fin=false,texts=[],alts=[],chunks=[],nat=null,rec=null,stopCap=function(){};
+    function finish(){if(res)return;res=true;try{if(rec)rec.remove();}catch(e){}done({heard:texts.join(' ').trim(),alts:alts,speech:started,wav:toWav(chunks,c?c.sampleRate:48000),engine:rec?'vosk':nat?'navigateur':'aucun'});}
+    function end(){if(fin)return;fin=true;stopCap();if(nat){try{nat.stop();}catch(e){}setTimeout(finish,2500);}else if(rec){try{rec.retrieveFinalResult();}catch(e){}setTimeout(finish,2000);}else finish();}
+    var started=false,sil=0,tot=0,noise=0.003;
+    if(ASR.model&&c){try{rec=new ASR.model.KaldiRecognizer(c.sampleRate,JSON.stringify(grammarFor()));rec.on('result',function(m){var t=m&&m.result&&m.result.text;if(t&&sayNorm(t))texts.push(sayNorm(t));if(fin)finish();});}catch(e){rec=null;}}
+    if(!rec){var R=nativeRec();if(R){try{nat=new R();nat.lang=langCode();nat.maxAlternatives=5;nat.interimResults=false;nat.continuous=false;
+        nat.onresult=function(e){for(var i=0;i<e.results.length;i++)for(var j=0;j<e.results[i].length;j++){alts.push(e.results[i][j].transcript);}if(alts.length&&!texts.length)texts.push(alts[0]);started=true;};
+        nat.onerror=function(e){if(e&&(e.error==='network'||e.error==='not-allowed'||e.error==='service-not-allowed'||e.error==='language-not-supported'))ASR.nativeBad=true;};
+        nat.onend=function(){if(!fin){fin=true;stopCap();}finish();};nat.start();}catch(e){nat=null;}}}
+    if(c&&sm){try{var src=c.createMediaStreamSource(sm),node=c.createScriptProcessor(4096,1,1);
+      node.onaudioprocess=function(e){if(fin)return;var d=new Float32Array(e.inputBuffer.getChannelData(0));chunks.push(d);if(rec){try{rec.acceptWaveformFloat(d,c.sampleRate);}catch(x){}}
+        var q=0;for(var i=0;i<d.length;i++)q+=d[i]*d[i];var rms=Math.sqrt(q/d.length),dt=d.length/c.sampleRate;tot+=dt;
+        if(!started){if(tot>0.2&&rms>Math.max(0.015,noise*3.5))started=true;else noise=noise*0.85+rms*0.15;if(tot>6&&!nat)end();}
+        else{if(rms<Math.max(0.01,noise*2.2))sil+=dt;else sil=0;if((sil>1.2||tot>10)&&!nat)end();}
+        if(tot>11)end();};
+      src.connect(node);node.connect(c.destination);stopCap=function(){try{src.disconnect();node.disconnect();}catch(x){}};}catch(e){}}
+    else if(!nat){setTimeout(finish,10);}
+    setTimeout(end,12000);return end;}
+  function openSay(h,state){var P=panelPos(h),L=SL(),ph=T(h,'question')||h.title||'',ex=T(h,'explanation'),r=st.res[h.id];var sv=st.say||(st.say={});var S=sv[h.id]||(sv[h.id]={tries:0,wav:null,heard:''});
+    var phA=prefs.simple&&h.questionS?null:(h.audio||null);
+    function model(pre){say((pre?pre+' ':'')+ph,pre?null:phA,true);}
+    function playMe(){if(!S.wav)return;stopSpeak();var a=new Audio(S.wav);curAudio=a;a.onended=function(){if(curAudio===a){curAudio=null;setTimeout(function(){model();},350);}};a.play().catch(function(){});}
+    function img(cb){if(!h.image)return cb(null);var im=new Image();im.onload=function(){cb(im);};im.onerror=function(){cb(null);};im.src=h.image;}
+    var title=ph,eb=L.eb+(r?'':' · '+L.tr+' '+Math.min(3,S.tries+1)+' / 3');
+    function ebNow(){return L.eb+(st.res[h.id]?'':' · '+L.tr+' '+Math.min(3,S.tries+1)+' / 3');}
+    function draw(o,btns){img(function(im){panelAt(P.az,P.el,{eyebrow:o.eb||ebNow(),title:title,body:o.body||'',img:im,note:o.note||null,tone:o.tone||'good'},btns,true);if(panelEnt)panelEnt._h=h.id;});}
+    function speakBtn(){return{label:L.speak,variant:'primary',onClick:function(){start();}};}
+    function listenB(){return{label:L.listen,variant:'dark',onClick:function(){model();}};}
+    function meB(){return S.wav?{label:L.me,variant:'plain',onClick:playMe}:null;}
+    function closeB(main){return main?{label:L.cont,variant:'primary',onClick:function(){seen(h);closePanel();}}:{label:L.close,variant:'plain',onClick:function(){closePanel();}};}
+    function start(){stopSpeak();if(ASR.noMic&&!nativeRec()){draw({note:L.nomic,tone:'bad'},[{row:[listenB(),closeB(true)],h:0.15}]);say(L.nomic,null,true);return;}
+      draw({note:L.wait,tone:'good'},[]);
+      var pm=ASR.micP||prepareMic();var waitV=ASR_MODELS[langCode().slice(0,2)]&&!ASR.model?Promise.race([loadVosk(),new Promise(function(ok){setTimeout(ok,25000);})]).catch(function(){}):Promise.resolve();
+      Promise.all([pm.catch(function(){return null;}),waitV]).then(function(){
+        if(!ASR.stream&&!nativeRec()){ASR.noMic=true;draw({note:L.nomic,tone:'bad'},[{row:[listenB(),closeB(true)],h:0.15}]);say(L.nomic,null,true);return;}
+        chime('go');setTimeout(function(){var stopper=null;draw({note:L.rec,tone:'bad',eb:L.eb+' · REC'},[{label:L.stop,variant:'bad',h:0.15,onClick:function(){if(stopper)stopper();}}]);
+          stopper=listenOnce(function(o){after(o);});},280);});}
+    function after(o){S.wav=o.wav||S.wav;var heard=o.heard||(o.alts&&o.alts[0])||'';S.heard=heard;var engineOk=o.engine!=='aucun';
+      if(!engineOk){/* pas de reconnaissance : l'élève compare sa voix au modèle */
+        if(!o.speech){draw({note:L.none,tone:'bad'},[{row:[listenB(),speakBtn()],h:0.15},{row:[closeB(false)],h:0.13}]);chime('ko');say(L.none,null,true);return;}
+        draw({note:L.self,tone:'good'},[{row:[{label:L.good,variant:'good',onClick:function(){if(!st.res[h.id])setRes(h,true,'auto-évaluation (sans reconnaissance vocale)');chime('ok');seen(h);openSay(h);}},{label:L.again,variant:'plain',onClick:function(){start();}}],h:0.15},{row:[listenB(),meB()],h:0.13}]);playMe();return;}
+      if(!o.speech&&!heard){draw({note:L.none,tone:'bad'},[{row:[listenB(),speakBtn()],h:0.15},{row:[closeB(false)],h:0.13}]);chime('ko');say(L.none,null,true);return;}
+      S.tries++;var sc=Math.max(sayScore(h,heard),o.alts&&o.alts.length?sayScore(h,o.alts):0),ok=sc>=0.75;
+      var det='essai '+S.tries+', entendu « '+(heard||'?')+' »';
+      if(ok){if(!st.res[h.id])setRes(h,true,det);seen(h);chime('ok');
+        draw({eb:L.eb,note:L.ok+' '+L.heard+'« '+heard+' »'+(ex?'\n'+ex:''),tone:'good'},[{row:[listenB(),meB(),speakBtn()],h:0.15},{row:[closeB(true)],h:0.14}]);say(L.ok+(ex?' '+ex:''),null,true);return;}
+      chime('ko');
+      if(S.tries>=3&&!st.res[h.id]){setRes(h,false,det);seen(h);}
+      var last=S.tries>=3;
+      draw({eb:last?L.eb:null,note:(last?L.last:L.ko)+'\n'+L.heard+'« '+(heard||'…')+' »',tone:'bad'},[{row:[listenB(),meB(),speakBtn()],h:0.15},{row:[closeB(last)],h:0.14}]);
+      setTimeout(function(){model(last?L.last:L.ko);},500);}
+    if(state==='keep')return;
+    var btn=[{row:[listenB(),speakBtn()],h:0.16},{row:[meB(),closeB(!!r)],h:0.13}];
+    if(hasSay())prepareMic();
+    img(function(im){panelAt(P.az,P.el,{eyebrow:eb,title:title,body:T(h,'text')||'',img:im,note:r?(r.ok?L.ok:L.last):null,tone:r&&r.ok?'good':'bad'},btn);if(panelEnt)panelEnt._h=h.id;if(aMode()==='auto')model(L.lr);});}
   function refreshRays(){Array.prototype.forEach.call(sc.querySelectorAll('[raycaster]'),function(el){var rc=el.components&&el.components.raycaster;if(rc&&rc.refreshObjects)rc.refreshObjects();});var rs=sc.components&&sc.components.raycaster;if(rs&&rs.refreshObjects)rs.refreshObjects();}
   function startSearch(h){closePanel();search={h:h,tries:0};pickEnt.classList.add('atl-click');refreshRays();buildHud();}
   function endSearch(){search=null;if(pickEnt){pickEnt.classList.remove('atl-click');refreshRays();}}
@@ -3077,12 +3177,12 @@ function createPlayer(container,course,opts){
     if(d<=tol){setRes(h,true,(search.tries+1)+' essai(s)');endSearch();seen(h);revealFind(h,true);return;}
     search.tries++;
     if(search.tries>=3){setRes(h,false,'3 essais');endSearch();seen(h);revealFind(h,false);return;}
-    var left=3-search.tries;var msg=(d<tol*2.2?'Tout près ! ':'Pas ici. ')+'Encore '+left+' essai'+(left>1?'s':'');flash(az,el,msg);say(msg,null);buildHud();}
+    var left=3-search.tries;var msg=EN()?((d<tol*2.2?'Very close! ':'Not here. ')+left+' more tr'+(left>1?'ies':'y')+'.'):((d<tol*2.2?'Tout près ! ':'Pas ici. ')+'Encore '+left+' essai'+(left>1?'s':''));flash(az,el,msg);say(msg,null);buildHud();}
   function markTarget(h,col){var e=makeEnt(world,+h.tAz||0,+h.tEl||0,R_HOT);var tol=+h.tol||15;var rad=Math.max(0.35,Math.tan(tol*Math.PI/180)*R_HOT);
     var ring=new THREE.Mesh(new THREE.RingGeometry(rad*0.86,rad,64),new THREE.MeshBasicMaterial({color:col||COL.good,transparent:true,opacity:0.85,depthWrite:false}));disposables.push(ring);e.setObject3D('ring',ring);e.setAttribute('atl-pulse','');return e;}
   function revealFind(h,ok){var ex=T(h,'explanation'),q=T(h,'question')||h.title||'';markTarget(h,ok?COL.good:COL.accent);
-    var note=(ok?'Bravo, vous avez trouvé ! ':'Voici où se trouvait la réponse (cercle jaune). ')+ex;
-    panelAt(norm(+h.tAz||0),Math.max(-12,Math.min(14,(+h.tEl||0)-14)),{eyebrow:'DÉFI · TROUVE-LE',title:q,note:note,tone:ok?'good':'bad'},[withListen(note,null,{label:'Continuer',variant:'primary',onClick:closePanel})]);autoSay(note,null);}
+    var note=(EN()?(ok?'Well done, you found it! ':'Look! It is here, in the yellow circle. '):(ok?'Bravo, vous avez trouvé ! ':'Voici où se trouvait la réponse (cercle jaune). '))+ex;
+    panelAt(norm(+h.tAz||0),Math.max(-12,Math.min(14,(+h.tEl||0)-14)),{eyebrow:EN()?'FIND IT!':'DÉFI · TROUVE-LE',title:q,note:note,tone:ok?'good':'bad'},[withListen(note,null,{label:EN()?'Continue':'Continuer',variant:'primary',onClick:closePanel})]);autoSay(note,null);}
 
   /* --- Molécule 3D manipulable (mains ou manettes) --- */
   var MCOL={H:0xf2f2f2,C:0x2e2e2e,O:0xe0261c,N:0x2b59e6,S:0xf2cf29,Cl:0x25c44a,P:0xff8a1a,F:0x86e04a,Na:0x9f5cf0,Br:0x962626,I:0x88009a,K:0x8f40d4,Ca:0x3dd000,Fe:0xe06633,Cu:0xc8802e,He:0xd0ffff,Ne:0xb0e0f0,Mg:0x8ad000,Si:0xd8b090,Zn:0x7d80b0};
@@ -3330,18 +3430,18 @@ function createPlayer(container,course,opts){
     b.push({label:'Fermer',variant:'primary',w:0.8,h:0.14,onClick:function(){closePanel();loadScene(idx,false);}});
     panelAt(az,4,{eyebrow:'RÉGLAGES',title:'Confort de lecture',body:'Ces réglages restent mémorisés sur ce casque.'},b);}
 
-  function graded(h){return h.type==='quiz'||h.type==='order'||h.type==='match'||h.type==='find';}
+  function graded(h){return h.type==='quiz'||h.type==='order'||h.type==='match'||h.type==='find'||h.type==='say';}
   function summary(done){var tot=0,sn=0,g=0,ok=0,det=[];(course.scenes||[]).forEach(function(s,si){(s.hotspots||[]).forEach(function(h){if(h.type==='goto')return;tot++;if(st.visited[h.id])sn++;
-      if(graded(h)){g++;var r=st.res[h.id];if(r&&r.ok)ok++;det.push({scene:si+1,type:h.vf?'vrai/faux':({quiz:'QCM',order:'ordre',match:'association',find:'trouve-le'}[h.type]||h.type),titre:(h.title||h.question||'').slice(0,60),ok:r?(r.ok?'oui':'non'):'non fait',detail:r?r.detail:''});}});});
+      if(graded(h)){g++;var r=st.res[h.id];if(r&&r.ok)ok++;det.push({scene:si+1,type:h.vf?'vrai/faux':({quiz:'QCM',order:'ordre',match:'association',find:'trouve-le',say:'répétition orale'}[h.type]||h.type),titre:(h.title||h.question||'').slice(0,60),ok:r?(r.ok?'oui':'non'):'non fait',detail:r?r.detail:''});}});});
     return{done:!!done,seen:sn,tot:tot,ok:ok,tq:g,dur:Math.round((Date.now()-st.t0)/1000),details:det};}
 
   function counts(s){var hs=(s&&s.hotspots||[]).filter(function(h){return h.type!=='goto';});return{tot:hs.length,seen:hs.filter(function(h){return st.visited[h.id];}).length};}
   function buildHud(){clearEl(hud);var n=(course.scenes||[]).length;if(!n)return;var bar=makeEnt(hud,0,-34,2.3),c=counts(course.scenes[idx]);
-    if(search){var q=T(search.h,'question')||search.h.title||'';button(bar,'Cherchez : '+q+(search.tries?'  ('+(3-search.tries)+' essai'+(3-search.tries>1?'s':'')+')':''),'dark',1.5,0.13,-0.2,0,null);button(bar,'Abandonner','plain',0.44,0.13,0.79,0,function(){endSearch();buildHud();});return;}
+    if(search){var q=T(search.h,'question')||search.h.title||'';button(bar,(EN()?'Find: ':'Cherchez : ')+q+(search.tries?'  ('+(3-search.tries)+(EN()?' tr'+(3-search.tries>1?'ies':'y'):' essai'+(3-search.tries>1?'s':''))+')':''),'dark',1.5,0.13,-0.2,0,null);button(bar,EN()?'Give up':'Abandonner','plain',0.44,0.13,0.79,0,function(){endSearch();buildHud();});return;}
     var Wd=[0.36,0.64,0.36,0.32,0.32],gp=0.035,tw=Wd.reduce(function(a,b){return a+b;},0)+gp*4,xs=[],xx=-tw/2;Wd.forEach(function(w){xs.push(xx+w/2);xx+=w+gp;});
-    button(bar,'Précédente',idx>0?'plain':'dim',Wd[0],0.13,xs[0],0,idx>0?function(){loadScene(idx-1);sceneIntro();}:null);
-    button(bar,'Scène '+(idx+1)+'/'+n+'  ·  '+c.seen+'/'+c.tot+' vus','dark',Wd[1],0.13,xs[1],0,null);
-    button(bar,idx<n-1?'Suivante':'Terminer','primary',Wd[2],0.13,xs[2],0,idx<n-1?function(){loadScene(idx+1);sceneIntro();}:finish);
+    button(bar,EN()?'Back':'Précédente',idx>0?'plain':'dim',Wd[0],0.13,xs[0],0,idx>0?function(){loadScene(idx-1);sceneIntro();}:null);
+    button(bar,(EN()?'Scene ':'Scène ')+(idx+1)+'/'+n+'  ·  '+c.seen+'/'+c.tot+(EN()?' done':' vus'),'dark',Wd[1],0.13,xs[1],0,null);
+    button(bar,idx<n-1?(EN()?'Next':'Suivante'):(EN()?'Finish':'Terminer'),'primary',Wd[2],0.13,xs[2],0,idx<n-1?function(){loadScene(idx+1);sceneIntro();}:finish);
     button(bar,'Menu','plain',Wd[3],0.13,xs[3],0,openMenu);
     button(bar,quitArmed?'Confirmer ?':'Quitter',quitArmed?'bad':'plain',Wd[4],0.13,xs[4],0,function(){if(!quitArmed){quitArmed=true;buildHud();clearTimeout(quitT);quitT=setTimeout(function(){quitArmed=false;hudRefresh();},4000);return;}quitArmed=false;clearTimeout(quitT);quit(false);});
     var env=curEnv();if(env&&env.type==='video'&&vid){var vb=makeEnt(hud,0,-43,2.3);var v=vid;
@@ -3349,15 +3449,15 @@ function createPlayer(container,course,opts){
       button(vb,(v.muted||vidNeedsUnlock)?'Activer le son':'Couper le son','plain',0.84,0.11,0,0,function(){vidNeedsUnlock=false;v.muted=!v.muted;if(v.paused)v.play().catch(function(){});});
       button(vb,'Revoir','plain',0.42,0.11,0.66,0,function(){try{v.currentTime=0;}catch(e){}v.play().catch(function(){});});}}
   function welcome(){var n=(course.scenes||[]).length;if(!n)return;var wTxt=(course.title||'')+'. '+(course.objectif||'');
-    panelAt(0,4,{eyebrow:[course.matiere,course.niveau].filter(Boolean).join(' · ').toUpperCase()||'COURS 360',title:course.title||'Cours immersif',body:(course.objectif?course.objectif+'\n\n':'')+n+(n>1?' scènes':' scène')+' à explorer. Visez avec la main ou la manette, puis pincez le pouce et l\'index ou appuyez sur la gâchette pour choisir. Sur ordinateur : glissez pour regarder, cliquez pour choisir. Le bouton Menu permet de changer de scène, de recentrer la vue et d\'agrandir le texte.'},[withListen(wTxt,null,{label:'Commencer',variant:'primary',onClick:sceneIntro})]);autoSay(wTxt,null);}
+    panelAt(0,4,{eyebrow:[course.matiere,course.niveau].filter(Boolean).join(' · ').toUpperCase()||'COURS 360',title:course.title||'Cours immersif',body:EN()?((course.objectif?course.objectif+'\n\n':'')+n+' scenes. Point with your hand or the controller. Pinch your fingers or press the trigger to choose.'):(course.objectif?course.objectif+'\n\n':'')+n+(n>1?' scènes':' scène')+' à explorer. Visez avec la main ou la manette, puis pincez le pouce et l\'index ou appuyez sur la gâchette pour choisir. Sur ordinateur : glissez pour regarder, cliquez pour choisir. Le bouton Menu permet de changer de scène, de recentrer la vue et d\'agrandir le texte.'},[withListen(wTxt,null,{label:EN()?'Start':'Commencer',variant:'primary',onClick:sceneIntro})]);autoSay(wTxt,null);}
   function sceneIntro(){var s=course.scenes[idx];if(!s)return;var c=counts(s);var it=T(s,'intro');var sTxt=(s.name||'')+'. '+it;var sA=prefs.simple&&s.introS?null:(s.introAudio||null);
-    panelAt(0,4,{eyebrow:'SCÈNE '+(idx+1)+' / '+course.scenes.length,title:s.name||'Scène',body:(it?it+'\n\n':'')+(c.tot?'Regardez tout autour de vous : '+c.tot+' point'+(c.tot>1?'s':'')+' à découvrir.':'')},[withListen(sTxt,sA,{label:'Explorer',variant:'primary',onClick:closePanel})]);autoSay(sTxt,sA);}
+    panelAt(0,4,{eyebrow:(EN()?'SCENE ':'SCÈNE ')+(idx+1)+' / '+course.scenes.length,title:s.name||'Scène',body:(it?it+'\n\n':'')+(c.tot?(EN()?'Look all around you: '+c.tot+' points.':'Regardez tout autour de vous : '+c.tot+' point'+(c.tot>1?'s':'')+' à découvrir.'):'')},[withListen(sTxt,sA,{label:EN()?'Explore':'Explorer',variant:'primary',onClick:closePanel})]);autoSay(sTxt,sA);}
   var finT=null;
   function stopFin(){if(finT){clearInterval(finT);finT=null;}}
   function finish(){stopFin();endSearch();var sm=summary(true);var body='Points découverts : '+sm.seen+' sur '+sm.tot+(sm.tq?'\nActivités réussies : '+sm.ok+' sur '+sm.tq:'');
     var cam=camAngles(),az=norm(cam.az+worldYaw),left=10;
     function draw(){panelAt(az,2,{eyebrow:'BILAN',title:'Leçon terminée, bravo !',body:body,note:'La leçon se ferme dans '+left+' seconde'+(left>1?'s':'')+'.',tone:'good'},[{row:[{label:'Recommencer',variant:'plain',onClick:restart},{label:'Quitter maintenant',variant:'primary',onClick:function(){quit(true);}}],h:0.15}],true);}
-    draw();autoSay('Leçon terminée, bravo ! Points découverts : '+sm.seen+' sur '+sm.tot+'.'+(sm.tq?' Activités réussies : '+sm.ok+' sur '+sm.tq+'.':''),null);finT=setInterval(function(){left--;if(left<=0){stopFin();quit(true);}else draw();},1000);}
+    draw();autoSay(EN()?'Well done! The lesson is finished.'+(sm.tq?' You did '+sm.ok+' activities out of '+sm.tq+'.':''):'Leçon terminée, bravo ! Points découverts : '+sm.seen+' sur '+sm.tot+'.'+(sm.tq?' Activités réussies : '+sm.ok+' sur '+sm.tq+'.':''),null);finT=setInterval(function(){left--;if(left<=0){stopFin();quit(true);}else draw();},1000);}
 
   function lookAt(az,el){var lc=camEl.components&&camEl.components['look-controls'];if(!lc||!lc.yawObject)return;lc.yawObject.rotation.y=-az*Math.PI/180+worldYaw*Math.PI/180;lc.pitchObject.rotation.x=el*Math.PI/180;}
 
@@ -3382,6 +3482,8 @@ function createPlayer(container,course,opts){
     setPrefs:function(p){Object.assign(prefs,p||{});loadScene(idx,false);},
     getPrefs:function(){return Object.assign({},prefs);},
     summary:summary,
+    prepareMic:function(){if(hasSay())return prepareMic().catch(function(){});},
+    hasSay:hasSay,
     _dbg:{open:function(id){var s=(course.scenes||[])[idx];var h=s&&(s.hotspots||[]).find(function(x){return x.id===id;});if(h)onHot(h);return!!h;},
       buttons:function(){var out=[];[panelEnt,hud].forEach(function(root){if(!root)return;Array.prototype.forEach.call(root.querySelectorAll('a-entity'),function(e){if(e._lbl!==undefined)out.push({label:e._lbl,on:e._on,click:function(){e.emit('click');}});});});return out;},
       pick:function(az,el){var P=dirPos(az,el,30);var v=new THREE.Vector3(P.x,P.y,P.z);world.object3D.localToWorld(v);onPick(v);},
@@ -3476,9 +3578,9 @@ function renderScenes(){const ul=$('#sceneList');
     <div class="sub">${isVid(s)?'<span class="vtag">VIDÉO</span>':''}<span>${n} point${n>1?'s':''}${q?' · '+q+' activité'+(q>1?'s':''):''}</span><span class="tools"><button class="icon-btn" data-mv="-1" title="Monter" aria-label="Monter la scène">↑</button><button class="icon-btn" data-mv="1" title="Descendre" aria-label="Descendre la scène">↓</button><button class="icon-btn" data-delsc title="Supprimer" aria-label="Supprimer la scène">✕</button></span></div></div></li>`;}).join('')||'<li class="empty">Aucune scène.</li>';
   $('#stageEmpty').hidden=course.scenes.length>0;}
 function cnt(id,val,max){return`<div class="count${val.length>max?' over':''}" id="${id}">${val.length} / ${max}</div>`;}
-const TYPE_LABEL={info:'Information',mol:'Molécule 3D',quiz:'Quiz',vf:'Vrai ou faux',order:"Remettre dans l'ordre",match:'Associer par paires',find:'Trouve-le dans la scène',goto:'Lien vers une scène'};
+const TYPE_LABEL={info:'Information',mol:'Molécule 3D',quiz:'Quiz',vf:'Vrai ou faux',order:"Remettre dans l'ordre",match:'Associer par paires',find:'Trouve-le dans la scène',say:'Répéter à voix haute (micro)',goto:'Lien vers une scène'};
 const hKind=h=>h.type==='quiz'&&h.vf?'vf':h.type;
-function badgeTxt(h){return{mol:'⚛',info:'i',quiz:'?',vf:'V/F',order:'123',match:'⇄',find:'◎',goto:'➜'}[hKind(h)]||'i';}
+function badgeTxt(h){return{mol:'⚛',info:'i',quiz:'?',vf:'V/F',order:'123',match:'⇄',find:'◎',say:'🎤',goto:'➜'}[hKind(h)]||'i';}
 const VF={'fr-FR':['Vrai','Faux'],'en-GB':['True','False'],'es-ES':['Verdadero','Falso'],'de-DE':['Richtig','Falsch'],'it-IT':['Vero','Falso']};
 function simpleField(id,val,label){return course.simple?`<div class="field simple"><label for="${id}">${label} · version simplifiée</label><textarea id="${id}" maxlength="450">${esc(val||'')}</textarea></div>`:'';}
 function renderInsp(){const box=$('#insp'),s=scene();
@@ -3510,12 +3612,13 @@ function renderInsp(){const box=$('#insp'),s=scene();
     if(h.type==='mol')html+=`<div class="stage-note">Molécule 3D : ${esc((h.mol&&h.mol.formula)||'H₂O par défaut')} · ${(h.mol&&h.mol.atoms?h.mol.atoms.length:3)} atomes${h.mol&&h.mol.product?' · réaction animée':''}. Le modèle se définit dans le fichier du cours (champ « mol »).</div>`;
     if(h.type==='info'||h.type==='mol')html+=`<div class="field"><label for="hText">Texte affiché</label><textarea id="hText" maxlength="${LIMITS.text+50}">${esc(h.text)}</textarea>${cnt('cText',h.text||'',LIMITS.text)}</div>${simpleField('hTextS',h.textS,'Texte')}
       <div class="field"><label for="hImg">Illustration dans le panneau (facultatif)</label>${h.image?`<img src="${h.image}" alt="Illustration du point" class="ill">`:''}<div class="actions"><label class="btn small" for="hImg">${h.image?'Changer l\'image':'Ajouter une image'}</label>${h.image?'<button type="button" class="btn small danger" id="hImgDel">Retirer</button>':''}</div><input type="file" id="hImg" accept="image/*" hidden></div>`;
-    const qField=()=>`<div class="field"><label for="hQ">${h.type==='find'?'Consigne (ce que l\'élève doit trouver)':h.type==='order'||h.type==='match'?'Consigne':h.vf?'Affirmation':'Question'}</label><textarea id="hQ" maxlength="${LIMITS.question+30}">${esc(h.question)}</textarea>${cnt('cQ',h.question||'',LIMITS.question)}</div>${simpleField('hQS',h.questionS,h.vf?'Affirmation':'Question')}`;
+    const qField=()=>`<div class="field"><label for="hQ">${h.type==='say'?'Mot ou phrase à répéter (lu par la voix, reconnu au micro)':h.type==='find'?'Consigne (ce que l\'élève doit trouver)':h.type==='order'||h.type==='match'?'Consigne':h.vf?'Affirmation':'Question'}</label><textarea id="hQ" maxlength="${LIMITS.question+30}">${esc(h.question)}</textarea>${cnt('cQ',h.question||'',LIMITS.question)}</div>${simpleField('hQS',h.questionS,h.vf?'Affirmation':'Question')}`;
     const exField=()=>`<div class="field"><label for="hEx">Explication après la réponse</label><textarea id="hEx" maxlength="${LIMITS.expl+30}">${esc(h.explanation)}</textarea>${cnt('cEx',h.explanation||'',LIMITS.expl)}</div>${simpleField('hExS',h.explanationS,'Explication')}`;
     if(h.type==='quiz'&&h.vf){const op=h.options||VF['fr-FR'];html+=qField()+`<div class="field"><label>Bonne réponse</label>${[0,1].map(k=>`<label class="check"><input type="radio" name="hAns" value="${k}"${h.answer===k?' checked':''}> ${esc(op[k])}</label>`).join('')}</div>`+exField();}
     else if(h.type==='quiz'){const op=h.options||[];html+=qField()+`<div class="field"><label>Réponses (cochez la bonne)</label>${[0,1,2,3].map(k=>`<div class="opt"><input type="radio" name="hAns" value="${k}"${h.answer===k?' checked':''} aria-label="Bonne réponse ${String.fromCharCode(65+k)}"><input type="text" data-opt="${k}" maxlength="${LIMITS.option}" placeholder="${k<2?'Réponse '+String.fromCharCode(65+k):'Réponse '+String.fromCharCode(65+k)+' (facultatif)'}" value="${esc(op[k]||'')}"></div>`).join('')}</div>`+exField();}
     if(h.type==='order'){const it=h.items||[];html+=qField()+`<div class="field"><label>Éléments, dans le bon ordre (2 à 6)</label><div class="list-ed">${it.map((x,k)=>`<div class="li"><span class="n">${k+1}</span><input type="text" data-item="${k}" maxlength="${LIMITS.option}" value="${esc(x)}" placeholder="Élément ${k+1}"><button type="button" class="icon-btn" data-itemdel="${k}" aria-label="Retirer l'élément ${k+1}">✕</button></div>`).join('')}</div>${it.length<6?'<button type="button" class="btn small" id="itemAdd" style="align-self:flex-start">+ Ajouter un élément</button>':''}<div class="stage-note">Dans le casque, les éléments sont mélangés : l'élève les touche dans l'ordre.</div></div>`+exField();}
     if(h.type==='match'){const pr=h.pairs||[];html+=qField()+`<div class="field"><label>Paires à associer (2 à 5)</label><div class="list-ed">${pr.map((x,k)=>`<div class="li pair"><input type="text" data-pair="${k},0" maxlength="${LIMITS.option}" value="${esc(x[0])}" placeholder="Élément"><span class="muted">↔</span><input type="text" data-pair="${k},1" maxlength="${LIMITS.option}" value="${esc(x[1])}" placeholder="Correspondance"><button type="button" class="icon-btn" data-pairdel="${k}" aria-label="Retirer la paire ${k+1}">✕</button></div>`).join('')}</div>${pr.length<5?'<button type="button" class="btn small" id="pairAdd" style="align-self:flex-start">+ Ajouter une paire</button>':''}<div class="stage-note">La colonne de droite est mélangée dans le casque.</div></div>`+exField();}
+    if(h.type==='say')html+=qField()+`<div class="stage-note">Dans le casque : l'élève écoute le modèle, appuie sur « Parler » et répète. La reconnaissance vocale corrige (3 essais) et le résultat part avec les autres activités.</div>`+exField();
     if(h.type==='find')html+=qField()+`<div class="field"><label>Cible à trouver</label><div class="mono" style="font-size:13px">Azimut ${Math.round(+h.tAz||0)}° · Élévation ${Math.round(+h.tEl||0)}°</div>
       <div class="actions"><button type="button" class="btn small primary" id="tPlace">Placer la cible au centre de la vue</button><button type="button" class="btn small" id="tLook">Regarder la cible</button></div>
       <div class="stage-note">La cible apparaît en bleu dans l'éditeur, invisible pour l'élève. Le marqueur du défi (plus bas) doit être placé ailleurs.</div></div>
@@ -3538,6 +3641,7 @@ function initType(h,type,v){v=v||{az:h.az||0,el:h.el||0};
   else if(type==='order'){h.type='order';delete h.vf;h.title=h.title||"Remets dans l'ordre";h.question=h.question||'';h.items=h.items&&h.items.length?h.items:['','',''];h.explanation=h.explanation||'';}
   else if(type==='match'){h.type='match';delete h.vf;h.title=h.title||'Associe';h.question=h.question||'';h.pairs=h.pairs&&h.pairs.length?h.pairs:[['',''],['',''],['','']];h.explanation=h.explanation||'';}
   else if(type==='find'){h.type='find';delete h.vf;h.title=h.title||'Défi';h.question=h.question||'';h.explanation=h.explanation||'';if(h.tAz===undefined){h.tAz=Math.round(((v.az+60+180)%360+360)%360-180);h.tEl=0;}h.tol=h.tol||15;}
+  else if(type==='say'){h.type='say';delete h.vf;h.title=h.title||'Répète';h.question=h.question||'';h.explanation=h.explanation||'';}
   else{h.type=type;delete h.vf;}}
 function addHot(type){const s=scene();if(!s)return;if(mode!=='edit')setMode('edit');const v=player?player.getView():{az:0,el:0};
   const h={id:uid(),type,az:v.az,el:Math.max(-60,Math.min(60,v.el)),title:''};
@@ -3761,7 +3865,7 @@ window.addEventListener('error',function(e){if(!P)fail('Le cours ne s\\'est pas 
 function tap(el,fn){if(!el)return;var last=0;function h(ev){if(Date.now()-last<600)return;last=Date.now();fn(ev);}el.addEventListener('click',h);el.addEventListener('pointerup',h);el.addEventListener('touchend',h);}
 function syncChips(){Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(c){c.setAttribute('aria-pressed',prefs[c.getAttribute('data-p')]?'true':'false');});}
 Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(c){tap(c,function(){var k=c.getAttribute('data-p');prefs[k]=!prefs[k];ls('atl_prefs',prefs);syncChips();if(P){P.setPrefs(prefs);needRestart=true;}});});syncChips();
-function begin(){D.hidden=true;var i=document.getElementById('eleve');student=i?i.value.trim():'';if(!P){fail('Le moteur 3D ne s\\'est pas chargé. Vérifiez la connexion puis rechargez la page.');return false;}if(needRestart){needRestart=false;P.restart();}return true;}
+function begin(){D.hidden=true;var i=document.getElementById('eleve');student=i?i.value.trim():'';if(!P){fail('Le moteur 3D ne s\\'est pas chargé. Vérifiez la connexion puis rechargez la page.');return false;}if(needRestart){needRestart=false;P.restart();}if(P.prepareMic)P.prepareMic();return true;}
 function goVR(){if(!begin())return;S.style.display='none';PAD.hidden=true;P.enterVR();P.unlock();}
 function goFlat(){if(!begin())return;S.style.display='none';PAD.hidden=false;P.unlock();setTimeout(function(){P.resize();},50);}
 tap(document.getElementById('vr'),goVR);tap(document.getElementById('padvr'),goVR);tap(document.getElementById('flat'),goFlat);
@@ -4026,7 +4130,7 @@ Réponds uniquement avec ce JSON :
   finally{genCtl=null;go.textContent='Générer le cours';renderAtts();}});
 
 /* ---- fiche enseignant (.docx) ---- */
-const KIND_FR={info:'Information',quiz:'QCM',vf:'Vrai ou faux',order:"Remettre dans l'ordre",match:'Associer',find:'Trouve-le dans la scène',goto:'Lien vers une scène'};
+const KIND_FR={info:'Information',quiz:'QCM',vf:'Vrai ou faux',order:"Remettre dans l'ordre",match:'Associer',find:'Trouve-le dans la scène',say:'Répéter à voix haute',goto:'Lien vers une scène'};
 const ENV_FR={studio:'Studio',espace:'Espace',ocean:'Océan',montagne:'Montagne',desert:'Désert',foret:'Forêt',banquise:'Banquise'};
 const xe=t=>String(t==null?'':t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'');
 function wRun(t,o){o=o||{};const pr=`<w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri" w:cs="Calibri"/>${o.b?'<w:b/>':''}${o.i?'<w:i/>':''}<w:color w:val="${o.color||'1F2433'}"/><w:sz w:val="${o.sz||22}"/></w:rPr>`;
@@ -4069,6 +4173,7 @@ function ficheXml(c,tips){const cfg=siteCfg();let x='';const kind=h=>hKind(h);
       if(h.type==='quiz'){const ops=(h.options||[]).map((o,j)=>({o:String(o||'').trim(),j})).filter(z=>z.o);a='Réponse : '+((ops.find(z=>z.j===h.answer)||{}).o||'—')+(h.vf?'':'   (choix : '+ops.map(z=>String.fromCharCode(65+z.j)+'. '+z.o).join(' / ')+')');}
       else if(h.type==='order')a='Ordre attendu : '+(h.items||[]).filter(Boolean).map((t,j)=>(j+1)+'. '+t).join('   ');
       else if(h.type==='match')a='Paires : '+(h.pairs||[]).filter(p=>p[0]&&p[1]).map(p=>p[0]+' ↔ '+p[1]).join('   ·   ');
+      else if(h.type==='say')a='À prononcer : « '+(h.question||h.title||'')+' »'+((h.accept||[]).length?'   (accepté aussi : '+h.accept.join(' / ')+')':'')+', 3 essais, reconnaissance vocale.';
       else if(h.type==='find')a='À trouver dans la scène (azimut '+Math.round(+h.tAz||0)+'°, élévation '+Math.round(+h.tEl||0)+'°, précision '+(+h.tol||15)+'°), 3 essais.';
       x+=wP(wRun(a),{ind:360,after:40});if(h.explanation)x+=wP(wRun(h.explanation,{i:1,color:'3D4460'}),{ind:360,after:80});});}
   if(tips){x+=wH2('Conseils de mise en œuvre');
