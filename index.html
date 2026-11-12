@@ -2832,7 +2832,7 @@ function createPlayer(container,course,opts){
     c.addEventListener('gripdown',function(){var g=grabbers[h];g.kind='ctrl';c.object3D.getWorldPosition(g.pos);c.object3D.getWorldQuaternion(g.quat);grabStart(h);});c.addEventListener('gripup',function(){grabEnd(h);});
     {var hd=document.createElement('a-entity');hd.setAttribute('hand-tracking-controls','hand: '+h+'; modelStyle: mesh; modelColor: #e8c3a0; modelOpacity: 0.9');rig.appendChild(hd);handEnts[h]=hd;
       var hp=function(ev){var g=grabbers[h],d=ev.detail||{};if(d.position)g.pos.copy(d.position);if(d.wristRotation)g.quat.copy(d.wristRotation);};
-      hd.addEventListener('pinchstarted',function(ev){hp(ev);grabbers[h].kind='hand';grabStart(h);});hd.addEventListener('pinchmoved',hp);hd.addEventListener('pinchended',function(ev){hp(ev);grabEnd(h);});}});
+      hd.addEventListener('pinchstarted',function(ev){hp(ev);var R=HR[h];if(R){R.selSeen=false;R.pinch=true;}grabbers[h].kind='hand';grabStart(h);});hd.addEventListener('pinchmoved',hp);hd.addEventListener('pinchended',function(ev){hp(ev);grabEnd(h);var R=HR[h];if(!R)return;R.pinch=false;setTimeout(function(){if(!R.selSeen){if(R.used)R.used=false;else if(R.on)handClick(R);}R.selSeen=false;},220);});}});
   var skyEnt=document.createElement('a-entity'),world=document.createElement('a-entity'),hud=document.createElement('a-entity');
   hud.setAttribute('atl-follow','');
   sc.appendChild(rig);sc.appendChild(skyEnt);sc.appendChild(world);sc.appendChild(hud);
@@ -2860,15 +2860,20 @@ function createPlayer(container,course,opts){
   function clickTarget(o){while(o){if(o.el&&o.el.classList&&o.el.classList.contains('atl-click'))return o.el;o=o.parent;}return null;}
   function handHover(R,el,hit){if(R.hover!==el){if(R.hover)R.hover.emit('mouseleave',{},false);R.hover=el;if(el)el.emit('mouseenter',{intersection:hit},false);}R.hit=hit;}
   function hideRay(R){R.line.visible=R.dot.visible=false;handHover(R,null,null);}
+  function isHand(x){return !!(x&&(x.hand||((x.profiles||[]).join(',').indexOf('hand')>=0)));}
+  var _hm=new THREE.Matrix4(),_hp=new THREE.Vector3(),_hc=new THREE.Vector3(),_hr=new THREE.Vector3();
+  function jointRay(h,R){var he=handEnts[h],c=he&&he.components&&he.components['hand-tracking-controls'];if(!c||!c.hasPoses||!c.jointPoses)return false;
+    _hm.fromArray(c.jointPoses,96);_hp.setFromMatrixPosition(_hm);var cam=sc.camera;if(!cam)return false;cam.getWorldPosition(_hc);_hr.set(1,0,0).applyQuaternion(cam.getWorldQuaternion(_hq));_hr.y=0;_hr.normalize();
+    _hc.addScaledVector(_hr,h==='left'?-0.17:0.17);_hc.y-=0.28;R.o.copy(_hp);R.d.subVectors(_hp,_hc).normalize();_hq.setFromUnitVectors(new THREE.Vector3(0,0,-1),R.d);return true;}
   function handTick(){var s=sc.xrSession||sc._mockSession,fr=sc.frame||sc._mockFrame,rs=null;
     try{rs=sc._mockRef||(sc.renderer&&sc.renderer.xr&&sc.renderer.xr.getReferenceSpace());}catch(e){}
     ['left','right'].forEach(function(h){var R=HR[h]||(HR[h]=mkRay()),src=null;
-      if(s&&s.inputSources)for(var k=0;k<s.inputSources.length;k++){var x=s.inputSources[k];if(x&&x.hand&&x.handedness===h)src=x;}
-      var was=R.on;R.on=!!(src&&fr&&rs);if(R.on!==was)setLaser(h,!R.on);
-      if(!R.on){hideRay(R);return;}
-      var pose=null;try{pose=fr.getPose(src.targetRaySpace,rs);}catch(e){}
-      if(!pose){hideRay(R);return;}
-      var t=pose.transform;R.o.set(t.position.x,t.position.y,t.position.z);_hq.set(t.orientation.x,t.orientation.y,t.orientation.z,t.orientation.w);R.d.set(0,0,-1).applyQuaternion(_hq);
+      if(s&&s.inputSources)for(var k=0;k<s.inputSources.length;k++){var x=s.inputSources[k];if(isHand(x)&&x.handedness===h)src=x;}
+      var pose=null;if(src&&fr&&rs){try{pose=fr.getPose(src.targetRaySpace,rs);}catch(e){}}
+      var ok=false;if(pose){var t=pose.transform;R.o.set(t.position.x,t.position.y,t.position.z);_hq.set(t.orientation.x,t.orientation.y,t.orientation.z,t.orientation.w);R.d.set(0,0,-1).applyQuaternion(_hq);ok=true;}
+      else if(sc.is('vr-mode')||sc._mockSession)ok=jointRay(h,R);
+      var was=R.on;R.on=ok;if(R.on!==was)setLaser(h,!R.on);
+      if(!ok){hideRay(R);return;}
       var grabbing=grabbers[h]&&grabbers[h].on;
       var objs=[];Array.prototype.forEach.call(sc.querySelectorAll('.atl-click'),function(e){if(e.object3D)objs.push(e.object3D);});
       _hrc.set(R.o,R.d);_hrc.far=80;var hits=objs.length&&!grabbing?_hrc.intersectObjects(objs,true):[],hit=null,el=null;
@@ -2876,11 +2881,12 @@ function createPlayer(container,course,opts){
       handHover(R,el,hit);
       var len=hit?hit.distance:1.0;R.line.visible=!grabbing;R.line.position.copy(R.o);R.line.quaternion.copy(_hq);R.line.scale.set(1,1,len);R.line.material.opacity=R.pinch?1:0.7;
       if(hit&&!grabbing){R.dot.visible=true;R.dot.position.copy(hit.point).addScaledVector(R.d,-0.01);var sz=Math.max(0.006,hit.distance*0.012)*(R.pinch?0.7:1);R.dot.scale.set(sz,sz,sz);R.dot.quaternion.copy(_hq);R.dot.material.color.set(el?0xffffff:0xaaaaaa);}else R.dot.visible=false;});}
-  function onSelStart(ev){var src=ev.inputSource;if(!src||!src.hand)return;var R=HR[src.handedness];if(R)R.pinch=true;}
-  function onSel(ev){var src=ev.inputSource;if(!src||!src.hand)return;var R=HR[src.handedness];if(!R)return;R.pinch=false;
+  function handClick(R){if(R.hover){unlock();R.hover.emit('click',{intersection:R.hit},true);}}
+  function onSelStart(ev){var src=ev.inputSource;if(!isHand(src))return;var R=HR[src.handedness];if(R)R.pinch=true;}
+  function onSel(ev){var src=ev.inputSource;if(!isHand(src))return;var R=HR[src.handedness];if(!R)return;R.pinch=false;R.selSeen=true;
     if(R.used){R.used=false;return;}
-    if(R.hover){unlock();R.hover.emit('click',{intersection:R.hit},true);}}
-  function onSelEnd(ev){var src=ev.inputSource;if(!src||!src.hand)return;var R=HR[src.handedness];if(R){R.pinch=false;setTimeout(function(){R.used=false;},50);}}
+    handClick(R);}
+  function onSelEnd(ev){var src=ev.inputSource;if(!isHand(src))return;var R=HR[src.handedness];if(R){R.pinch=false;setTimeout(function(){R.used=false;},50);}}
   function attachXR(){var s=sc.xrSession||sc._mockSession;if(!s||s._atlHands)return;s._atlHands=true;s.addEventListener('selectstart',onSelStart);s.addEventListener('select',onSel);s.addEventListener('selectend',onSelEnd);}
   var hrEnt=document.createElement('a-entity');hrEnt._mt=function(){if(mode==='play')handTick();};
   hrEnt.setAttribute('atl-moltick','');sc.appendChild(hrEnt);
@@ -3150,6 +3156,12 @@ function createPlayer(container,course,opts){
     btn.push(withListen(iTxt,iA,{label:"J'ai compris",variant:'plain',onClick:function(){seen(h);closePanel();}}));
     panelAt(norm((h.az||0)+34),5,{eyebrow:'MOLÉCULE 3D',title:h.title||'Molécule',body:tx+'\n\n'+MOLHINT,note:note,tone:'good'},btn,true);if(panelEnt)panelEnt._h=h.id;
     if(!keep)autoSay(iTxt,iA);}
+  function openMenu(){var cam=camAngles(),az=norm(cam.az+worldYaw),sc2=course.scenes||[],b=[];
+    var cut=function(t,n){t=String(t||'');return t.length>n?t.slice(0,n-1)+'…':t;};
+    for(var k=0;k<sc2.length;k+=2){var row=[];[k,k+1].forEach(function(j){if(j>=sc2.length)return;var c=counts(sc2[j]);row.push({label:(j+1)+'. '+cut(sc2[j].name,24)+(c.tot&&c.seen>=c.tot?'  ✓':''),variant:j===idx?'primary':'plain',onClick:function(){closePanel();if(j!==idx)loadScene(j);sceneIntro();}});});b.push({row:row,h:0.11});}
+    b.push({row:[{label:'Réglages',variant:'plain',onClick:openSettings},{label:'Recentrer la vue',variant:'plain',onClick:function(){closePanel();realign();buildHud();}}],h:0.13});
+    b.push({row:[{label:'Recommencer',variant:'plain',onClick:function(){closePanel();restart();}},{label:'Fermer',variant:'primary',onClick:closePanel}],h:0.13});
+    panelAt(az,4,{eyebrow:'MENU',title:cut(course.title||'Cours',60),body:'Choisissez une scène ou une option.'},b);}
   /* --- Réglages dans le casque --- */
   function hasSimple(){return(course.scenes||[]).some(function(s){return s.introS||(s.hotspots||[]).some(function(h){return h.textS||h.questionS;});});}
   function openSettings(){var cam=camAngles(),az=norm(cam.az+worldYaw);
@@ -3171,14 +3183,14 @@ function createPlayer(container,course,opts){
     button(bar,'Précédente',idx>0?'plain':'dim',Wd[0],0.13,xs[0],0,idx>0?function(){loadScene(idx-1);sceneIntro();}:null);
     button(bar,'Scène '+(idx+1)+'/'+n+'  ·  '+c.seen+'/'+c.tot+' vus','dark',Wd[1],0.13,xs[1],0,null);
     button(bar,idx<n-1?'Suivante':'Terminer','primary',Wd[2],0.13,xs[2],0,idx<n-1?function(){loadScene(idx+1);sceneIntro();}:finish);
-    button(bar,'Réglages','plain',Wd[3],0.13,xs[3],0,openSettings);
+    button(bar,'Menu','plain',Wd[3],0.13,xs[3],0,openMenu);
     button(bar,quitArmed?'Confirmer ?':'Quitter',quitArmed?'bad':'plain',Wd[4],0.13,xs[4],0,function(){if(!quitArmed){quitArmed=true;buildHud();clearTimeout(quitT);quitT=setTimeout(function(){quitArmed=false;hudRefresh();},4000);return;}quitArmed=false;clearTimeout(quitT);quit(false);});
     var env=curEnv();if(env&&env.type==='video'&&vid){var vb=makeEnt(hud,0,-43,2.3);var v=vid;
       button(vb,v.paused?'Lecture':'Pause','plain',0.42,0.11,-0.66,0,function(){if(v.paused){unlock();v.play().catch(function(){});}else v.pause();});
       button(vb,(v.muted||vidNeedsUnlock)?'Activer le son':'Couper le son','plain',0.84,0.11,0,0,function(){vidNeedsUnlock=false;v.muted=!v.muted;if(v.paused)v.play().catch(function(){});});
       button(vb,'Revoir','plain',0.42,0.11,0.66,0,function(){try{v.currentTime=0;}catch(e){}v.play().catch(function(){});});}}
   function welcome(){var n=(course.scenes||[]).length;if(!n)return;var wTxt=(course.title||'')+'. '+(course.objectif||'');
-    panelAt(0,4,{eyebrow:[course.matiere,course.niveau].filter(Boolean).join(' · ').toUpperCase()||'COURS 360',title:course.title||'Cours immersif',body:(course.objectif?course.objectif+'\n\n':'')+n+(n>1?' scènes':' scène')+' à explorer. Visez avec la manette et appuyez sur la gâchette pour choisir. Sur ordinateur : glissez pour regarder, cliquez pour choisir. Le bouton Réglages permet d\'agrandir le texte.'},[withListen(wTxt,null,{label:'Commencer',variant:'primary',onClick:sceneIntro})]);autoSay(wTxt,null);}
+    panelAt(0,4,{eyebrow:[course.matiere,course.niveau].filter(Boolean).join(' · ').toUpperCase()||'COURS 360',title:course.title||'Cours immersif',body:(course.objectif?course.objectif+'\n\n':'')+n+(n>1?' scènes':' scène')+' à explorer. Visez avec la main ou la manette, puis pincez le pouce et l\'index ou appuyez sur la gâchette pour choisir. Sur ordinateur : glissez pour regarder, cliquez pour choisir. Le bouton Menu permet de changer de scène, de recentrer la vue et d\'agrandir le texte.'},[withListen(wTxt,null,{label:'Commencer',variant:'primary',onClick:sceneIntro})]);autoSay(wTxt,null);}
   function sceneIntro(){var s=course.scenes[idx];if(!s)return;var c=counts(s);var it=T(s,'intro');var sTxt=(s.name||'')+'. '+it;var sA=prefs.simple&&s.introS?null:(s.introAudio||null);
     panelAt(0,4,{eyebrow:'SCÈNE '+(idx+1)+' / '+course.scenes.length,title:s.name||'Scène',body:(it?it+'\n\n':'')+(c.tot?'Regardez tout autour de vous : '+c.tot+' point'+(c.tot>1?'s':'')+' à découvrir.':'')},[withListen(sTxt,sA,{label:'Explorer',variant:'primary',onClick:closePanel})]);autoSay(sTxt,sA);}
   var finT=null;
@@ -3573,7 +3585,7 @@ function coursePage(c,o){
 .chip[aria-pressed="true"]{background:#17855f;border-color:#17855f;color:#fff}
 .back{display:inline-block;margin-bottom:10px;color:#f5b700;font-weight:700;text-decoration:none;font-size:16px;padding:8px 12px}
 #pad{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:2147483000;display:flex;gap:8px;align-items:center;background:rgba(20,26,46,.85);border-radius:999px;padding:8px;flex-wrap:wrap;justify-content:center;max-width:calc(100% - 24px)}
-#pad .k{width:58px;height:58px;padding:0;margin:0;font-size:24px;background:#2a3150;color:#fff}#pad .w{font-size:16px;padding:0 18px;height:58px;margin:0;background:#2a3150;color:#fff}#pad #padvr{font-size:16px;padding:0 18px;height:58px;margin:0}</style></head>
+#pad .k{width:58px;height:58px;padding:0;margin:0;font-size:24px;background:#2a3150;color:#fff}#pad .w{font-size:16px;padding:0 18px;height:58px;margin:0;background:#2a3150;color:#fff}#pad #padvr{font-size:16px;padding:0 18px;height:58px;margin:0}/* mains : cibles larges et survol visible */.b{font-size:22px;padding:20px 38px;min-height:64px}.chip{font-size:18px;padding:14px 22px;min-height:56px}.back{font-size:19px;padding:12px 18px}.b:hover,.chip:hover,.back:hover,.b:focus-visible,.chip:focus-visible{outline:3px solid #f5b700;outline-offset:3px}#pad .k{width:68px;height:68px}#pad .w,#pad #padvr{height:68px}.idf input{font-size:24px;padding:14px 20px}</style></head>
 <body>${results?resForm():''}<div id="start"><div class="card">${o.back?`<a class="back" href="${o.back}">← Tous les cours</a>`:''}<div class="eb">${esc([c.matiere,c.niveau].filter(Boolean).join(' · ')||'Cours 360°')}</div><h1>${t}</h1><p>${esc(c.objectif||'')}</p>
 <div id="done" hidden></div>
 ${results?'<div class="idf"><label for="eleve">Ton prénom ou ton numéro</label><input id="eleve" maxlength="40" autocomplete="off" placeholder="Ex. : Léa B. ou 12"></div>':''}
@@ -3624,7 +3636,7 @@ try{P=createPlayer(document.body,COURSE,{mode:'play',prefs:prefs,onPrefs:functio
   P.scene.addEventListener('exit-vr',function(){if(S.style.display==='none')PAD.hidden=false;});
 }catch(err){fail('Le moteur 3D ne s\\'est pas chargé ('+err.message+'). Vérifiez la connexion puis rechargez la page.');}
 setTimeout(function(){if(P&&(COURSE.audio||'auto')!=='off'&&!P.voiceOk()){var h=document.getElementById('hint');h.textContent+=" Note : aucune voix de synthèse n'a été trouvée sur cet appareil, seuls les enregistrements audio seront lus.";}},2500);
-if(navigator.xr&&navigator.xr.isSessionSupported){navigator.xr.isSessionSupported('immersive-vr').then(function(ok){if(ok){document.getElementById('vr').hidden=false;document.getElementById('padvr').hidden=false;document.getElementById('flat').textContent='Aperçu à l\\'écran (sans immersion)';document.getElementById('hint').textContent='Choisissez « Entrer en réalité virtuelle » pour l\\'expérience complète. Visez avec la manette droite, gâchette pour choisir.';}}).catch(function(){});}
+if(navigator.xr&&navigator.xr.isSessionSupported){navigator.xr.isSessionSupported('immersive-vr').then(function(ok){if(ok){document.getElementById('vr').hidden=false;document.getElementById('padvr').hidden=false;document.getElementById('flat').textContent='Aperçu à l\\'écran (sans immersion)';document.getElementById('hint').textContent='Choisissez « Entrer en réalité virtuelle » pour l\\'expérience complète. Visez avec la main ou la manette, puis pincez le pouce et l\\'index ou appuyez sur la gâchette pour choisir.';}}).catch(function(){});}
 <\/script></body></html>`;}
 
 function portalPage(list,o){
@@ -3653,7 +3665,7 @@ ul{list-style:none;margin:0 auto;padding:0;max-width:1100px;display:grid;grid-te
 #qm .q{background:#fff;color:#141a2e;border-radius:20px;padding:22px;text-align:center;max-width:420px;width:100%}
 #qm img{width:100%;image-rendering:pixelated;max-width:340px}#qm p{word-break:break-all;font-size:15px}
 #qm button{font:inherit;font-weight:700;border:0;border-radius:999px;background:#141a2e;color:#fff;padding:12px 22px;font-size:16px;cursor:pointer}
-.empty{color:#9aa1bb;font-size:18px}</style></head>
+.empty{color:#9aa1bb;font-size:18px}.card a:hover,.card a:focus-visible{outline:4px solid #f5b700;outline-offset:2px;border-radius:16px}.card a{min-height:72px}</style></head>
 <body>${resForm()}
 <header><div><span class="eb">${esc(o.org||'Cours immersifs 360°')}</span><h1>${esc(o.name)}</h1><p>Choisis ton cours, puis entre en réalité virtuelle.</p></div><button type="button" class="top qrb2" data-u="./">QR code de cette page</button></header>
 <ul>${cards||'<li class="empty">Aucun cours publié.</li>'}</ul>
