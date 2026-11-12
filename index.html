@@ -3245,10 +3245,10 @@ function createPlayer(container,course,opts){
   var QFS=['precision highp float;varying vec3 vd;uniform vec3 fill;',
     'uniform sampler2D t0;uniform sampler2D t1;uniform sampler2D t2;uniform sampler2D t3;uniform sampler2D t4;uniform sampler2D t5;',
     'uniform vec4 p0;uniform vec4 p1;uniform vec4 p2;uniform vec4 p3;uniform vec4 p4;uniform vec4 p5;',
-    'vec3 lay(vec3 col,sampler2D t,vec4 p,vec2 q){if(p.w<=0.001)return col;vec2 uv=(q-p.xy)/p.z+0.5;float r=length(uv-0.5)*2.0;float a=(1.0-smoothstep(0.58,0.98,r))*p.w;if(a<=0.0)return col;return mix(col,texture2D(t,uv).rgb,a);}',
+    'vec3 lay(vec3 col,sampler2D t,vec4 p,vec2 q){float w=abs(p.w);if(w<=0.001)return col;vec2 uv=(q-p.xy)/p.z+0.5;float r=length(uv-0.5)*2.0;float a=(1.0-smoothstep(0.58,0.98,r))*w;if(a<=0.0)return col;vec3 c=texture2D(t,uv).rgb;if(p.w<0.0)c=max(col,c);return mix(col,c,a);}',
     'void main(){vec3 d=normalize(vd);vec2 q=2.0*d.xy/max(1e-6,1.0-d.z);vec3 c=fill;',
     'c=lay(c,t0,p0,q);c=lay(c,t1,p1,q);c=lay(c,t2,p2,q);c=lay(c,t3,p3,q);c=lay(c,t4,p4,q);c=lay(c,t5,p5,q);gl_FragColor=vec4(c,1.0);}'].join('\n');
-  function zQuiltBuild(env){var Q=(env.quilt||[]).map(function(l){return{e:+l.e,S:Math.pow(10,+l.e),cx:l.cx===undefined?0.5:+l.cx,cy:l.cy===undefined?0.5:+l.cy,img:l.img,fill:l.fill||[0,0,0],tex:null,im:null};}).sort(function(a,b){return b.e-a.e;});
+  function zQuiltBuild(env){var Q=(env.quilt||[]).map(function(l){return{e:+l.e,S:Math.pow(10,+l.e),cx:l.cx===undefined?0.5:+l.cx,cy:l.cy===undefined?0.5:+l.cy,img:l.img,fill:l.fill||[0,0,0],add:!!l.add,dark:(l.fill||[0,0,0]).reduce(function(a,b){return a+b;},0)<120,tex:null,im:null};}).sort(function(a,b){return b.e-a.e;});
     var n=Q.length;if(!n)return;Q[n-1].px=0;Q[n-1].py=0;for(var i=n-2;i>=0;i--){Q[i].px=Q[i+1].px-(Q[i].cx-0.5)*Q[i].S;Q[i].py=Q[i+1].py-(0.5-Q[i].cy)*Q[i].S;}
     Q.forEach(function(l){var im=new Image();im.src=l.img;l.im=im;});
     var u={fill:{value:new THREE.Color(0,0,0)}};for(var k=0;k<6;k++){u['t'+k]={value:null};u['p'+k]={value:new THREE.Vector4(0,0,1,0)};}
@@ -3263,7 +3263,7 @@ function createPlayer(container,course,opts){
     while(act.length>6)act.pop();
     var u=Z.qu,outer=act[0];
     for(var k=0;k<6;k++){var l=act[k],P=u['p'+k].value;if(!l){P.w=0;u['t'+k].value=Z.blank;continue;}var t=zQTex(l);if(!t){P.w=0;u['t'+k].value=Z.blank;continue;}
-      var d=l.e-z,f=Math.min(1,Math.max(0,(d+2.1)/0.5));P.set(l.px/V,l.py/V,l.S/V,f);u['t'+k].value=t;}
+      var d=l.e-z,f=Math.min(1,Math.max(0,(d+2.1)/0.5));if(l.dark)f*=1-Math.min(1,Math.max(0,(d-0.9)/0.7));P.set(l.px/V,l.py/V,l.S/V,l.add?-f:f);u['t'+k].value=t;}
     if(outer)u.fill.value.setRGB(outer.fill[0]/255,outer.fill[1]/255,outer.fill[2]/255);
     if(Z.qm)Z.qm.rotation.set(0,0,0);}
   function zClamp(z){return Math.max(Z.zmin,Math.min(Z.zmax,z));}
