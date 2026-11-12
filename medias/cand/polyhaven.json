@@ -1,0 +1,6621 @@
+{
+ "abandoned_bakery": {
+  "name": "Abandoned Bakery",
+  "categories": [
+   "natural light",
+   "artificial light",
+   "urban",
+   "indoor",
+   "high contrast"
+  ],
+  "tags": [
+   "abandoned",
+   "empty",
+   "industrial",
+   "windows",
+   "bare",
+   "rubble",
+   "brick",
+   "concrete",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "abandoned_construction": {
+  "name": "Abandoned Construction",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "overcast"
+  ],
+  "tags": [
+   "brick",
+   "pillar",
+   "warehouse",
+   "rubble",
+   "abandoned",
+   "debris",
+   "desolate",
+   "empty",
+   "ruin",
+   "gloomy"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "abandoned_factory_canteen_01": {
+  "name": "Abandoned Factory Canteen 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "hall",
+   "abandoned",
+   "fluorescent",
+   "industrial",
+   "backplates",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "abandoned_factory_canteen_02": {
+  "name": "Abandoned Factory Canteen 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast"
+  ],
+  "tags": [
+   "hall",
+   "abandoned",
+   "industrial",
+   "boxes",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "abandoned_games_room_01": {
+  "name": "Abandoned Games Room 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "abandoned",
+   "room",
+   "window",
+   "tile",
+   "rubble"
+  ],
+  "authors": {
+   "Octavian Tudose": "All"
+  }
+ },
+ "abandoned_games_room_02": {
+  "name": "Abandoned Games Room 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "abandoned",
+   "room",
+   "window",
+   "tile",
+   "arcade",
+   "rubble"
+  ],
+  "authors": {
+   "Octavian Tudose": "All"
+  }
+ },
+ "abandoned_garage": {
+  "name": "Abandoned Garage",
+  "categories": [
+   "indoor",
+   "medium contrast",
+   "urban",
+   "natural light",
+   "midday",
+   "overcast"
+  ],
+  "tags": [
+   "abandoned",
+   "graffiti",
+   "grunge",
+   "workshop",
+   "tire",
+   "debris",
+   "trash"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "abandoned_greenhouse": {
+  "name": "Abandoned Greenhouse",
+  "categories": [
+   "low contrast",
+   "natural light",
+   "indoor",
+   "urban",
+   "overcast",
+   "midday"
+  ],
+  "tags": [
+   "warehouse",
+   "concrete",
+   "greenhouse",
+   "abandoned",
+   "industrial",
+   "graffiti"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "abandoned_hall_01": {
+  "name": "Abandoned Hall 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "hall",
+   "window",
+   "abandoned",
+   "empty",
+   "bare"
+  ],
+  "authors": {
+   "Octavian Tudose": "All"
+  }
+ },
+ "abandoned_tiled_room": {
+  "name": "Abandoned Tiled Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "sunrise-sunset"
+  ],
+  "tags": [
+   "abandoned",
+   "industrial",
+   "rubble",
+   "ruin",
+   "trash",
+   "weathered",
+   "broken",
+   "neglected",
+   "decay",
+   "debris",
+   "grunge",
+   "window"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "abandoned_workshop": {
+  "name": "Abandoned workshop",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "abandoned",
+   "warehouse",
+   "rubble",
+   "brick",
+   "pillar",
+   "bare",
+   "empty",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "abandoned_workshop_02": {
+  "name": "Abandoned Workshop 02",
+  "categories": [
+   "indoor",
+   "nature",
+   "midday",
+   "low contrast",
+   "natural light",
+   "urban"
+  ],
+  "tags": [
+   "abandoned",
+   "warehouse",
+   "concrete",
+   "bare",
+   "empty",
+   "overgrown",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "acoustical_shell": {
+  "name": "Acoustical Shell",
+  "categories": [
+   "indoor",
+   "outdoor",
+   "natural light",
+   "urban",
+   "morning-afternoon",
+   "partly cloudy",
+   "medium contrast"
+  ],
+  "tags": [
+   "stage",
+   "promenade",
+   "tree",
+   "garden",
+   "bay"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "adams_place_bridge": {
+  "name": "Adams Place Bridge",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "building",
+   "architecture",
+   "europe",
+   "bridge",
+   "tunnel",
+   "path"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "aerodynamics_workshop": {
+  "name": "Aerodynamics Workshop",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "machine",
+   "industrial",
+   "workshop",
+   "wind tunnel",
+   "window"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "afrikaans_church_interior": {
+  "name": "Afrikaans Church Interior",
+  "categories": [
+   "indoor",
+   "high contrast",
+   "natural light",
+   "urban",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "windows",
+   "pew",
+   "altar",
+   "red carpet",
+   "stage",
+   "wooden ceiling",
+   "pulpit",
+   "high ceiling"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "aft_lounge": {
+  "name": "Aft Lounge",
+  "categories": [
+   "indoor",
+   "urban",
+   "sunrise-sunset",
+   "clear",
+   "high contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "lounge",
+   "chair",
+   "ship",
+   "stage",
+   "carpet",
+   "window",
+   "ocean",
+   "sun",
+   "lamp",
+   "table"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "aircraft_workshop_01": {
+  "name": "Aircraft Workshop 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "workshop",
+   "industrial",
+   "warehouse",
+   "scaffold"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "anniversary_lounge": {
+  "name": "Anniversary Lounge",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "window",
+   "room",
+   "couch",
+   "lamp",
+   "carpet",
+   "table"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "art_studio": {
+  "name": "Art Studio",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "painting",
+   "art",
+   "workshop",
+   "window",
+   "atelier"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "artist_workshop": {
+  "name": "Artist Workshop",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "painting",
+   "canvas",
+   "window",
+   "art",
+   "atelier"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "auto_service": {
+  "name": "Auto Service",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "workshop",
+   "warehouse",
+   "industrial",
+   "concrete",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "autoshop_01": {
+  "name": "Autoshop 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "garage",
+   "warehouse",
+   "industrial",
+   "car",
+   "workshop"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "ballroom": {
+  "name": "Ballroom",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light",
+   "natural light"
+  ],
+  "tags": [
+   "tile",
+   "victorian",
+   "window",
+   "piano",
+   "chandelier"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "bank_vault": {
+  "name": "Bank Vault",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "cage",
+   "bars",
+   "concrete",
+   "fluorescent",
+   "bare",
+   "empty",
+   "industrial"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "basement_boxing_ring": {
+  "name": "Basement Boxing Ring",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "sport",
+   "boxing",
+   "ring",
+   "basement",
+   "fluorescent"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "bathroom": {
+  "name": "Bathroom",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "bath",
+   "basin",
+   "tiles",
+   "sink"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "bell_tower": {
+  "name": "Bell Tower",
+  "categories": [
+   "indoor",
+   "natural light",
+   "urban",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "church",
+   "tower",
+   "wooden beams",
+   "stained glass",
+   "architecture",
+   "arched windows",
+   "empty",
+   "wooden floor",
+   "ladder"
+  ],
+  "authors": {
+   "Dario Barresi": "All"
+  }
+ },
+ "billiard_hall": {
+  "name": "Billiard Hall",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "artificial light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "brick",
+   "pool",
+   "snooker",
+   "ball game",
+   "carpet",
+   "window",
+   "lamp",
+   "billiards",
+   "table"
+  ],
+  "authors": {
+   "Greg Zaal": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "birbeck_street_underpass": {
+  "name": "Birbeck Street Underpass",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "road",
+   "asphalt",
+   "tunnel",
+   "underpass",
+   "brick",
+   "graffiti"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "blender_institute": {
+  "name": "Blender Institute",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "blender",
+   "timber",
+   "computer",
+   "chair",
+   "lamp",
+   "people"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "blinds": {
+  "name": "Blinds",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "kitchen",
+   "window",
+   "counter",
+   "table"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "blocky_photo_studio": {
+  "name": "Blocky Photo Studio",
+  "categories": [
+   "urban",
+   "indoor",
+   "studio",
+   "artificial light",
+   "natural light",
+   "low contrast"
+  ],
+  "tags": [
+   "studio",
+   "stair",
+   "ramp",
+   "stand",
+   "modern",
+   "concrete"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "blue_photo_studio": {
+  "name": "Blue Photo Studio",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "natural light",
+   "urban",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "couch",
+   "wooden floor",
+   "lamp",
+   "window",
+   "seat",
+   "dark",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "boiler_room": {
+  "name": "Boiler Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "machine",
+   "industrial",
+   "pipes",
+   "factory"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "boma": {
+  "name": "Boma",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "bench",
+   "restaurant",
+   "arch",
+   "brick",
+   "rafters",
+   "cafe",
+   "seat",
+   "flag"
+  ],
+  "authors": {
+   "Greg Zaal": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "brown_photostudio_01": {
+  "name": "Brown Photostudio 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "artificial light",
+   "medium contrast",
+   "studio",
+   "low contrast"
+  ],
+  "tags": [
+   "studio",
+   "lamp",
+   "photo",
+   "chair",
+   "window",
+   "wood",
+   "fluorescent",
+   "couch",
+   "victorian",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "brown_photostudio_02": {
+  "name": "Brown Photostudio 02",
+  "categories": [
+   "urban",
+   "studio",
+   "indoor",
+   "artificial light",
+   "natural light",
+   "medium contrast"
+  ],
+  "tags": [
+   "bed",
+   "studio",
+   "fluorescent",
+   "window",
+   "couch",
+   "chair",
+   "photo",
+   "table",
+   "kitchen",
+   "fridge",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "brown_photostudio_03": {
+  "name": "Brown Photostudio 03",
+  "categories": [
+   "indoor",
+   "studio",
+   "natural light",
+   "urban",
+   "low contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "couch",
+   "studio",
+   "window",
+   "fireplace",
+   "plant",
+   "modern",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "brown_photostudio_04": {
+  "name": "Brown Photostudio 04",
+  "categories": [
+   "studio",
+   "natural light",
+   "indoor",
+   "urban",
+   "midday",
+   "low contrast"
+  ],
+  "tags": [
+   "studio",
+   "couch",
+   "bed",
+   "window",
+   "table",
+   "kitchen",
+   "plant",
+   "curtain",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "brown_photostudio_05": {
+  "name": "Brown Photostudio 05",
+  "categories": [
+   "indoor",
+   "natural light",
+   "urban",
+   "morning-afternoon",
+   "low contrast",
+   "studio"
+  ],
+  "tags": [
+   "wood",
+   "couch",
+   "decor",
+   "studio",
+   "windows",
+   "door",
+   "curtain",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "brown_photostudio_06": {
+  "name": "Brown Photostudio 06",
+  "categories": [
+   "indoor",
+   "studio",
+   "urban",
+   "natural light",
+   "medium contrast"
+  ],
+  "tags": [
+   "studio",
+   "couch",
+   "curtain",
+   "wood",
+   "mirror",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "brown_photostudio_07": {
+  "name": "Brown Photostudio 07",
+  "categories": [
+   "natural light",
+   "studio",
+   "indoor",
+   "medium contrast",
+   "urban"
+  ],
+  "tags": [
+   "studio",
+   "bed",
+   "fabric",
+   "wood",
+   "wooden floor",
+   "white",
+   "windows",
+   "chair"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "burnt_warehouse": {
+  "name": "Burnt Warehouse",
+  "categories": [
+   "natural light",
+   "indoor",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "abandoned",
+   "warehouse",
+   "industrial",
+   "concrete",
+   "burnt",
+   "trash",
+   "brick",
+   "rubble",
+   "ruin",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "bush_restaurant": {
+  "name": "Bush Restaurant",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "table",
+   "chair",
+   "restaurant",
+   "window",
+   "door"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "cabin": {
+  "name": "Cabin",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "bed",
+   "tv",
+   "hotel",
+   "cabin",
+   "boat",
+   "ship",
+   "cruise"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "carpentry_shop_01": {
+  "name": "Carpentry Shop 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "workshop",
+   "lamp",
+   "tablesaw",
+   "wood"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "carpentry_shop_02": {
+  "name": "Carpentry Shop 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "fluorescent",
+   "workshop",
+   "machine",
+   "tools",
+   "wood",
+   "carpentry",
+   "workbench"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "castle_zavelstein_cellar": {
+  "name": "Castle Zavelstein Cellar",
+  "categories": [
+   "natural light",
+   "indoor",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "cellar",
+   "basement",
+   "arch",
+   "tunnel",
+   "brick",
+   "castle"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "cave_wall": {
+  "name": "Cave Wall",
+  "categories": [
+   "outdoor",
+   "indoor",
+   "nature",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "rock",
+   "tree",
+   "wall",
+   "river",
+   "vine",
+   "ledge",
+   "cave"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "cayley_interior": {
+  "name": "Cayley Interior",
+  "categories": [
+   "indoor",
+   "urban",
+   "sunrise-sunset",
+   "artificial light",
+   "natural light",
+   "high contrast"
+  ],
+  "tags": [
+   "lamp",
+   "table",
+   "window",
+   "glass",
+   "balcony",
+   "view",
+   "log"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "chapel_day": {
+  "name": "Chapel Day",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "natural light",
+   "low contrast",
+   "midday"
+  ],
+  "tags": [
+   "chair",
+   "bench",
+   "cross",
+   "altar",
+   "barrel",
+   "seat",
+   "church",
+   "pew",
+   "stained glass",
+   "religion"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "childrens_hospital": {
+  "name": "Children's Hospital",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "bed",
+   "ward",
+   "medical",
+   "hospital",
+   "room"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "christmas_photo_studio_01": {
+  "name": "Christmas Photo Studio 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "night",
+   "high contrast",
+   "artificial light",
+   "studio"
+  ],
+  "tags": [
+   "couch",
+   "sofa",
+   "wood",
+   "book",
+   "blanket",
+   "tree",
+   "christmas",
+   "step",
+   "ladder",
+   "studio",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "christmas_photo_studio_02": {
+  "name": "Christmas Photo Studio 02",
+  "categories": [
+   "indoor",
+   "studio",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "blanket",
+   "cloth",
+   "christmas",
+   "ladder",
+   "wood",
+   "studio",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "christmas_photo_studio_03": {
+  "name": "Christmas Photo Studio 03",
+  "categories": [
+   "indoor",
+   "studio",
+   "urban",
+   "artificial light",
+   "medium contrast",
+   "night"
+  ],
+  "tags": [
+   "couch",
+   "christmas",
+   "photo",
+   "shoot",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "christmas_photo_studio_04": {
+  "name": "Christmas Photo Studio 04",
+  "categories": [
+   "indoor",
+   "studio",
+   "urban",
+   "night",
+   "low contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "couch",
+   "christmas",
+   "photo",
+   "shoot",
+   "curtain",
+   "presents",
+   "fluorescent",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "christmas_photo_studio_05": {
+  "name": "Christmas Photo Studio 05",
+  "categories": [
+   "indoor",
+   "studio",
+   "morning-afternoon",
+   "natural light",
+   "artificial light",
+   "low contrast",
+   "urban"
+  ],
+  "tags": [
+   "table",
+   "couch",
+   "christmas",
+   "fireplace",
+   "victorian",
+   "apartment",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "christmas_photo_studio_06": {
+  "name": "Christmas Photo Studio 06",
+  "categories": [
+   "medium contrast",
+   "urban",
+   "indoor",
+   "artificial light",
+   "studio"
+  ],
+  "tags": [
+   "couch",
+   "christmas",
+   "photo",
+   "shoot",
+   "clock",
+   "painting",
+   "chair"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "christmas_photo_studio_07": {
+  "name": "Christmas Photo Studio 07",
+  "categories": [
+   "artificial light",
+   "studio",
+   "urban",
+   "indoor",
+   "medium contrast",
+   "high contrast"
+  ],
+  "tags": [
+   "kitchen",
+   "chair",
+   "umbrella",
+   "wood",
+   "wooden floor",
+   "table",
+   "window",
+   "plant",
+   "christmas",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "church_meeting_room": {
+  "name": "Church Meeting Room",
+  "categories": [
+   "indoor",
+   "low contrast",
+   "natural light",
+   "urban",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "table",
+   "pew",
+   "chair",
+   "portraits",
+   "wooden ceiling",
+   "stained glass",
+   "carpet"
+  ],
+  "authors": {
+   "Dario Barresi": "All"
+  }
+ },
+ "church_museum": {
+  "name": "Church Museum",
+  "categories": [
+   "indoor",
+   "natural light",
+   "urban",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "wooden ceiling",
+   "vaulted ceiling",
+   "stained glass",
+   "carpet",
+   "table",
+   "chair",
+   "bench",
+   "display",
+   "high ceiling",
+   "decorative windows"
+  ],
+  "authors": {
+   "Dario Barresi": "All"
+  }
+ },
+ "church_stairway": {
+  "name": "Church Stairway",
+  "categories": [
+   "indoor",
+   "natural light",
+   "high contrast",
+   "urban",
+   "morning-afternoon",
+   "artificial light"
+  ],
+  "tags": [
+   "wooden staircase",
+   "stained glass",
+   "wooden ceiling",
+   "historic architecture",
+   "balusters",
+   "balcony",
+   "arched windows"
+  ],
+  "authors": {
+   "Dario Barresi": "All"
+  }
+ },
+ "cinema_hall": {
+  "name": "Cinema Hall",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "movie",
+   "cinema",
+   "chair",
+   "seat",
+   "projector",
+   "theater"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "cinema_lobby": {
+  "name": "Cinema Lobby",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "couch",
+   "seat",
+   "bench",
+   "fluorescent"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "circus_arena": {
+  "name": "Circus Arena",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "seat",
+   "theater",
+   "arena",
+   "show"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "climbing_gym": {
+  "name": "Climbing Gym",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "fitness",
+   "gym",
+   "exercise",
+   "mat",
+   "climbing",
+   "training",
+   "warehouse",
+   "high ceiling",
+   "wall"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "colorful_studio": {
+  "name": "Colorful Studio",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "couch",
+   "bar",
+   "bottle",
+   "incandescent",
+   "set",
+   "lounge",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "combination_room": {
+  "name": "Combination Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "couch",
+   "victorian",
+   "curtain",
+   "lamp",
+   "painting",
+   "window"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "comfy_cafe": {
+  "name": "Comfy Café",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "shop",
+   "coffee",
+   "cafe",
+   "couch",
+   "table",
+   "store",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "concrete_tunnel": {
+  "name": "Concrete Tunnel",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "tunnel",
+   "brick",
+   "concrete",
+   "lamp",
+   "bench"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "concrete_tunnel_02": {
+  "name": "Concrete Tunnel 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "asphalt",
+   "concrete",
+   "tunnel",
+   "road",
+   "underpass"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "country_club": {
+  "name": "Country Club",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "high contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "victorian",
+   "room",
+   "window",
+   "ballroom",
+   "wood floor",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "cowboy_town_hall": {
+  "name": "Cowboy Town Hall",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "artificial light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "saloon",
+   "western decor",
+   "wild west",
+   "bench",
+   "lamp",
+   "table",
+   "corrugated metal ceiling"
+  ],
+  "authors": {
+   "Dimitrios Savva": "photography",
+   "Jarod Guest": "processing"
+  }
+ },
+ "cowboy_town_saloon": {
+  "name": "Cowboy Town Saloon",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "natural light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "saloon",
+   "western decor",
+   "wild west",
+   "restaurant",
+   "table",
+   "chair",
+   "bar",
+   "dining"
+  ],
+  "authors": {
+   "Dimitrios Savva": "photography",
+   "Jarod Guest": "processing"
+  }
+ },
+ "creepy_bathroom": {
+  "name": "Creepy Bathroom",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "night",
+   "low contrast"
+  ],
+  "tags": [
+   "dark",
+   "spooky",
+   "broken",
+   "abandoned",
+   "pipes",
+   "debris",
+   "grunge",
+   "window"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "crossfit_gym": {
+  "name": "Crossfit Gym",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "rubber floor",
+   "workout equipment",
+   "gym",
+   "metal roof",
+   "fluorescent",
+   "fitness",
+   "exercise",
+   "weights",
+   "training"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "cyclorama_hard_light": {
+  "name": "Cyclorama Hard Light",
+  "categories": [
+   "studio",
+   "indoor",
+   "high contrast",
+   "urban",
+   "artificial light"
+  ],
+  "tags": [
+   "studio",
+   "lamp",
+   "umbrella",
+   "white",
+   "infinity",
+   "clean"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "dancing_hall": {
+  "name": "Dancing Hall",
+  "categories": [
+   "urban",
+   "medium contrast",
+   "indoor",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "hall",
+   "architecture",
+   "empty",
+   "curtain",
+   "stage",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "de_balie": {
+  "name": "De Balie",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "stair",
+   "banister",
+   "people",
+   "bcon",
+   "door",
+   "meeting",
+   "pink"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "debris_basement_corridor": {
+  "name": "Debris Basement Corridor",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "high contrast"
+  ],
+  "tags": [
+   "basement",
+   "storage area",
+   "construction",
+   "debris",
+   "utility room",
+   "underground",
+   "maintenance"
+  ],
+  "authors": {
+   "Elvis Posa": "All"
+  }
+ },
+ "decor_shop": {
+  "name": "Decor Shop",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "tile",
+   "couch",
+   "decor",
+   "chandelier",
+   "store",
+   "shop",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "distribution_board": {
+  "name": "Distribution Board",
+  "categories": [
+   "natural light",
+   "urban",
+   "medium contrast",
+   "indoor",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "abandoned",
+   "industrial",
+   "factory",
+   "rust",
+   "rubble",
+   "electrical",
+   "machine",
+   "brick"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "drachenfels_cellar": {
+  "name": "Drachenfels Cellar",
+  "categories": [
+   "indoor",
+   "nature",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "tunnel",
+   "brick",
+   "dirt",
+   "cave",
+   "castle",
+   "arch",
+   "shelter",
+   "doorway"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "dresden_station_night": {
+  "name": "Dresden Station Night",
+  "categories": [
+   "indoor",
+   "urban",
+   "night",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "train",
+   "station",
+   "bench",
+   "hall",
+   "tracks",
+   "fluorescent"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "empty_play_room": {
+  "name": "Empty Play Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "artificial light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "carpet",
+   "table tennis",
+   "curtain",
+   "fluorescent",
+   "brick",
+   "wood"
+  ],
+  "authors": {
+   "Greg Zaal": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "empty_warehouse_01": {
+  "name": "Empty Warehouse 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "warehouse",
+   "derelict",
+   "fluorescent",
+   "concrete",
+   "industrial",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "empty_workshop": {
+  "name": "Empty Workshop",
+  "categories": [
+   "medium contrast",
+   "indoor",
+   "urban",
+   "midday",
+   "natural light"
+  ],
+  "tags": [
+   "bare",
+   "empty",
+   "clean",
+   "spacious",
+   "brick",
+   "concrete",
+   "wood"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "en_suite": {
+  "name": "En Suite",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "high contrast"
+  ],
+  "tags": [
+   "bathroom",
+   "sink",
+   "basin",
+   "shower",
+   "toilet"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "entrance_hall": {
+  "name": "Entrance Hall",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "victorian",
+   "window",
+   "tile"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "events_hall_interior": {
+  "name": "Events Hall Interior",
+  "categories": [
+   "indoor",
+   "medium contrast",
+   "urban",
+   "natural light",
+   "midday"
+  ],
+  "tags": [
+   "warehouse",
+   "concrete floor",
+   "high ceiling",
+   "rustic walls",
+   "metal roof",
+   "white chairs"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "ferndale_studio_01": {
+  "name": "Ferndale Studio 01",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "white"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "ferndale_studio_02": {
+  "name": "Ferndale Studio 02",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "rectangle",
+   "spotlight",
+   "blue",
+   "teal",
+   "red"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Greg Zaal": "Processing"
+  }
+ },
+ "ferndale_studio_03": {
+  "name": "Ferndale Studio 03",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "rectangle",
+   "spotlight",
+   "white",
+   "warm"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Greg Zaal": "Processing"
+  }
+ },
+ "ferndale_studio_04": {
+  "name": "Ferndale Studio 04",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "rectangle",
+   "spotlight",
+   "yellow",
+   "green",
+   "teal"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "ferndale_studio_05": {
+  "name": "Ferndale Studio 05",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "rectangle",
+   "pink",
+   "purple"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "ferndale_studio_06": {
+  "name": "Ferndale Studio 06",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "rectangle",
+   "red",
+   "blue"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Greg Zaal": "Processing"
+  }
+ },
+ "ferndale_studio_07": {
+  "name": "Ferndale Studio 07",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "spotlight",
+   "tube",
+   "rectangle",
+   "white",
+   "warm"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Greg Zaal": "Processing"
+  }
+ },
+ "ferndale_studio_08": {
+  "name": "Ferndale Studio 08",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "rectangle",
+   "spotlight",
+   "warm"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "ferndale_studio_09": {
+  "name": "Ferndale Studio 09",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "reflector",
+   "warm",
+   "white"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "ferndale_studio_10": {
+  "name": "Ferndale Studio 10",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "reflector",
+   "weathered",
+   "blue",
+   "teal"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "ferndale_studio_11": {
+  "name": "Ferndale Studio 11",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "rectangle",
+   "tube",
+   "white",
+   "warm"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Greg Zaal": "Processing"
+  }
+ },
+ "ferndale_studio_12": {
+  "name": "Ferndale Studio 12",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "lamp",
+   "infinity",
+   "dark ceiling",
+   "rectangle",
+   "tube",
+   "blue",
+   "colors",
+   "white"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Greg Zaal": "Processing"
+  }
+ },
+ "fireplace": {
+  "name": "Fireplace",
+  "categories": [
+   "indoor",
+   "urban",
+   "night",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "fire",
+   "couch",
+   "room",
+   "lounge"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "floral_tent": {
+  "name": "Floral Tent",
+  "categories": [
+   "indoor",
+   "nature",
+   "urban",
+   "midday",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "bush",
+   "plant",
+   "sun",
+   "tiles",
+   "tent",
+   "canopy"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "garage": {
+  "name": "Garage",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "garage",
+   "fluorescent",
+   "concrete",
+   "parking",
+   "shelves",
+   "orange",
+   "mess",
+   "tools",
+   "junk"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "gear_store": {
+  "name": "Gear Store",
+  "categories": [
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "shelves",
+   "fluorescent",
+   "boxes",
+   "store"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "georgentor": {
+  "name": "Georgentor",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "brick",
+   "architecture",
+   "tunnel",
+   "passage"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "glass_passage": {
+  "name": "Glass Passage",
+  "categories": [
+   "indoor",
+   "nature",
+   "urban",
+   "low contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "tunnel",
+   "plant",
+   "tree",
+   "lamp",
+   "enclosure"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "glasshouse_interior": {
+  "name": "Glasshouse Interior",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "nature",
+   "low contrast",
+   "morning-afternoon",
+   "partly cloudy"
+  ],
+  "tags": [
+   "large windows",
+   "bed",
+   "kitchen",
+   "dining table",
+   "fireplace",
+   "vintage carpet",
+   "cozy",
+   "panoramic",
+   "vista"
+  ],
+  "authors": {
+   "Dario Barresi": "All"
+  }
+ },
+ "graaff_reinet_groote_kerk": {
+  "name": "Graaff Reinet Groote Kerk",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "church",
+   "religion",
+   "stained glass",
+   "altar",
+   "pew",
+   "arched windows",
+   "wooden ceiling"
+  ],
+  "authors": {
+   "Dario Barresi": "All"
+  }
+ },
+ "graffiti_shelter": {
+  "name": "Graffiti Shelter",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "overcast",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "tree",
+   "shelter",
+   "bench",
+   "road",
+   "path",
+   "graffiti",
+   "hut",
+   "autumn"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "gym_01": {
+  "name": "Gym 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "fluorescent",
+   "gym",
+   "weights",
+   "fitness",
+   "exercise"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "gym_entrance": {
+  "name": "Gym Entrance",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "shop",
+   "couch",
+   "gym",
+   "red",
+   "fluorescent"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "hall_of_finfish": {
+  "name": "Hall of Finfish",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "fish",
+   "shark",
+   "museum"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "hall_of_mammals": {
+  "name": "Hall of Mammals",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "museum",
+   "bone",
+   "lion",
+   "tiger",
+   "whale",
+   "skeleton"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "hamburg_hbf": {
+  "name": "Hamburg Hbf",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "hall",
+   "windows",
+   "sun",
+   "train",
+   "station"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "hangar_interior": {
+  "name": "Hangar Interior",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "hangar",
+   "plane",
+   "airport",
+   "concrete",
+   "aviation",
+   "warehouse"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "hayloft": {
+  "name": "Hayloft",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "barn",
+   "farm",
+   "hay",
+   "timber",
+   "rafters",
+   "pallet",
+   "rural",
+   "rustic"
+  ],
+  "authors": {
+   "Adrian Kubasa": "All"
+  }
+ },
+ "hikers_cave": {
+  "name": "Hiker's Cave",
+  "categories": [
+   "indoor",
+   "nature",
+   "midday",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "forest",
+   "cave",
+   "rock"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "historic_cloister_passage": {
+  "name": "Historic Cloister Passage",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "arched windows",
+   "sandstone",
+   "wooden door",
+   "gothic",
+   "medieval",
+   "monastery",
+   "castle",
+   "arch"
+  ],
+  "authors": {
+   "Elvis Posa": "All"
+  }
+ },
+ "hospital_room": {
+  "name": "Hospital Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "bed",
+   "table",
+   "hospital",
+   "lamp",
+   "medical",
+   "operation"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "hospital_room_2": {
+  "name": "Hospital Room 2",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "medical",
+   "healthcare",
+   "hospital",
+   "ward",
+   "bed",
+   "clean",
+   "clinical",
+   "recovery"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "hotel_room": {
+  "name": "Hotel Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "bed",
+   "tv",
+   "table",
+   "chair",
+   "mirror",
+   "window",
+   "curtain",
+   "lamp",
+   "hotel"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "indoor_pool": {
+  "name": "Indoor Pool",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "pool",
+   "water",
+   "lamp",
+   "chair"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "industrial_pipe_and_valve_01": {
+  "name": "Industrial Pipe & Valve 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "workshop",
+   "lamp",
+   "industrial",
+   "warehouse"
+  ],
+  "authors": {
+   "Philip Modin": "All"
+  }
+ },
+ "industrial_pipe_and_valve_02": {
+  "name": "Industrial Pipe & Valve 02",
+  "categories": [
+   "artificial light",
+   "high contrast",
+   "indoor",
+   "urban"
+  ],
+  "tags": [
+   "industrial",
+   "lamp",
+   "warehouse",
+   "workshop"
+  ],
+  "authors": {
+   "Philip Modin": "All"
+  }
+ },
+ "industrial_wooden_attic": {
+  "name": "Industrial Wooden Attic",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "midday",
+   "high contrast"
+  ],
+  "tags": [
+   "wooden floor",
+   "rafters",
+   "machine",
+   "rustic",
+   "beam ceiling",
+   "loft",
+   "old factory",
+   "barn",
+   "whitewashed walls"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "industrial_workshop_foundry": {
+  "name": "Industrial Workshop Foundry",
+  "categories": [
+   "indoor",
+   "medium contrast",
+   "artificial light",
+   "natural light",
+   "urban"
+  ],
+  "tags": [
+   "industrial",
+   "warehouse",
+   "workshop",
+   "machine",
+   "tools"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "interior_construction": {
+  "name": "Interior Construction",
+  "categories": [
+   "indoor",
+   "low contrast",
+   "urban",
+   "midday",
+   "natural light"
+  ],
+  "tags": [
+   "bare",
+   "construction",
+   "brick",
+   "wood",
+   "chipboard",
+   "empty",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "kart_club": {
+  "name": "Kart Club",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "high contrast",
+   "midday"
+  ],
+  "tags": [
+   "track",
+   "race",
+   "tire",
+   "warehouse",
+   "graffiti",
+   "pillar",
+   "window",
+   "concrete",
+   "gocart",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "kiara_interior": {
+  "name": "Kiara Interior",
+  "categories": [
+   "indoor",
+   "urban",
+   "sunrise-sunset",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "tile",
+   "table",
+   "fridge",
+   "window",
+   "door",
+   "glass",
+   "kitchen",
+   "lounge"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "lapa": {
+  "name": "Lapa",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "thatch",
+   "couch",
+   "garden",
+   "plant",
+   "gazebo"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "large_corridor": {
+  "name": "Large Corridor",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "entrance",
+   "hall",
+   "arch",
+   "empty",
+   "victorian",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "leadenhall_market": {
+  "name": "Leadenhall Market",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "hall",
+   "mall",
+   "europe",
+   "architecture",
+   "london",
+   "cobblestone",
+   "street",
+   "road"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "lebombo": {
+  "name": "Lebombo",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "low contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "house",
+   "lamp",
+   "window",
+   "wood floor",
+   "empty"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "lookout": {
+  "name": "Lookout",
+  "categories": [
+   "indoor",
+   "urban",
+   "nature",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "thatch",
+   "hide",
+   "pilanesberg",
+   "window"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "lythwood_lounge": {
+  "name": "Lythwood Lounge",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "overcast",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "couch",
+   "warm",
+   "lounge",
+   "lamp",
+   "room"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "lythwood_room": {
+  "name": "Lythwood Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "overcast",
+   "low contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "couch",
+   "bed",
+   "lamp",
+   "window",
+   "mantel",
+   "carpet",
+   "backplates"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "machine_shop_01": {
+  "name": "Machine Shop 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "workshop",
+   "hall",
+   "warehouse",
+   "industrial",
+   "machine",
+   "metal"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "machine_shop_02": {
+  "name": "Machine Shop 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "workshop",
+   "hall",
+   "warehouse",
+   "industrial",
+   "machine",
+   "metal"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "machine_shop_03": {
+  "name": "Machine Shop 03",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "hall",
+   "industrial",
+   "machine",
+   "warehouse",
+   "workshop"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "marry_hall": {
+  "name": "Marry Hall",
+  "categories": [
+   "studio",
+   "indoor",
+   "urban",
+   "natural light",
+   "morning-afternoon",
+   "artificial light",
+   "low contrast"
+  ],
+  "tags": [
+   "curtain",
+   "couch",
+   "studio",
+   "text",
+   "window",
+   "chair",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "metro_noord": {
+  "name": "Metro: Noord",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "night",
+   "medium contrast"
+  ],
+  "tags": [
+   "train",
+   "metro",
+   "station",
+   "modern",
+   "bench",
+   "glass",
+   "architecture",
+   "empty",
+   "platform",
+   "europe",
+   "amsterdam"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "metro_vijzelgracht": {
+  "name": "Metro: Vijzelgracht",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "low contrast",
+   "night"
+  ],
+  "tags": [
+   "underground",
+   "metro",
+   "train",
+   "station",
+   "platform",
+   "metal",
+   "concrete",
+   "subway",
+   "architecture",
+   "modern",
+   "europe",
+   "amsterdam"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "mirrored_hall": {
+  "name": "Mirrored Hall",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light",
+   "midday"
+  ],
+  "tags": [
+   "hall",
+   "mirror",
+   "window",
+   "victorian",
+   "high ceiling",
+   "abandoned"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "missile_launch_facility_01": {
+  "name": "Missile Launch Facility 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "tunnel",
+   "rubble",
+   "concrete",
+   "forest",
+   "arch",
+   "sand",
+   "abandoned"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "modern_bathroom": {
+  "name": "Modern Bathroom",
+  "categories": [
+   "indoor",
+   "midday",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "contemporary",
+   "clean",
+   "white",
+   "bath",
+   "shower",
+   "toilet",
+   "basin",
+   "sink",
+   "bathroom",
+   "spacious",
+   "tiles",
+   "sloped ceiling",
+   "heater"
+  ],
+  "authors": {
+   "Adrian Kubasa": "All"
+  }
+ },
+ "monkstown_castle": {
+  "name": "Monkstown Castle",
+  "categories": [
+   "low contrast",
+   "indoor",
+   "outdoor",
+   "natural light",
+   "urban",
+   "morning-afternoon",
+   "partly cloudy"
+  ],
+  "tags": [
+   "tunnel",
+   "shade",
+   "castle",
+   "wall",
+   "stone",
+   "medieval",
+   "arch",
+   "doorway",
+   "historical"
+  ],
+  "authors": {
+   "Savva Zakharov": "All"
+  }
+ },
+ "monochrome_studio_01": {
+  "name": "Monochrome Studio 01",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "white",
+   "photo",
+   "lamp",
+   "umbrella",
+   "infinity",
+   "dark ceiling"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "monochrome_studio_02": {
+  "name": "Monochrome Studio 02",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "dark ceiling",
+   "infinity",
+   "umbrella",
+   "rectangle",
+   "softbox"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "monochrome_studio_03": {
+  "name": "Monochrome Studio 03",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "dark ceiling",
+   "infinity",
+   "softbox",
+   "rectangle",
+   "diffuser",
+   "soft"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "monochrome_studio_04": {
+  "name": "Monochrome Studio 04",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "dark ceiling",
+   "infinity",
+   "rectangle",
+   "softbox",
+   "diffuser"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "moon_lab": {
+  "name": "Moon Lab",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "high contrast",
+   "studio",
+   "collection: moon"
+  ],
+  "tags": [
+   "lamp",
+   "lunar",
+   "sand",
+   "simulation",
+   "science",
+   "museum",
+   "laboratory"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "mosaic_tunnel": {
+  "name": "Mosaic Tunnel",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "path",
+   "tunnel",
+   "tiles",
+   "concrete",
+   "pipe",
+   "art",
+   "fluorescent",
+   "lamp",
+   "backplates"
+  ],
+  "authors": {
+   "Greg Zaal": "All",
+   "Rico Cilliers": "Backplates"
+  }
+ },
+ "museum_of_ethnography": {
+  "name": "Museum of Ethnography",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "museum",
+   "antique",
+   "display"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "music_hall_01": {
+  "name": "Music Hall 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "theater",
+   "organ",
+   "chair",
+   "victorian",
+   "hall"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "music_hall_02": {
+  "name": "Music Hall 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light",
+   "natural light"
+  ],
+  "tags": [
+   "hall",
+   "empty",
+   "victorian",
+   "window",
+   "couch"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "mutianyu": {
+  "name": "Mutianyu",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "clear",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "arch",
+   "brick",
+   "window",
+   "mountain",
+   "great wall"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "neon_photostudio": {
+  "name": "Neon Photostudio",
+  "categories": [
+   "urban",
+   "indoor",
+   "medium contrast",
+   "artificial light",
+   "natural light",
+   "studio"
+  ],
+  "tags": [
+   "fluorescent",
+   "window",
+   "wood",
+   "lamp",
+   "studio",
+   "chair",
+   "plant",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "newman_cafeteria": {
+  "name": "Newman Cafeteria",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "lockers",
+   "fluorescent",
+   "brick",
+   "table",
+   "school",
+   "university",
+   "hallway"
+  ],
+  "authors": {
+   "Savva Zakharov": "All"
+  }
+ },
+ "newman_lobby": {
+  "name": "Newman Lobby",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "school",
+   "university",
+   "brick",
+   "concrete ceiling",
+   "doorway",
+   "table",
+   "hallway"
+  ],
+  "authors": {
+   "Savva Zakharov": "All"
+  }
+ },
+ "newman_locker_room": {
+  "name": "Newman Locker Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "lockers",
+   "fluorescent",
+   "brick",
+   "school",
+   "university",
+   "concrete ceiling",
+   "hallway"
+  ],
+  "authors": {
+   "Savva Zakharov": "All"
+  }
+ },
+ "old_apartments_walkway": {
+  "name": "Old Apartments Walkway",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "clear",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "tree",
+   "railing",
+   "abandoned",
+   "balcony"
+  ],
+  "authors": {
+   "Octavian Tudose": "All"
+  }
+ },
+ "old_bus_depot": {
+  "name": "Old Bus Depot",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "warehouse",
+   "industrial",
+   "concrete",
+   "abandoned",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "old_depot": {
+  "name": "Old Depot",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "clear",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "warehouse",
+   "abandoned",
+   "industrial"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "old_hall": {
+  "name": "Old Hall",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "victorian",
+   "abandoned",
+   "empty",
+   "hall",
+   "europe",
+   "building",
+   "arch",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "old_room": {
+  "name": "Old Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "window",
+   "arch",
+   "fireplace",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "outdoor_chapel": {
+  "name": "Outdoor Chapel",
+  "categories": [
+   "indoor",
+   "urban",
+   "nature",
+   "natural light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "bench",
+   "altar",
+   "wedding",
+   "stone wall",
+   "arch",
+   "transparent roof",
+   "airy",
+   "flower decorations",
+   "concrete floor"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "parking_garage": {
+  "name": "Parking Garage",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "high contrast"
+  ],
+  "tags": [
+   "lamp",
+   "car",
+   "parking",
+   "road",
+   "garage",
+   "underground",
+   "backplates"
+  ],
+  "authors": {
+   "Greg Zaal": "All",
+   "Rico Cilliers": "Backplates"
+  }
+ },
+ "paul_lobe_haus": {
+  "name": "Paul Lobe Haus",
+  "categories": [
+   "outdoor",
+   "indoor",
+   "urban",
+   "midday",
+   "overcast",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "architecture",
+   "berlin",
+   "germany",
+   "autumn",
+   "glass",
+   "skylight"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "pav_studio_01": {
+  "name": "PAV Studio 01",
+  "categories": [
+   "studio",
+   "urban",
+   "artificial light",
+   "indoor",
+   "high contrast"
+  ],
+  "tags": [
+   "white",
+   "photo",
+   "infinity",
+   "rectangle"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "pav_studio_02": {
+  "name": "PAV Studio 02",
+  "categories": [
+   "studio",
+   "urban",
+   "artificial light",
+   "indoor",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "red",
+   "photo",
+   "infinity",
+   "rectangle",
+   "umbrella",
+   "softbox",
+   "window"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "pav_studio_03": {
+  "name": "PAV Studio 03",
+  "categories": [
+   "studio",
+   "urban",
+   "artificial light",
+   "indoor",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "white",
+   "photo",
+   "infinity",
+   "umbrella",
+   "window",
+   "rectangle",
+   "softbox"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "penguin_museum": {
+  "name": "Penguin Museum",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "natural light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "museum",
+   "carpet",
+   "display",
+   "fish",
+   "penguin",
+   "vaulted ceiling",
+   "wooden beams",
+   "exhibition cases",
+   "wall-mounted specimens"
+  ],
+  "authors": {
+   "Jenelle van Heerden": "All"
+  }
+ },
+ "peppermint_powerplant": {
+  "name": "Peppermint Powerplant",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "abandoned",
+   "industrial",
+   "factory",
+   "workshop"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "peppermint_powerplant_2": {
+  "name": "Peppermint Powerplant 2",
+  "categories": [
+   "urban",
+   "natural light",
+   "sunrise-sunset",
+   "indoor",
+   "medium contrast"
+  ],
+  "tags": [
+   "abandoned",
+   "industrial",
+   "window",
+   "workshop",
+   "tiles",
+   "machine",
+   "factory"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "phone_shop": {
+  "name": "Phone Shop",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "shop",
+   "store",
+   "display",
+   "counter"
+  ],
+  "authors": {
+   "Philip Modin": "All"
+  }
+ },
+ "photo_studio_01": {
+  "name": "Photo Studio 01",
+  "categories": [
+   "indoor",
+   "studio",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "photo",
+   "fluorescent",
+   "bed",
+   "white",
+   "infinity",
+   "chair",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "photo_studio_broadway_hall": {
+  "name": "Photo Studio Broadway Hall",
+  "categories": [
+   "indoor",
+   "low contrast",
+   "natural light",
+   "overcast",
+   "urban",
+   "studio",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "wood",
+   "wall",
+   "chair",
+   "flash",
+   "umbrella",
+   "studio",
+   "photo",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "photo_studio_loft_hall": {
+  "name": "Photo Studio Loft Hall",
+  "categories": [
+   "indoor",
+   "medium contrast",
+   "urban",
+   "studio",
+   "morning-afternoon",
+   "natural light"
+  ],
+  "tags": [
+   "couch",
+   "wood",
+   "sunny",
+   "apartment",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "photo_studio_london_hall": {
+  "name": "Photo Studio London Hall",
+  "categories": [
+   "indoor",
+   "natural light",
+   "urban",
+   "low contrast",
+   "midday",
+   "studio"
+  ],
+  "tags": [
+   "table",
+   "couch",
+   "victorian",
+   "apartment",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "pillars": {
+  "name": "Pillars",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "column",
+   "architecture",
+   "monument"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "pine_attic": {
+  "name": "Pine Attic",
+  "categories": [
+   "indoor",
+   "artificial light",
+   "natural light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "wood",
+   "carpet",
+   "pallet",
+   "skylight",
+   "wooden ceiling",
+   "cozy",
+   "warm",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "poly_haven_studio": {
+  "name": "Poly Haven Studio",
+  "categories": [
+   "low contrast",
+   "indoor",
+   "urban",
+   "artificial light",
+   "natural light",
+   "midday"
+  ],
+  "tags": [
+   "chair",
+   "office",
+   "table",
+   "heater",
+   "cat",
+   "wooden ceiling",
+   "computer",
+   "window",
+   "lamp",
+   "curtain",
+   "tiles",
+   "desk",
+   "room",
+   "bright"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "pretville_cinema": {
+  "name": "Pretville Cinema",
+  "categories": [
+   "indoor",
+   "artificial light",
+   "medium contrast",
+   "urban"
+  ],
+  "tags": [
+   "chair",
+   "seat",
+   "stage",
+   "cinema",
+   "theater",
+   "movie",
+   "red",
+   "piano",
+   "chandelier",
+   "projector"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "provence_studio": {
+  "name": "Provence Studio",
+  "categories": [
+   "studio",
+   "indoor",
+   "urban",
+   "artificial light",
+   "low contrast"
+  ],
+  "tags": [
+   "couch",
+   "stair",
+   "door",
+   "studio",
+   "umbrella",
+   "chair",
+   "curtain",
+   "bicycle"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "pump_house": {
+  "name": "Pump House",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "high contrast",
+   "natural light"
+  ],
+  "tags": [
+   "brick",
+   "pump",
+   "dirt",
+   "pipe",
+   "shed",
+   "window"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "reading_room": {
+  "name": "Reading Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "chair",
+   "couch",
+   "window",
+   "door",
+   "tile"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "reinforced_concrete_01": {
+  "name": "Reinforced Concrete 01",
+  "categories": [
+   "outdoor",
+   "indoor",
+   "urban",
+   "sunrise-sunset",
+   "clear",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "tree",
+   "sun",
+   "grass",
+   "concrete",
+   "rubble",
+   "ruin",
+   "warehouse",
+   "industrial",
+   "slab",
+   "abandoned",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "relax_inn_seaview_suite": {
+  "name": "Relax Inn Seaview Suite",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "artificial light",
+   "medium contrast",
+   "midday",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "hotel",
+   "bed",
+   "bedroom",
+   "window",
+   "clock",
+   "table",
+   "balcony",
+   "sliding glass door",
+   "wicker ottoman",
+   "chaise"
+  ],
+  "authors": {
+   "Dario Barresi": "photography",
+   "Jenelle van Heerden": "processing"
+  }
+ },
+ "rostock_arches": {
+  "name": "Rostock Arches",
+  "categories": [
+   "indoor",
+   "artificial light",
+   "night",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "europe",
+   "architecture",
+   "germany",
+   "street",
+   "restaurant",
+   "city",
+   "square",
+   "building",
+   "town",
+   "arch"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "rostock_laage_airport": {
+  "name": "Rostock-Laage Airport",
+  "categories": [
+   "indoor",
+   "low contrast",
+   "natural light",
+   "artificial light",
+   "urban"
+  ],
+  "tags": [
+   "airport",
+   "hall",
+   "warehouse",
+   "high ceiling",
+   "tiles",
+   "europe",
+   "building",
+   "aviation",
+   "museum",
+   "modern"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "royal_esplanade": {
+  "name": "Royal Esplanade",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "mall",
+   "cruise",
+   "screen",
+   "balcony",
+   "stair",
+   "tile"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "school_hall": {
+  "name": "School Hall",
+  "categories": [
+   "indoor",
+   "natural light",
+   "artificial light",
+   "urban",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "school",
+   "stage",
+   "hall",
+   "wood",
+   "wooden floor",
+   "curtain"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "school_quad": {
+  "name": "School Quad",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "artificial light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "concrete",
+   "pavers",
+   "covered",
+   "hall",
+   "square",
+   "campus",
+   "school",
+   "symmetrical"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "sculpture_exhibition": {
+  "name": "Sculpture Exhibition",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "horse",
+   "art",
+   "exhibition",
+   "museum"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "sepulchral_chapel_basement": {
+  "name": "Sepulchral Chapel Basement",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "tiles",
+   "architecture",
+   "dome",
+   "circular"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "sepulchral_chapel_rotunda": {
+  "name": "Sepulchral Chapel Rotunda",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "tiles",
+   "architecture",
+   "roman",
+   "hall",
+   "dome",
+   "pantheon",
+   "circular"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "short_tunnel": {
+  "name": "Short Tunnel",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "overcast",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "tunnel",
+   "road",
+   "street",
+   "concrete",
+   "underpass",
+   "backplates"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "skylit_garage": {
+  "name": "Skylit Garage",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "road",
+   "parking",
+   "pillar",
+   "backplates"
+  ],
+  "authors": {
+   "Greg Zaal": "All",
+   "Rico Cilliers": "Backplates"
+  }
+ },
+ "small_cathedral": {
+  "name": "Small Cathedral",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "church",
+   "chapel",
+   "carpet",
+   "painting",
+   "religion",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_cathedral_02": {
+  "name": "Small Cathedral 02",
+  "categories": [
+   "outdoor",
+   "urban",
+   "sunrise-sunset",
+   "partly cloudy",
+   "medium contrast",
+   "natural light",
+   "indoor"
+  ],
+  "tags": [
+   "sun",
+   "europe",
+   "architecture",
+   "arch",
+   "church",
+   "tree",
+   "cobblestone",
+   "brick",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_cave": {
+  "name": "Small Cave",
+  "categories": [
+   "indoor",
+   "nature",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "cave",
+   "forest",
+   "rock"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "small_empty_house": {
+  "name": "Small Empty House",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "house",
+   "tile",
+   "lamp",
+   "door"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "small_empty_room_1": {
+  "name": "Small Empty Room 1",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "room",
+   "empty",
+   "office",
+   "door",
+   "window",
+   "curtain",
+   "wooden floor"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_empty_room_2": {
+  "name": "Small Empty Room 2",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast",
+   "night"
+  ],
+  "tags": [
+   "room",
+   "empty",
+   "office",
+   "door",
+   "curtain",
+   "wooden floor",
+   "led panel",
+   "wallpaper"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_empty_room_3": {
+  "name": "Small Empty Room 3",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "room",
+   "empty",
+   "office",
+   "door",
+   "curtain",
+   "wooden floor",
+   "led panel"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_empty_room_4": {
+  "name": "Small Empty Room 4",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "room",
+   "empty",
+   "office",
+   "door",
+   "window",
+   "curtain",
+   "wooden floor",
+   "wallpaper"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_hangar_01": {
+  "name": "Small Hangar 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "hangar",
+   "plane",
+   "industrial",
+   "warehouse"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_hangar_02": {
+  "name": "Small Hangar 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "hangar",
+   "plane",
+   "industrial",
+   "europe"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "small_workshop": {
+  "name": "Small Workshop",
+  "categories": [
+   "artificial light",
+   "natural light",
+   "indoor",
+   "urban",
+   "low contrast",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "workshop",
+   "machine",
+   "fluorescent",
+   "lamp",
+   "table",
+   "tablesaw",
+   "concrete",
+   "tools",
+   "mess"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "smelting_tower_interior": {
+  "name": "Smelting Tower Interior",
+  "categories": [
+   "natural light",
+   "indoor",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "stone tower",
+   "rock",
+   "arched doorway",
+   "historical",
+   "abandoned",
+   "ruin",
+   "rubble",
+   "weathered"
+  ],
+  "authors": {
+   "Savva Zakharov": "All"
+  }
+ },
+ "solitude_interior": {
+  "name": "Solitude Interior",
+  "categories": [
+   "indoor",
+   "medium contrast",
+   "urban",
+   "natural light",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "architecture",
+   "europe",
+   "building",
+   "column",
+   "pillar",
+   "arch",
+   "victorian",
+   "backplates"
+  ],
+  "authors": {
+   "Andreas Mischok": "All"
+  }
+ },
+ "squash_court": {
+  "name": "Squash Court",
+  "categories": [
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "sport",
+   "court",
+   "lines",
+   "ball game",
+   "arena",
+   "wooden floor",
+   "rafters"
+  ],
+  "authors": {
+   "Greg Zaal": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "st_fagans_interior": {
+  "name": "St. Fagans Interior",
+  "categories": [
+   "indoor",
+   "urban",
+   "low contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "bench",
+   "couch",
+   "lobby",
+   "modern",
+   "museum",
+   "stairs",
+   "wooden floor"
+  ],
+  "authors": {
+   "Morgan Evans": "All"
+  }
+ },
+ "storeroom": {
+  "name": "Storeroom",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "mess",
+   "junk",
+   "fluorescent"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "story_studio_01": {
+  "name": "Story Studio 01",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "natural light",
+   "medium contrast"
+  ],
+  "tags": [
+   "umbrella",
+   "softbox",
+   "infinity",
+   "window",
+   "lamp",
+   "white",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "story_studio_02": {
+  "name": "Story Studio 02",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "umbrella",
+   "softbox",
+   "infinity",
+   "lamp",
+   "white",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "story_studio_03": {
+  "name": "Story Studio 03",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "umbrella",
+   "softbox",
+   "infinity",
+   "lamp",
+   "white",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "story_studio_04": {
+  "name": "Story Studio 04",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "umbrella",
+   "softbox",
+   "infinity",
+   "lamp",
+   "white",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "story_studio_05": {
+  "name": "Story Studio 05",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "umbrella",
+   "softbox",
+   "infinity",
+   "lamp",
+   "white",
+   "overhead",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_country_hall": {
+  "name": "Studio Country Hall",
+  "categories": [
+   "indoor",
+   "medium contrast",
+   "urban",
+   "studio",
+   "morning-afternoon",
+   "natural light"
+  ],
+  "tags": [
+   "studio",
+   "wood",
+   "rustic",
+   "kitchen",
+   "chair",
+   "ladder",
+   "carpet",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "studio_kominka_01": {
+  "name": "Studio Kominka 01",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "rectangle",
+   "overhead",
+   "umbrella",
+   "reflector",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_kominka_02": {
+  "name": "Studio Kominka 02",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "umbrella",
+   "overhead",
+   "rectangle",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_kominka_03": {
+  "name": "Studio Kominka 03",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "umbrella",
+   "reflector",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_kominka_04": {
+  "name": "Studio Kominka 04",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "umbrella",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_kontrast_01": {
+  "name": "Studio Kontrast 01",
+  "categories": [
+   "studio",
+   "urban",
+   "artificial light",
+   "indoor",
+   "medium contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "umbrella",
+   "warm",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_kontrast_02": {
+  "name": "Studio Kontrast 02",
+  "categories": [
+   "studio",
+   "urban",
+   "artificial light",
+   "indoor",
+   "low contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "umbrella",
+   "rectangle",
+   "softbox",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_kontrast_03": {
+  "name": "Studio Kontrast 03",
+  "categories": [
+   "studio",
+   "urban",
+   "artificial light",
+   "indoor",
+   "medium contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "rectangle",
+   "softbox",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_kontrast_04": {
+  "name": "Studio Kontrast 04",
+  "categories": [
+   "studio",
+   "urban",
+   "artificial light",
+   "indoor",
+   "low contrast"
+  ],
+  "tags": [
+   "infinity",
+   "lamp",
+   "white",
+   "rectangle",
+   "softbox",
+   "photo"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_small_01": {
+  "name": "Studio Small 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "studio",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "studio",
+   "photo"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "studio_small_02": {
+  "name": "Studio Small 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "studio",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "studio",
+   "photo"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "studio_small_03": {
+  "name": "Studio Small 03",
+  "categories": [
+   "indoor",
+   "urban",
+   "studio",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "studio",
+   "photo",
+   "umbrella"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "studio_small_04": {
+  "name": "Studio Small 04",
+  "categories": [
+   "indoor",
+   "studio",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "studio",
+   "photo"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "studio_small_05": {
+  "name": "Studio Small 05",
+  "categories": [
+   "indoor",
+   "urban",
+   "studio",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "studio",
+   "photo",
+   "reflector",
+   "dish"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "studio_small_06": {
+  "name": "Studio Small 06",
+  "categories": [
+   "indoor",
+   "urban",
+   "studio",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "studio",
+   "photo"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "studio_small_07": {
+  "name": "Studio Small 07",
+  "categories": [
+   "indoor",
+   "studio",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "lamp",
+   "photo",
+   "studio",
+   "single"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "studio_small_08": {
+  "name": "Studio Small 08",
+  "categories": [
+   "low contrast",
+   "indoor",
+   "urban",
+   "artificial light",
+   "studio"
+  ],
+  "tags": [
+   "umbrella",
+   "softbox",
+   "infinity",
+   "lamp",
+   "studio",
+   "photo"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "studio_small_09": {
+  "name": "Studio Small 09",
+  "categories": [
+   "medium contrast",
+   "indoor",
+   "urban",
+   "artificial light",
+   "studio"
+  ],
+  "tags": [
+   "umbrella",
+   "softbox",
+   "infinity",
+   "lamp",
+   "studio",
+   "photo"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "studio_wizja_01": {
+  "name": "Studio Wizja 01",
+  "categories": [
+   "studio",
+   "artificial light",
+   "urban",
+   "indoor",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "infinity",
+   "white",
+   "lamp",
+   "umbrella",
+   "rectangle",
+   "softbox"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_wizja_02": {
+  "name": "Studio Wizja 02",
+  "categories": [
+   "studio",
+   "artificial light",
+   "urban",
+   "indoor",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "infinity",
+   "white",
+   "lamp",
+   "umbrella",
+   "rectangle",
+   "softbox"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "studio_wizja_03": {
+  "name": "Studio Wizja 03",
+  "categories": [
+   "studio",
+   "artificial light",
+   "urban",
+   "indoor",
+   "medium contrast"
+  ],
+  "tags": [
+   "photo",
+   "infinity",
+   "white",
+   "lamp",
+   "rectangle"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "subway_entrance": {
+  "name": "Subway Entrance",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "tile",
+   "fluorescent",
+   "stair",
+   "map",
+   "tunnel",
+   "station",
+   "escalator"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "sundowner_deck": {
+  "name": "Sundowner Deck",
+  "categories": [
+   "indoor",
+   "outdoor",
+   "natural light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "patio",
+   "restaurant",
+   "table",
+   "chair",
+   "cafe",
+   "sea view",
+   "ocean",
+   "wooden deck",
+   "covered terrace"
+  ],
+  "authors": {
+   "Dario Barresi": "All"
+  }
+ },
+ "surgery": {
+  "name": "Surgery",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "bed",
+   "table",
+   "hospital",
+   "lamp",
+   "medical",
+   "operation"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "teufelsberg_inner": {
+  "name": "Teufelsberg Inner",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "overcast",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "abandoned",
+   "graffiti",
+   "art",
+   "industrial"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "teufelsberg_lookout": {
+  "name": "Teufelsberg Lookout",
+  "categories": [
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "partly cloudy",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "graffiti",
+   "abandoned",
+   "art",
+   "pallet",
+   "industrial",
+   "forest",
+   "view"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "thatch_chapel": {
+  "name": "Thatch Chapel",
+  "categories": [
+   "artificial light",
+   "indoor",
+   "urban",
+   "high contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "room",
+   "thatch",
+   "windows",
+   "door",
+   "basket",
+   "table",
+   "chapel"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "theater_01": {
+  "name": "Theater 01",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "theater",
+   "theatre",
+   "seat",
+   "orchestra",
+   "stage",
+   "curtain"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "theater_02": {
+  "name": "Theater 02",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "theater",
+   "theatre",
+   "seat",
+   "orchestra",
+   "stage",
+   "curtain"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "trekker_monument": {
+  "name": "Trekker Monument",
+  "categories": [
+   "natural light",
+   "indoor",
+   "urban",
+   "medium contrast",
+   "overcast",
+   "midday"
+  ],
+  "tags": [
+   "concrete",
+   "monument",
+   "symmetrical",
+   "circular",
+   "skylight"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "tv_studio": {
+  "name": "TV Studio",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "camera",
+   "studio",
+   "set",
+   "news",
+   "show"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "unfinished_office": {
+  "name": "Unfinished Office",
+  "categories": [
+   "natural light",
+   "indoor",
+   "urban",
+   "morning-afternoon",
+   "low contrast"
+  ],
+  "tags": [
+   "room",
+   "empty",
+   "construction",
+   "office",
+   "door",
+   "white"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "unfinished_office_night": {
+  "name": "Unfinished Office Night",
+  "categories": [
+   "artificial light",
+   "urban",
+   "night",
+   "indoor",
+   "medium contrast"
+  ],
+  "tags": [
+   "room",
+   "empty",
+   "construction",
+   "office",
+   "door",
+   "white"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "university_workshop": {
+  "name": "University Workshop",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "machine",
+   "workshop",
+   "tools",
+   "carpentry",
+   "workbench",
+   "spacious",
+   "industrial",
+   "concrete floor",
+   "high ceiling"
+  ],
+  "authors": {
+   "Savva Zakharov": "All"
+  }
+ },
+ "ushaka_sea_world_aquarium": {
+  "name": "Ushaka Sea World Aquarium",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "aquarium",
+   "water",
+   "window",
+   "tank",
+   "wooden floor",
+   "wooden ceiling",
+   "wooden beams",
+   "pirate",
+   "ship",
+   "museum",
+   "shipwreck"
+  ],
+  "authors": {
+   "Dario Barresi": "photography",
+   "Jarod Guest": "processing"
+  }
+ },
+ "veranda": {
+  "name": "Veranda",
+  "categories": [
+   "indoor",
+   "outdoor",
+   "urban",
+   "morning-afternoon",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "table",
+   "tile",
+   "brick",
+   "patio",
+   "veranda",
+   "porch"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "vestibule": {
+  "name": "Vestibule",
+  "categories": [
+   "indoor",
+   "natural light",
+   "medium contrast",
+   "urban"
+  ],
+  "tags": [
+   "wooden floor",
+   "victorian",
+   "high ceiling",
+   "arch",
+   "architecture",
+   "europe",
+   "building",
+   "pillar",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "vintage_measuring_lab": {
+  "name": "Vintage Measuring Lab",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "machine",
+   "industrial",
+   "workshop",
+   "laboratory"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "voortrekker_interior": {
+  "name": "Voortrekker Interior",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "low contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "arch",
+   "architecture",
+   "tile",
+   "window",
+   "door",
+   "museum",
+   "sculpture"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "vulture_hide": {
+  "name": "Vulture Hide",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "natural light"
+  ],
+  "tags": [
+   "hide",
+   "bench",
+   "brick",
+   "window"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "warm_bar": {
+  "name": "Warm Bar",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "night",
+   "medium contrast"
+  ],
+  "tags": [
+   "pub",
+   "bar",
+   "stool",
+   "bench",
+   "counter",
+   "fridge",
+   "bottle",
+   "rafters",
+   "cozy",
+   "drinks",
+   "tiles",
+   "wood"
+  ],
+  "authors": {
+   "Greg Zaal": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "warm_reception_dinner": {
+  "name": "Warm Reception Dinner",
+  "categories": [
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "lamp",
+   "windows",
+   "table",
+   "chair",
+   "chandelier",
+   "fireplace",
+   "barn door",
+   "concrete floor",
+   "rustic",
+   "wedding",
+   "banquet",
+   "exposed brick"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "warm_restaurant": {
+  "name": "Warm Restaurant",
+  "categories": [
+   "indoor",
+   "medium contrast",
+   "natural light",
+   "urban",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "window",
+   "table",
+   "restaurant",
+   "chair",
+   "tiles",
+   "bench",
+   "animal skin",
+   "rafters",
+   "dining",
+   "cozy",
+   "fireplace",
+   "seat"
+  ],
+  "authors": {
+   "Greg Zaal": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "warm_restaurant_night": {
+  "name": "Warm Restaurant Night",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "night",
+   "medium contrast"
+  ],
+  "tags": [
+   "restaurant",
+   "seat",
+   "chair",
+   "bench",
+   "animal skin",
+   "dining",
+   "rafters",
+   "window",
+   "table",
+   "tiles",
+   "cozy",
+   "fireplace"
+  ],
+  "authors": {
+   "Greg Zaal": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "whale_skeleton": {
+  "name": "Whale Skeleton",
+  "categories": [
+   "indoor",
+   "urban",
+   "medium contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "museum",
+   "bone",
+   "whale",
+   "skeleton"
+  ],
+  "authors": {
+   "Oliksiy Yakovlyev": "All"
+  }
+ },
+ "white_chapel": {
+  "name": "White Chapel",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "medium contrast",
+   "midday"
+  ],
+  "tags": [
+   "church",
+   "wedding",
+   "thatch",
+   "vaulted ceiling",
+   "religion",
+   "chapel",
+   "round window",
+   "symmetrical"
+  ],
+  "authors": {
+   "Jenelle van Heerden": "All"
+  }
+ },
+ "white_home_studio": {
+  "name": "White Home Studio",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "softbox",
+   "umbrella",
+   "rectangle",
+   "infinity"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "white_studio_01": {
+  "name": "White Studio 01",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "infinity",
+   "umbrella",
+   "high ceiling"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "white_studio_02": {
+  "name": "White Studio 02",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "infinity",
+   "umbrella",
+   "high ceiling",
+   "grid",
+   "dark ceiling"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "white_studio_03": {
+  "name": "White Studio 03",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "infinity",
+   "umbrella",
+   "high ceiling",
+   "grid",
+   "dark ceiling"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "white_studio_04": {
+  "name": "White Studio 04",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "infinity",
+   "dark ceiling",
+   "umbrella",
+   "soft",
+   "high ceiling"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "white_studio_05": {
+  "name": "White Studio 05",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "lamp",
+   "white",
+   "photo",
+   "infinity",
+   "high ceiling",
+   "soft",
+   "umbrella"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "white_studio_06": {
+  "name": "White Studio 06",
+  "categories": [
+   "studio",
+   "indoor",
+   "urban",
+   "low contrast",
+   "natural light"
+  ],
+  "tags": [
+   "white",
+   "photo",
+   "infinity",
+   "high ceiling",
+   "soft",
+   "skylight"
+  ],
+  "authors": {
+   "Grzegorz Wronkowski": "All"
+  }
+ },
+ "witsand_woolshop": {
+  "name": "Witsand Woolshop",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "artificial light",
+   "medium contrast",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "shop",
+   "table",
+   "wool",
+   "wood",
+   "yarn",
+   "spinning wheel",
+   "crochet",
+   "fabric",
+   "colorful"
+  ],
+  "authors": {
+   "Jenelle van Heerden": "All"
+  }
+ },
+ "wooden_lounge": {
+  "name": "Wooden Lounge",
+  "categories": [
+   "indoor",
+   "urban",
+   "high contrast",
+   "artificial light"
+  ],
+  "tags": [
+   "couch",
+   "wood",
+   "lamp",
+   "table"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "wooden_studio_01": {
+  "name": "Wooden Studio 01",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_02": {
+  "name": "Wooden Studio 02",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor",
+   "softbox"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_03": {
+  "name": "Wooden Studio 03",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "umbrella",
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor",
+   "softbox"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_04": {
+  "name": "Wooden Studio 04",
+  "categories": [
+   "studio",
+   "artificial light",
+   "indoor",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "umbrella",
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor",
+   "softbox"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_05": {
+  "name": "Wooden Studio 05",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor",
+   "softbox",
+   "soft"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_06": {
+  "name": "Wooden Studio 06",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor",
+   "softbox"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_07": {
+  "name": "Wooden Studio 07",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast",
+   "high contrast"
+  ],
+  "tags": [
+   "red",
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_08": {
+  "name": "Wooden Studio 08",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast",
+   "high contrast"
+  ],
+  "tags": [
+   "lamp",
+   "photo",
+   "rectangle",
+   "wooden ceiling",
+   "wood",
+   "black floor"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_09": {
+  "name": "Wooden Studio 09",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "black floor",
+   "led panel",
+   "rectangle",
+   "lamp",
+   "blue",
+   "red",
+   "teal",
+   "wooden ceiling",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_10": {
+  "name": "Wooden Studio 10",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "black floor",
+   "wooden ceiling",
+   "led panel",
+   "rectangle",
+   "blue",
+   "pink",
+   "orange",
+   "softbox",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_11": {
+  "name": "Wooden Studio 11",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "wooden ceiling",
+   "rectangle",
+   "diffuser",
+   "black floor",
+   "lamp",
+   "blue",
+   "orange",
+   "softbox",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_12": {
+  "name": "Wooden Studio 12",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "wooden ceiling",
+   "diffuser",
+   "black floor",
+   "lamp",
+   "pink",
+   "yellow",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_13": {
+  "name": "Wooden Studio 13",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "wooden ceiling",
+   "umbrella",
+   "diffuser",
+   "pink",
+   "green",
+   "black floor",
+   "lamp",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_14": {
+  "name": "Wooden Studio 14",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast"
+  ],
+  "tags": [
+   "wooden ceiling",
+   "black floor",
+   "lamp",
+   "red",
+   "green",
+   "blue",
+   "led panel",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_15": {
+  "name": "Wooden Studio 15",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "high contrast",
+   "medium contrast"
+  ],
+  "tags": [
+   "black floor",
+   "lamp",
+   "softbox",
+   "soft",
+   "white",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_16": {
+  "name": "Wooden Studio 16",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast"
+  ],
+  "tags": [
+   "black floor",
+   "lamp",
+   "softbox",
+   "soft",
+   "white",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_17": {
+  "name": "Wooden Studio 17",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "medium contrast",
+   "low contrast"
+  ],
+  "tags": [
+   "black floor",
+   "lamp",
+   "softbox",
+   "soft",
+   "white",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_18": {
+  "name": "Wooden Studio 18",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "wooden ceiling",
+   "black floor",
+   "lamp",
+   "white",
+   "umbrella",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "wooden_studio_19": {
+  "name": "Wooden Studio 19",
+  "categories": [
+   "studio",
+   "indoor",
+   "artificial light",
+   "urban",
+   "low contrast"
+  ],
+  "tags": [
+   "black floor",
+   "lamp",
+   "softbox",
+   "soft",
+   "white",
+   "rectangle",
+   "photo"
+  ],
+  "authors": {
+   "Alexander Scholten": "All"
+  }
+ },
+ "workshop": {
+  "name": "Workshop",
+  "categories": [
+   "indoor",
+   "high contrast",
+   "artificial light",
+   "urban"
+  ],
+  "tags": [
+   "fluorescent",
+   "lamp",
+   "table",
+   "workshop",
+   "machine",
+   "tools",
+   "concrete",
+   "mess"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ },
+ "wrestling_gym": {
+  "name": "Wrestling Gym",
+  "categories": [
+   "indoor",
+   "urban",
+   "natural light",
+   "low contrast",
+   "midday",
+   "morning-afternoon"
+  ],
+  "tags": [
+   "gym",
+   "exercise",
+   "mat",
+   "windows",
+   "empty",
+   "hall",
+   "fitness",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "yaris_interior_garage": {
+  "name": "Yaris Interior Garage",
+  "categories": [
+   "indoor",
+   "urban",
+   "midday",
+   "medium contrast",
+   "natural light",
+   "artificial light"
+  ],
+  "tags": [
+   "car",
+   "driver",
+   "seat",
+   "garage"
+  ],
+  "authors": {
+   "Greg Zaal": "All"
+  }
+ },
+ "yoga_room": {
+  "name": "Yoga Room",
+  "categories": [
+   "indoor",
+   "urban",
+   "artificial light",
+   "medium contrast"
+  ],
+  "tags": [
+   "mirror",
+   "gym",
+   "wooden floor",
+   "window",
+   "high ceiling",
+   "backplates"
+  ],
+  "authors": {
+   "Sergej Majboroda": "All"
+  }
+ },
+ "zwartkops_pit": {
+  "name": "Zwartkops Pit",
+  "categories": [
+   "outdoor",
+   "indoor",
+   "natural light",
+   "medium contrast",
+   "urban",
+   "midday"
+  ],
+  "tags": [
+   "race",
+   "track",
+   "pit",
+   "parking",
+   "concrete",
+   "covered",
+   "barrier",
+   "pillar",
+   "backplates"
+  ],
+  "authors": {
+   "Dimitrios Savva": "Photography",
+   "Jarod Guest": "Processing"
+  }
+ }
+}
