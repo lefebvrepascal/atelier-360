@@ -1,0 +1,3 @@
+Reconnaissance vocale hors ligne utilisée par l'activité « Répète » (micro) d'Atelier 360.
+- vosk.js : vosk-browser 0.0.8 (licence Apache 2.0), https://github.com/ccoreilly/vosk-browser
+- vosk-model-small-en-us-0.15.tar.gz : modèle Vosk anglais (licence Apache 2.0), https://alphacephei.com/vosk/models
