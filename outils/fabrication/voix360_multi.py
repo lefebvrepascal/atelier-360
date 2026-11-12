@@ -10,7 +10,8 @@ from playwright.sync_api import sync_playwright
 from piper import PiperVoice
 
 site = sys.argv[1]
-VOICES = {"fr": "/home/claude/voix/vrepo/medias/voix/fr_FR-siwis-medium.onnx", "en": "/home/claude/voix/en/en_US-lessac-medium.onnx"}
+VD = os.environ.get("VOIX_DIR", "voix")  # branche « voix-piper » du dépôt
+VOICES = {"fr": os.path.join(VD, "fr_FR-siwis-medium.onnx"), "en": os.path.join(VD, "en_US-lessac-medium.onnx")}
 _cache = {}
 def get_voice(lang):
     k = lang[:2]

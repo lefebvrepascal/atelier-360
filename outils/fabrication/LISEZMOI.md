@@ -48,3 +48,31 @@ Chaque document contient : `matiere`, `niveau` (6e à 3e), `langue` (fr-FR, en-G
 
 Le site entier fait près de 1 Go. Chaque mise en ligne par Netlify renvoie tout le site et consomme des crédits : en novembre 2026 le compte a atteint sa limite (« account credit usage exceeded »).
 Avant de mettre la file d'attente en service, choisir : offre Netlify supérieure (vidéos sur le site séparé `atelier360-medias`), ou GitHub Pages (envois partiels gratuits, vidéos dans un second dépôt, 1 Go par site).
+
+## 4. Traitement automatique (tâche planifiée)
+
+Hébergement retenu : Netlify (offre supérieure depuis le 12 novembre 2026).
+- Site des cours : `atelier360-sacre-coeur` (identifiant `cce920f1-206a-42f6-ba34-0b1a0eab0615`), https://atelier360-sacre-coeur.netlify.app
+- Vidéos : `atelier360-medias` (identifiant `62399d63-cf9e-4c74-952e-27b93e77a11d`), https://atelier360-medias.netlify.app/<slug>/<fichier>.mp4
+- Éditeur : `atelier360-editeur` (identifiant `439dfe1d-7a13-4c0c-8bae-037d9a73bddb`)
+- Page des demandes : artefact claude.ai « Demander un cours 360° », slug `4412b35b-0190-45f0-ae6a-48f285b82bb9`, collection `demandes`.
+
+Copies de référence dans ce dépôt (à cloner seules, `--depth 1 --single-branch`) :
+- `site-publie` : le contenu exact du site des cours (index.html, lib/, cours/, netlify.toml) ;
+- `site-medias` : le contenu exact du site des vidéos ;
+- `voix-piper` : les modèles de voix (fr siwis, en lessac) ;
+- `fabrication` : ce dossier ; `main` : l'éditeur (index.html, aframe.min.js), utilisé par `export_cours.py`.
+
+Mise en place d'une session vierge :
+```
+R=https://github.com/lefebvrepascal/atelier-360
+git clone -q --depth 1 -b main $R atelier-360
+git -C atelier-360 fetch -q --depth 1 origin fabrication && git -C atelier-360 checkout origin/fabrication -- outils/fabrication
+git clone -q --depth 1 --single-branch -b site-publie $R site
+git clone -q --depth 1 --single-branch -b site-medias $R medias
+git clone -q --depth 1 --single-branch -b voix-piper $R voix
+pip install -q --break-system-packages piper-tts playwright rdkit pillow numpy scipy
+npm pack -q jszip@3.10.1 && tar xzf jszip-3.10.1.tgz   # JSZIP=package/dist/jszip.min.js
+```
+Après publication d'un cours : `git -C site add -A && git -C site commit -m "…" && git -C site push origin HEAD:site-publie` (idem pour `medias` si des vidéos ont été ajoutées), puis mise en ligne des deux dossiers avec l'outil Netlify (déploiement par envoi du dossier), vérification, et mise à jour de la demande (`statut`, `lien`, `note`) avec l'outil de base de données de l'artefact.
+Un cours par exécution au maximum, pour rester dans la durée d'une session ; laisser les autres demandes « en attente ».
