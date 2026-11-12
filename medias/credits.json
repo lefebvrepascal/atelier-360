@@ -1,0 +1,57 @@
+{
+ "molymods": {
+  "file": "Molymods.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Sonia\" title=\"User:Sonia\">Sonia</a>",
+  "license": "CC BY 3.0"
+ },
+ "polyethylene": {
+  "file": "Polyethylene.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Kriplozoik&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Kriplozoik (page does not exist)\">Kriplozoik</a>",
+  "license": "Public domain"
+ },
+ "granules": {
+  "file": "Bags of plastic granules.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Cjp24\" title=\"User:Cjp24\">Cjp24</a>",
+  "license": "CC BY-SA 3.0"
+ },
+ "flamme": {
+  "file": "Gas stove blue flames.jpg",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/36217778@N00\">Marina Burity</a> from Santo André, Brazil",
+  "license": "CC BY-SA 2.0"
+ },
+ "lavoisier": {
+  "file": "David - Portrait of Monsieur Lavoisier and His Wife (cropped).jpg",
+  "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Jacques-Louis_David\" class=\"extiw\" title=\"w:en:Jacques-Louis David\"><span title=\"French painter (1748–1825)\">Jacques-Louis David</span></a></bdi>",
+  "license": "Public domain"
+ },
+ "dalton": {
+  "file": "John Dalton by Charles Turner.jpg",
+  "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Charles_Turner_(engraver)\" class=\"extiw\" title=\"w:en:Charles Turner (engraver)\"><span title=\"English engraver (1774-1857)\">Charles Turner</span></a></bdi> / <bdi>After <a href=\"https://en.wikipedia.org/wiki/en:James_Lonsdale_(painter)\" class=\"extiw\" title=\"w:en:James Lonsdale (painter)\"><span title=\"English society portrait painter (1777-1839)\">James Lonsdale</span></a></bdi>",
+  "license": "Public domain"
+ },
+ "goutte": {
+  "file": "Water drop impact on a water-surface.jpg",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43698630@N00\">Davide Restivo</a> from Aarau, Switzerland",
+  "license": "CC BY-SA 2.0"
+ },
+ "chimie": {
+  "file": "Kugelpanorama des Chemie-Lehrsaals 20240827.jpg",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:PantheraLeo1359531\" title=\"User:PantheraLeo1359531\">PantheraLeo1359531</a>",
+  "license": "CC BY 4.0"
+ },
+ "vintage_measuring_lab": {
+  "file": "vintage_measuring_lab",
+  "artist": "Poly Haven",
+  "license": "CC0"
+ },
+ "moon_lab": {
+  "file": "moon_lab",
+  "artist": "Poly Haven",
+  "license": "CC0"
+ },
+ "school_hall": {
+  "file": "school_hall",
+  "artist": "Poly Haven",
+  "license": "CC0"
+ }
+}
