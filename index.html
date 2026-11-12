@@ -2799,7 +2799,7 @@ function createPlayer(container,course,opts){
           else if(h.type==='order'){var it=(h.items||[]).map(function(x){return String(x||'').trim();}).filter(Boolean),n=it.length;q=q||"Remets dans l'ordre";add(q+'. Touchez les éléments dans le bon ordre, du premier au dernier.');add("Bravo, c'est le bon ordre ! "+ex);
             for(var nb=0;nb<n;nb++)add('Pas tout à fait : '+nb+' sur '+n+' bien placés. Le bon ordre : '+it.join(', puis ')+'. '+ex);}
           else if(h.type==='match'){q=q||'Associe';add(q+'. Touchez un élément à gauche, puis celui qui lui correspond à droite.');add('Bravo, toutes les paires sont justes ! '+ex);for(var e=1;e<=8;e++)add('Toutes les paires sont trouvées, avec '+e+' erreur'+(e>1?'s':'')+'. '+ex);}
-          else if(h.type==='find'){q=q||'Trouve-le';add(q);add(q+'. Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et appuyez sur la gâchette. Vous avez 3 essais.');
+          else if(h.type==='find'){q=q||'Trouve-le';add(q);add(q+'. Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et pincez les doigts, ou appuyez sur la gâchette. Vous avez 3 essais.');
             add('Bravo, vous avez trouvé ! '+ex);add('Voici où se trouvait la réponse (cercle jaune). '+ex);[1,2].forEach(function(l){add('Tout près ! Encore '+l+' essai'+(l>1?'s':''));add('Pas ici. Encore '+l+' essai'+(l>1?'s':''));});}});});});
     prefs.simple=sv;var tot=0,g=0;(course.scenes||[]).forEach(function(s){(s.hotspots||[]).forEach(function(h){if(h.type==='goto')return;tot++;if(graded(h))g++;});});
     for(var x=0;x<=tot;x++)add('Points découverts : '+x+' sur '+tot+'.');for(var a=0;a<=g;a++)add('Activités réussies : '+a+' sur '+g+'.');
@@ -2830,7 +2830,7 @@ function createPlayer(container,course,opts){
   var ctrlEnts={},handEnts={};
   ['left','right'].forEach(function(h){var c=document.createElement('a-entity');c.setAttribute('laser-controls','hand: '+h);c.setAttribute('raycaster','objects: .atl-click; far: 60; lineColor: #f5b700; lineOpacity: 0.85');rig.appendChild(c);ctrlEnts[h]=c;
     c.addEventListener('gripdown',function(){var g=grabbers[h];g.kind='ctrl';c.object3D.getWorldPosition(g.pos);c.object3D.getWorldQuaternion(g.quat);grabStart(h);});c.addEventListener('gripup',function(){grabEnd(h);});
-    if(mode==='play'){var hd=document.createElement('a-entity');hd.setAttribute('hand-tracking-controls','hand: '+h+'; modelStyle: mesh; modelColor: #e8c3a0; modelOpacity: 0.9');rig.appendChild(hd);handEnts[h]=hd;
+    {var hd=document.createElement('a-entity');hd.setAttribute('hand-tracking-controls','hand: '+h+'; modelStyle: mesh; modelColor: #e8c3a0; modelOpacity: 0.9');rig.appendChild(hd);handEnts[h]=hd;
       var hp=function(ev){var g=grabbers[h],d=ev.detail||{};if(d.position)g.pos.copy(d.position);if(d.wristRotation)g.quat.copy(d.wristRotation);};
       hd.addEventListener('pinchstarted',function(ev){hp(ev);grabbers[h].kind='hand';grabStart(h);});hd.addEventListener('pinchmoved',hp);hd.addEventListener('pinchended',function(ev){hp(ev);grabEnd(h);});}});
   var skyEnt=document.createElement('a-entity'),world=document.createElement('a-entity'),hud=document.createElement('a-entity');
@@ -2848,7 +2848,44 @@ function createPlayer(container,course,opts){
   var loaded=new Promise(function(res){if(sc.hasLoaded)res();else sc.addEventListener('loaded',res);});
   var fonts=Promise.race([new Promise(function(r){setTimeout(r,2500);}),(document.fonts&&document.fonts.load)?Promise.all([document.fonts.load('700 48px "Atkinson Hyperlegible"'),document.fonts.load('400 40px "Atkinson Hyperlegible"')]).catch(function(){}):Promise.resolve()]);
   var ready=Promise.all([loaded,fonts]).then(function(){loadScene(0,true);if(mode==='play')welcome();});
-  sc.addEventListener('enter-vr',function(){unlock();setTimeout(realign,450);});
+
+  /* --- Interaction avec les mains seules : rayon de visée + pincement = clic --- */
+  var HR={},_hq=new THREE.Quaternion(),_hrc=new THREE.Raycaster(),_hv=new THREE.Vector3();
+  function mkRay(){var geo=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0),new THREE.Vector3(0,0,-1)]);
+    var line=new THREE.Line(geo,new THREE.LineBasicMaterial({color:0xf5b700,transparent:true,opacity:0.75,depthWrite:false}));line.frustumCulled=false;
+    var dot=new THREE.Mesh(new THREE.CircleGeometry(1,24),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:0.95,depthTest:false,depthWrite:false}));dot.renderOrder=40;
+    line.visible=dot.visible=false;sc.object3D.add(line);sc.object3D.add(dot);return{line:line,dot:dot,hover:null,hit:null,on:false,used:false,pinch:false,o:new THREE.Vector3(),d:new THREE.Vector3(0,0,-1)};}
+  function setLaser(h,on){var c=ctrlEnts[h];if(!c)return;try{c.setAttribute('raycaster','enabled',on);c.setAttribute('raycaster','showLine',on);}catch(e){}}
+  function visibleChain(o){while(o){if(o.visible===false)return false;o=o.parent;}return true;}
+  function clickTarget(o){while(o){if(o.el&&o.el.classList&&o.el.classList.contains('atl-click'))return o.el;o=o.parent;}return null;}
+  function handHover(R,el,hit){if(R.hover!==el){if(R.hover)R.hover.emit('mouseleave',{},false);R.hover=el;if(el)el.emit('mouseenter',{intersection:hit},false);}R.hit=hit;}
+  function hideRay(R){R.line.visible=R.dot.visible=false;handHover(R,null,null);}
+  function handTick(){var s=sc.xrSession||sc._mockSession,fr=sc.frame||sc._mockFrame,rs=null;
+    try{rs=sc._mockRef||(sc.renderer&&sc.renderer.xr&&sc.renderer.xr.getReferenceSpace());}catch(e){}
+    ['left','right'].forEach(function(h){var R=HR[h]||(HR[h]=mkRay()),src=null;
+      if(s&&s.inputSources)for(var k=0;k<s.inputSources.length;k++){var x=s.inputSources[k];if(x&&x.hand&&x.handedness===h)src=x;}
+      var was=R.on;R.on=!!(src&&fr&&rs);if(R.on!==was)setLaser(h,!R.on);
+      if(!R.on){hideRay(R);return;}
+      var pose=null;try{pose=fr.getPose(src.targetRaySpace,rs);}catch(e){}
+      if(!pose){hideRay(R);return;}
+      var t=pose.transform;R.o.set(t.position.x,t.position.y,t.position.z);_hq.set(t.orientation.x,t.orientation.y,t.orientation.z,t.orientation.w);R.d.set(0,0,-1).applyQuaternion(_hq);
+      var grabbing=grabbers[h]&&grabbers[h].on;
+      var objs=[];Array.prototype.forEach.call(sc.querySelectorAll('.atl-click'),function(e){if(e.object3D)objs.push(e.object3D);});
+      _hrc.set(R.o,R.d);_hrc.far=80;var hits=objs.length&&!grabbing?_hrc.intersectObjects(objs,true):[],hit=null,el=null;
+      for(var j=0;j<hits.length;j++){if(!visibleChain(hits[j].object))continue;var ce=clickTarget(hits[j].object);if(ce){hit=hits[j];el=ce;break;}}
+      handHover(R,el,hit);
+      var len=hit?hit.distance:1.0;R.line.visible=!grabbing;R.line.position.copy(R.o);R.line.quaternion.copy(_hq);R.line.scale.set(1,1,len);R.line.material.opacity=R.pinch?1:0.7;
+      if(hit&&!grabbing){R.dot.visible=true;R.dot.position.copy(hit.point).addScaledVector(R.d,-0.01);var sz=Math.max(0.006,hit.distance*0.012)*(R.pinch?0.7:1);R.dot.scale.set(sz,sz,sz);R.dot.quaternion.copy(_hq);R.dot.material.color.set(el?0xffffff:0xaaaaaa);}else R.dot.visible=false;});}
+  function onSelStart(ev){var src=ev.inputSource;if(!src||!src.hand)return;var R=HR[src.handedness];if(R)R.pinch=true;}
+  function onSel(ev){var src=ev.inputSource;if(!src||!src.hand)return;var R=HR[src.handedness];if(!R)return;R.pinch=false;
+    if(R.used){R.used=false;return;}
+    if(R.hover){unlock();R.hover.emit('click',{intersection:R.hit},true);}}
+  function onSelEnd(ev){var src=ev.inputSource;if(!src||!src.hand)return;var R=HR[src.handedness];if(R){R.pinch=false;setTimeout(function(){R.used=false;},50);}}
+  function attachXR(){var s=sc.xrSession||sc._mockSession;if(!s||s._atlHands)return;s._atlHands=true;s.addEventListener('selectstart',onSelStart);s.addEventListener('select',onSel);s.addEventListener('selectend',onSelEnd);}
+  var hrEnt=document.createElement('a-entity');hrEnt._mt=function(){if(mode==='play')handTick();};
+  hrEnt.setAttribute('atl-moltick','');sc.appendChild(hrEnt);
+  sc.addEventListener('enter-vr',function(){unlock();attachXR();setTimeout(realign,450);});
+  sc.addEventListener('exit-vr',function(){['left','right'].forEach(function(h){if(HR[h]){hideRay(HR[h]);HR[h].on=false;}setLaser(h,true);});});
   sc.addEventListener('click',function(){unlock();});
 
   /* ---------- dessin 2D ---------- */
@@ -3021,7 +3058,7 @@ function createPlayer(container,course,opts){
   function angDist(a1,e1,a2,e2){var p=Math.PI/180,A=dirPos(a1,e1,1),B=dirPos(a2,e2,1);var d=(A.x*B.x+(A.y-EYE)*(B.y-EYE)+A.z*B.z);return Math.acos(Math.max(-1,Math.min(1,d)))/p;}
   function openFind(h){var P=panelPos(h),q=T(h,'question')||h.title||'Trouve-le',ex=T(h,'explanation'),r=st.res[h.id];
     if(r){revealFind(h,r.ok);return;}
-    var intro='Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et appuyez sur la gâchette. Vous avez 3 essais.';
+    var intro='Regardez tout autour de vous. Quand vous avez trouvé, visez l\'endroit et pincez les doigts, ou appuyez sur la gâchette. Vous avez 3 essais.';
     panelAt(P.az,P.el,{eyebrow:'DÉFI · TROUVE-LE',title:q,body:intro},[withListen(q+'. '+intro,prefs.simple&&h.questionS?null:(h.audio||null),{label:'Je cherche',variant:'primary',onClick:function(){startSearch(h);}})]);
     autoSay(q,prefs.simple&&h.questionS?null:(h.audio||null));}
   function refreshRays(){Array.prototype.forEach.call(sc.querySelectorAll('[raycaster]'),function(el){var rc=el.components&&el.components.raycaster;if(rc&&rc.refreshObjects)rc.refreshObjects();});var rs=sc.components&&sc.components.raycaster;if(rs&&rs.refreshObjects)rs.refreshObjects();}
@@ -3044,7 +3081,7 @@ function createPlayer(container,course,opts){
   var MCOL={H:0xf2f2f2,C:0x2e2e2e,O:0xe0261c,N:0x2b59e6,S:0xf2cf29,Cl:0x25c44a,P:0xff8a1a,F:0x86e04a,Na:0x9f5cf0,Br:0x962626,I:0x88009a,K:0x8f40d4,Ca:0x3dd000,Fe:0xe06633,Cu:0xc8802e,He:0xd0ffff,Ne:0xb0e0f0,Mg:0x8ad000,Si:0xd8b090,Zn:0x7d80b0};
   var MBALL={H:0.36,C:0.48,N:0.47,O:0.46,S:0.6,Cl:0.58,P:0.58,F:0.42,Br:0.62,I:0.68,Na:0.62,K:0.7,Ca:0.62,Fe:0.58,Cu:0.58,Si:0.56,Mg:0.58,Zn:0.58};
   var MVDW={H:1.10,C:1.70,N:1.55,O:1.52,S:1.80,Cl:1.75,P:1.80,F:1.47,Br:1.85,I:1.98,Na:2.27,K:2.75,Ca:2.31,Fe:1.94,Cu:1.40,Si:2.10,Mg:1.73,Zn:1.39};
-  var MOLHINT='Attrapez la molécule en pinçant le pouce et l\'index, ou avec le bouton latéral de la manette. Avec les deux mains, écartez-les pour l\'éclater.';
+  var MOLHINT='Pour l\'attraper, pincez le pouce et l\'index sur la molécule, ou visez-la avec la main puis pincez. Avec les deux mains, écartez-les pour l\'éclater. Avec les manettes : bouton latéral.';
   var mol=null,grabbers={left:{on:false,pos:new THREE.Vector3(),quat:new THREE.Quaternion(),kind:null},right:{on:false,pos:new THREE.Vector3(),quat:new THREE.Quaternion(),kind:null}},manip=null;
   function molSpec(h){var m=h.mol||{};if(!m.atoms||!m.atoms.length)m={formula:'H₂O',atoms:[['O',0,0.12,0],['H',0.76,-0.47,0],['H',-0.76,-0.47,0]],bonds:[[0,1,1],[0,2,1]]};return m;}
   function grpInfo(n,groups,pos){var g=new Array(n).fill(0),gc=[],ng=1;if(groups&&groups.length>1){ng=groups.length;groups.forEach(function(gr,k){gr.forEach(function(i){g[i]=k;});});}
@@ -3066,10 +3103,10 @@ function createPlayer(container,course,opts){
       var lb=txtSprite(sym,sym==='C'?'#ffffff':'#ffe9a8');lb.scale.set(0.032,0.032,1);lb.visible=false;root.add(lb);return{sym:sym,me:me,lb:lb,rb:(MBALL[sym]||0.45)*s,rv:(MVDW[sym]||1.7)*s*0.92,cur:new THREE.Vector3()};});
     function mkBonds(A){return A.bonds.map(function(b){var ms=[];for(var k=0;k<b.o;k++){var mat=new THREE.MeshStandardMaterial({color:0xc8c8c8,roughness:0.4,transparent:true,opacity:1});var me=new THREE.Mesh(new THREE.CylinderGeometry(1,1,1,12),mat);disposables.push(me);root.add(me);ms.push(me);}return{b:b,ms:ms};});}
     var shield=new THREE.Mesh(new THREE.SphereGeometry(ext*s*1.05,16,12),new THREE.MeshBasicMaterial({visible:false}));
-    sc.appendChild(ent);var sh=child(ent,shield,0,0,0,'atl-click',function(){if(mol)mol.spin=!mol.spin;});
+    sc.appendChild(ent);var sh=child(ent,shield,0,0,0,'atl-click',function(){if(mol)mol.spin=!mol.spin;});ent._sh=sh;
     var cap=planeMesh(capCanvas(sp.formula||h.title||''),0.34);cap.renderOrder=15;sc.object3D.add(cap);
     mol={h:h,sp:sp,ent:ent,root:root,s:s,atoms:atoms,R:R,P:P,bR:mkBonds(R),bP:P?mkBonds(P):[],f:0,ft:0,m:0,mt:0,k:0,kt:0,labels:false,spin:!P,step:0,cap:cap,capT:null,ext:ext*s,dirty:true,
-      fmax:R.G.ng>1||(P&&P.G.ng>1)?2:1};
+      fmax:R.G.ng>1||(P&&P.G.ng>1)?2:1,shield:sh};
     ent._mt=molTick;ent.setAttribute('atl-moltick','');refreshRays();updMol();}
   function molPos(A,i,f,two,out){var G=A.G,p=A.pos[i],gc=G.gc[G.g[i]];out.copy(p);if(G.ng>1)out.addScaledVector(gc,Math.min(f,1)*0.6);var al=two?Math.max(0,f-1):f;out.addScaledVector(_c.subVectors(p,gc),al*0.95);return out;}
   var _c=new THREE.Vector3();
@@ -3089,7 +3126,7 @@ function createPlayer(container,course,opts){
     if(ch||M.dirty){M.dirty=false;updMol();}
     var o=M.ent.object3D,cam=sc.camera;M.cap.position.copy(o.position);M.cap.position.y+=M.ext*1.15+0.05+M.f*M.ext*0.35;if(cam){cam.getWorldPosition(_a);M.cap.lookAt(_a.x,M.cap.position.y,_a.z);}}
   function pollCtrls(){['left','right'].forEach(function(sd){var g=grabbers[sd];if(g.on&&g.kind==='ctrl'&&ctrlEnts[sd]){ctrlEnts[sd].object3D.getWorldPosition(g.pos);ctrlEnts[sd].object3D.getWorldQuaternion(g.quat);}});}
-  function grabStart(sd){var M=mol,g=grabbers[sd];if(!M)return;var c=M.ent.object3D.position;if(g.pos.distanceTo(c)>M.ext*(1+M.f*0.6)+0.14)return;g.on=true;M.spin=false;beginManip();}
+  function grabStart(sd){var M=mol,g=grabbers[sd];if(!M)return;var c=M.ent.object3D.position,far=false;if(g.pos.distanceTo(c)>M.ext*(1+M.f*0.6)+0.14){var H=HR[sd];if(!(g.kind==='hand'&&H&&H.hover&&H.hover===M.shield))return;far=true;}if(far){c.copy(g.pos).addScaledVector(HR[sd].d,M.ext+0.04);}if(g.kind==='hand'&&HR[sd])HR[sd].used=true;g.on=true;M.spin=false;beginManip();}
   function grabEnd(sd){if(!grabbers[sd].on)return;grabbers[sd].on=false;beginManip();}
   function beginManip(){var M=mol;if(!M){manip=null;return;}var L=grabbers.left,Rg=grabbers.right,o=M.ent.object3D;
     if(L.on&&Rg.on){manip={two:true,d0:L.pos.distanceTo(Rg.pos),f0:M.f};}
