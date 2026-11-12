@@ -22,6 +22,8 @@ Chaque document contient : `matiere`, `niveau` (6e à 3e), `langue` (fr-FR, en-G
 - Dernière scène : bilan avec activités de synthèse et un point « Crédits » (sources et licences).
 - Contenus sensibles : jamais d'images de cadavres ou de violence explicite ; préférer lieux de mémoire, schémas, témoignages. Respecter le champ `vigilance`.
 - Option `simplifie` : remplir aussi `introS`, `textS`, `questionS`, `explanationS` (phrases courtes, mots simples).
+- Activité « Répète » (point de type `say`, icône micro) : `question` = mot ou phrase à dire (lu par la voix), `accept` = variantes acceptées, `image` et `text` facultatifs, `explanation` lue après réussite. Dans le casque : Écouter → Parler → reconnaissance vocale hors ligne (Vosk, `https://atelier360-medias.netlify.app/asr/`), correction et réécoute de sa propre voix, 3 essais ; le résultat part avec les autres activités (Netlify › Forms › resultats). Langue : anglais pour l'instant (modèle `vosk-model-small-en-us-0.15`) ; autres langues : reconnaissance du navigateur si elle existe, sinon auto-évaluation. Vérifier que chaque mot est dans le vocabulaire du modèle (pip `vosk`, avertissement « missing in vocabulary »). Exemple : `exemples/build_eng6.py`.
+- Élève non lecteur (`vigilance`) : privilégier `say`, `find` et les points lus à voix haute ; éviter QCM, ordre et associations qui demandent de lire.
 
 **Images et médias (licences libres uniquement)**
 - Photos 360° réelles : Wikimedia Commons (rechercher « equirectangular », « 360 panorama », « Kugelpanorama »), Poly Haven (CC0). Panoramas partiels : `pwall.py` (écran panoramique honnête) ou `panos_mz.fill` (complète sol et ciel).
