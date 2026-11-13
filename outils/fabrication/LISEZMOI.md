@@ -78,3 +78,7 @@ npm pack -q jszip@3.10.1 && tar xzf jszip-3.10.1.tgz   # JSZIP=package/dist/jszi
 ```
 Après publication d'un cours : `git -C site add -A && git -C site commit -m "…" && git -C site push origin HEAD:site-publie` (idem pour `medias` si des vidéos ont été ajoutées), puis mise en ligne des deux dossiers avec l'outil Netlify (déploiement par envoi du dossier), vérification, et mise à jour de la demande (`statut`, `lien`, `note`) avec l'outil de base de données de l'artefact.
 Un cours par exécution au maximum, pour rester dans la durée d'une session ; laisser les autres demandes « en attente ».
+
+## Règle à respecter si le lecteur est modifié
+
+Aucune demande d'autorisation (micro, caméra, notifications…) ne doit être faite dans le même geste que « Entrer en réalité virtuelle » : le casque refuse alors de passer en VR (incident du 13 novembre 2026). Demander ces autorisations une fois en VR, ou depuis un bouton séparé. Après toute modification du lecteur, vérifier qu'un cours existant entre toujours en VR.
