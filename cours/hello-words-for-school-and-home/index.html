@@ -35,8 +35,8 @@ window.addEventListener('error',function(e){if(!P)fail('Le cours ne s\'est pas c
 function tap(el,fn){if(!el)return;var last=0;function h(ev){if(Date.now()-last<600)return;last=Date.now();fn(ev);}el.addEventListener('click',h);el.addEventListener('pointerup',h);el.addEventListener('touchend',h);}
 function syncChips(){Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(c){c.setAttribute('aria-pressed',prefs[c.getAttribute('data-p')]?'true':'false');});}
 Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(c){tap(c,function(){var k=c.getAttribute('data-p');prefs[k]=!prefs[k];ls('atl_prefs',prefs);syncChips();if(P){P.setPrefs(prefs);needRestart=true;}});});syncChips();
-function begin(){D.hidden=true;var i=document.getElementById('eleve');student=i?i.value.trim():'';if(!P){fail('Le moteur 3D ne s\'est pas chargé. Vérifiez la connexion puis rechargez la page.');return false;}if(needRestart){needRestart=false;P.restart();}if(P.prepareMic)P.prepareMic();return true;}
-function goVR(){if(!begin())return;S.style.display='none';PAD.hidden=true;P.enterVR();P.unlock();}
+function begin(vr){D.hidden=true;var i=document.getElementById('eleve');student=i?i.value.trim():'';if(!P){fail('Le moteur 3D ne s\'est pas chargé. Vérifiez la connexion puis rechargez la page.');return false;}if(needRestart){needRestart=false;P.restart();}if(!vr&&P.prepareMic)P.prepareMic();return true;}
+function goVR(){if(!begin(true))return;S.style.display='none';PAD.hidden=true;var pr=P.enterVR();P.unlock();if(pr&&pr.then)pr.then(function(){if(P.prepareMic)setTimeout(function(){P.prepareMic();},1500);},function(e){var c=e&&e.cause?(e.cause.name||'')+' '+(e.cause.message||''):'';fail('Le casque n’a pas pu passer en réalité virtuelle'+(c.trim()?' ('+c.trim().slice(0,160)+')':'')+'. Touchez à nouveau « Entrer en réalité virtuelle ».');});}
 function goFlat(){if(!begin())return;S.style.display='none';PAD.hidden=false;P.unlock();setTimeout(function(){P.resize();},50);}
 tap(document.getElementById('vr'),goVR);tap(document.getElementById('padvr'),goVR);tap(document.getElementById('flat'),goFlat);
 tap(document.getElementById('center'),function(){P&&P.recenter();});
@@ -565,6 +565,7 @@ function createPlayer(container,course,opts){
     var note=(EN()?(ok?'Well done, you found it! ':'Look! It is here, in the yellow circle. '):(ok?'Bravo, vous avez trouvé ! ':'Voici où se trouvait la réponse (cercle jaune). '))+ex;
     panelAt(norm(+h.tAz||0),Math.max(-12,Math.min(14,(+h.tEl||0)-14)),{eyebrow:EN()?'FIND IT!':'DÉFI · TROUVE-LE',title:q,note:note,tone:ok?'good':'bad'},[withListen(note,null,{label:EN()?'Continue':'Continuer',variant:'primary',onClick:closePanel})]);autoSay(note,null);}
 
+  var xrRetry=false;
   /* --- Molécule 3D manipulable (mains ou manettes) --- */
   var MCOL={H:0xf2f2f2,C:0x2e2e2e,O:0xe0261c,N:0x2b59e6,S:0xf2cf29,Cl:0x25c44a,P:0xff8a1a,F:0x86e04a,Na:0x9f5cf0,Br:0x962626,I:0x88009a,K:0x8f40d4,Ca:0x3dd000,Fe:0xe06633,Cu:0xc8802e,He:0xd0ffff,Ne:0xb0e0f0,Mg:0x8ad000,Si:0xd8b090,Zn:0x7d80b0};
   var MBALL={H:0.36,C:0.48,N:0.47,O:0.46,S:0.6,Cl:0.58,P:0.58,F:0.42,Br:0.62,I:0.68,Na:0.62,K:0.7,Ca:0.62,Fe:0.58,Cu:0.58,Si:0.56,Mg:0.58,Zn:0.58};
@@ -853,7 +854,7 @@ function createPlayer(container,course,opts){
     getView:function(){var a=camAngles();return{az:Math.round(norm(a.az+worldYaw)),el:Math.round(a.el)};},
     index:function(){return idx;},
     resize:function(){if(sc.resize)sc.resize();},
-    enterVR:function(){try{return sc.enterVR();}catch(e){}},
+    enterVR:function(){if(xrRetry){var w=sc.getAttribute('webxr')||{};sc.setAttribute('webxr',{referenceSpaceType:w.referenceSpaceType||'local-floor',requiredFeatures:(w.requiredFeatures||['local-floor']).slice(),optionalFeatures:(w.optionalFeatures||[]).filter(function(f){return f!=='hand-tracking';})});}try{var p=sc.enterVR();if(p&&p.catch)return p.catch(function(e){xrRetry=true;throw e;});return p;}catch(e){xrRetry=true;return Promise.reject(e);}},
     unlock:unlock,
     say:function(t,a){say(t,a,true);},
     stopSpeak:stopSpeak,
