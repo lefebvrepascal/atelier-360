@@ -2793,7 +2793,8 @@ function createPlayer(container,course,opts){
       add('Choisissez d\'abord un élément à gauche.');add('Leçon terminée, bravo !');
       (course.scenes||[]).forEach(function(s){add((s.name||'')+'. '+T(s,'intro'));if(s.env&&s.env.type==='zoom')(s.env.levels||[]).forEach(function(l){add((l.name||'')+'. '+(l.text||''));});
         (s.hotspots||[]).forEach(function(h){var q=T(h,'question')||h.title||'',ex=T(h,'explanation');
-          if(h.type==='info'||h.type==='mol')add((h.title?h.title+'. ':'')+T(h,'text'));
+          if(h.type==='info'||h.type==='mol'||h.type==='astro')add((h.title?h.title+'. ':'')+T(h,'text'));
+          if(h.type==='astro'&&!L._astro){L._astro=1;astroUnits(add);}
           if(h.type==='mol'&&h.mol){(h.mol.steps||[]).concat(h.mol.notes||[]).forEach(function(x){if(x)add(x);});}
           else if(h.type==='quiz'){var o2=(h.options||[]).map(function(o,k){return{o:String(o||'').trim(),k:k};}).filter(function(x){return x.o;});var good=o2.filter(function(x){return x.k===h.answer;})[0];
             add((q||'Question')+' '+o2.map(function(x){return(h.vf?'':String.fromCharCode(65+x.k)+'. ')+x.o+'.';}).join(' '));add('Bonne réponse ! '+ex);add('Pas tout à fait. La bonne réponse était : '+(good?good.o:'')+'. '+ex);}
@@ -2909,6 +2910,7 @@ function createPlayer(container,course,opts){
     else if(h.type==='goto'){g.beginPath();g.moveTo(c-S*0.13,c-S*0.17);g.lineTo(c+S*0.17,c);g.lineTo(c-S*0.13,c+S*0.17);g.closePath();g.fill();}
     else if(h.type==='find'){g.lineWidth=S*0.055;g.beginPath();g.arc(c-S*0.04,c-S*0.04,S*0.12,0,7);g.stroke();g.beginPath();g.moveTo(c+S*0.05,c+S*0.05);g.lineTo(c+S*0.16,c+S*0.16);g.stroke();}
     else if(h.type==='order'){g.font='700 '+Math.round(S*0.12)+'px '+FONT;g.textAlign='center';g.textBaseline='middle';[-1,0,1].forEach(function(k){g.fillText(String(k+2),c-S*0.12,c+k*S*0.12);g.fillRect(c-S*0.04,c+k*S*0.12-S*0.022,S*0.2,S*0.044);});}
+    else if(h.type==='astro'){g.lineWidth=S*0.03;g.beginPath();g.ellipse(c,c,S*0.17,S*0.08,-0.35,0,7);g.stroke();g.beginPath();g.arc(c,c,S*0.06,0,7);g.fill();g.beginPath();g.arc(c+S*0.15,c-S*0.07,S*0.03,0,7);g.fill();}
     else if(h.type==='mol'){g.lineWidth=S*0.04;var pts=[[0,-0.13],[-0.13,0.09],[0.13,0.09]];g.beginPath();g.moveTo(c+pts[0][0]*S,c+pts[0][1]*S);g.lineTo(c+pts[1][0]*S,c+pts[1][1]*S);g.moveTo(c+pts[0][0]*S,c+pts[0][1]*S);g.lineTo(c+pts[2][0]*S,c+pts[2][1]*S);g.stroke();pts.forEach(function(q,k){g.beginPath();g.arc(c+q[0]*S,c+q[1]*S,S*(k?0.055:0.08),0,7);g.fill();});}
     else if(h.type==='say'){rr(g,c-S*0.07,c-S*0.2,S*0.14,S*0.24,S*0.07);g.fill();g.lineWidth=S*0.04;g.beginPath();g.arc(c,c-S*0.02,S*0.13,0.15,Math.PI-0.15);g.stroke();g.beginPath();g.moveTo(c,c+S*0.11);g.lineTo(c,c+S*0.18);g.moveTo(c-S*0.07,c+S*0.18);g.lineTo(c+S*0.07,c+S*0.18);g.stroke();}
     else if(h.type==='match'){g.lineWidth=S*0.045;[-1,1].forEach(function(k){g.beginPath();g.arc(c+k*S*0.12,c,S*0.07,0,7);g.stroke();});g.beginPath();g.moveTo(c-S*0.05,c);g.lineTo(c+S*0.05,c);g.stroke();}
@@ -2988,7 +2990,7 @@ function createPlayer(container,course,opts){
     if(mode==='play'){buildHud();}
     if(opts.onScene)opts.onScene(idx);
   }
-  function defTitle(h){if(h.title)return h.title;if(h.type==='quiz')return h.vf?'Vrai ou faux':'Question';if(h.type==='find')return'Défi';if(h.type==='say')return'Répète';if(h.type==='mol')return'Molécule 3D';if(h.type==='order')return"Remets dans l'ordre";if(h.type==='match')return'Associe';if(h.type==='goto'){var t=(course.scenes||[]).find(function(x){return x.id===h.target;});return t?'Aller : '+t.name:'Aller à une scène';}return'Information';}
+  function defTitle(h){if(h.title)return h.title;if(h.type==='quiz')return h.vf?'Vrai ou faux':'Question';if(h.type==='find')return'Défi';if(h.type==='say')return'Répète';if(h.type==='mol')return'Molécule 3D';if(h.type==='astro')return'Système solaire 3D';if(h.type==='order')return"Remets dans l'ordre";if(h.type==='match')return'Associe';if(h.type==='goto'){var t=(course.scenes||[]).find(function(x){return x.id===h.target;});return t?'Aller : '+t.name:'Aller à une scène';}return'Information';}
   function buildHot(h){var e=makeEnt(world,h.az||0,h.el||0,R_HOT);
     var ring=new THREE.Mesh(new THREE.RingGeometry(0.34,0.47,48),new THREE.MeshBasicMaterial({color:COL.accent,transparent:true,opacity:0.42,depthWrite:false}));disposables.push(ring);e.setObject3D('ring',ring);e.setAttribute('atl-pulse','');
     var cv=document.createElement('canvas');cv.width=cv.height=256;var m=planeMesh(cv,0.64);cv._mesh=m;drawHot(cv,h,selected===h.id);
@@ -3017,6 +3019,7 @@ function createPlayer(container,course,opts){
 
   function openPanel(h,answered){var P=panelPos(h),az=P.az,el=P.el;
     if(h.type==='mol')return openMol(h);
+    if(h.type==='astro')return openAstro(h);
     if(h.type==='find')return openFind(h);
     if(h.type==='say')return openSay(h);
     if(h.type==='order')return openOrder(h);
@@ -3198,7 +3201,7 @@ function createPlayer(container,course,opts){
   function txtSprite(t,col){var cv=document.createElement('canvas');cv.width=cv.height=96;var g=cv.getContext('2d');g.font='700 64px '+FONT;g.textAlign='center';g.textBaseline='middle';g.lineWidth=12;g.strokeStyle='rgba(0,0,0,0.85)';g.strokeText(t,48,52);g.fillStyle=col||'#ffffff';g.fillText(t,48,52);
     var sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex(cv),depthTest:false,transparent:true}));sp.renderOrder=20;disposables.push(sp);return sp;}
   function capCanvas(t){var cv=document.createElement('canvas');cv.width=1024;cv.height=160;var g=cv.getContext('2d');g.font='700 84px '+FONT;var w=Math.min(1000,g.measureText(t).width+90);rr(g,(1024-w)/2,14,w,132,40);g.fillStyle='rgba(20,26,46,0.88)';g.fill();g.lineWidth=5;g.strokeStyle=COL.accent;g.stroke();g.fillStyle='#ffffff';g.textAlign='center';g.textBaseline='middle';g.fillText(t,512,84);return cv;}
-  function removeMol(){if(!mol)return;if(mol.ent.parentNode)mol.ent.parentNode.removeChild(mol.ent);if(mol.cap)sc.object3D.remove(mol.cap);mol=null;manip=null;grabbers.left.on=grabbers.right.on=false;refreshRays();}
+  function removeMol(){if(!mol)return;if(mol.astro)removeAstroOwn(mol);if(mol.ent.parentNode)mol.ent.parentNode.removeChild(mol.ent);if(mol.cap)sc.object3D.remove(mol.cap);mol=null;manip=null;grabbers.left.on=grabbers.right.on=false;refreshRays();}
   function buildMol(h){removeMol();var sp=molSpec(h),n=sp.atoms.length,V=function(a){return new THREE.Vector3(+a[0]||0,+a[1]||0,+a[2]||0);};
     var posR=sp.atoms.map(function(a){return V(a.slice(1));}),R=arrangement(posR,sp.bonds,sp.groups),P=null;
     if(sp.product&&sp.product.pos&&sp.product.pos.length===n)P=arrangement(sp.product.pos.map(V),sp.product.bonds,sp.product.groups);
@@ -3234,14 +3237,14 @@ function createPlayer(container,course,opts){
     if(ch||M.dirty){M.dirty=false;updMol();}
     var o=M.ent.object3D,cam=sc.camera;M.cap.position.copy(o.position);M.cap.position.y+=M.ext*1.15+0.05+M.f*M.ext*0.35;if(cam){cam.getWorldPosition(_a);M.cap.lookAt(_a.x,M.cap.position.y,_a.z);}}
   function pollCtrls(){['left','right'].forEach(function(sd){var g=grabbers[sd];if(g.on&&g.kind==='ctrl'&&ctrlEnts[sd]){ctrlEnts[sd].object3D.getWorldPosition(g.pos);ctrlEnts[sd].object3D.getWorldQuaternion(g.quat);}});}
-  function grabStart(sd){var M=mol,g=grabbers[sd];if(!M){if(Z)zGrab(sd,true);return;}var c=M.ent.object3D.position,far=false;if(g.pos.distanceTo(c)>M.ext*(1+M.f*0.6)+0.14){var H=HR[sd];if(!(g.kind==='hand'&&H&&H.hover&&H.hover===M.shield))return;far=true;}if(far){c.copy(g.pos).addScaledVector(HR[sd].d,M.ext+0.04);}if(g.kind==='hand'&&HR[sd])HR[sd].used=true;g.on=true;M.spin=false;beginManip();}
+  function grabStart(sd){var M=mol,g=grabbers[sd];if(!M){if(Z)zGrab(sd,true);return;}var c=M.ent.object3D.position,far=false;if(g.pos.distanceTo(c)>M.ext*(1+M.f*0.6)+0.14){var H=HR[sd];if(!(g.kind==='hand'&&H&&H.hover&&H.hover===M.shield))return;far=true;}if(far&&!M.astro){c.copy(g.pos).addScaledVector(HR[sd].d,M.ext+0.04);}if(g.kind==='hand'&&HR[sd])HR[sd].used=true;g.on=true;M.spin=false;beginManip();}
   function grabEnd(sd){if(Z&&!mol&&Z.gs[sd]){zGrab(sd,false);return;}if(!grabbers[sd].on)return;grabbers[sd].on=false;beginManip();}
   function beginManip(){var M=mol;if(!M){manip=null;return;}var L=grabbers.left,Rg=grabbers.right,o=M.ent.object3D;
-    if(L.on&&Rg.on){manip={two:true,d0:L.pos.distanceTo(Rg.pos),f0:M.f};}
+    if(L.on&&Rg.on){manip={two:true,d0:L.pos.distanceTo(Rg.pos),f0:M.f,z0:M.zoom||1};}
     else if(L.on||Rg.on){var g=L.on?L:Rg;manip={two:false,g:g,p0:g.pos.clone(),q0i:g.quat.clone().invert(),mp0:o.position.clone(),mq0:o.quaternion.clone()};}
     else manip=null;}
   function doManip(){var M=mol;if(!M||!manip)return;var o=M.ent.object3D;
-    if(manip.two){var d=grabbers.left.pos.distanceTo(grabbers.right.pos);var f=Math.max(0,Math.min(M.fmax,manip.f0+(d-manip.d0)/0.2));M.f=M.ft=f;M.dirty=true;}
+    if(manip.two){var d=grabbers.left.pos.distanceTo(grabbers.right.pos);if(M.astro){M.zoom=Math.max(0.35,Math.min(3,manip.z0*d/Math.max(0.03,manip.d0)));o.scale.setScalar(M.zoom);return;}var f=Math.max(0,Math.min(M.fmax,manip.f0+(d-manip.d0)/0.2));M.f=M.ft=f;M.dirty=true;}
     else{var g=manip.g;_q.copy(g.quat).multiply(manip.q0i);o.quaternion.copy(_q).multiply(manip.mq0);_a.subVectors(manip.mp0,manip.p0).applyQuaternion(_q);o.position.copy(g.pos).add(_a);}}
   function molSay(t){if(t)say(t,null,false);}
   function openMol(h,keep){var P=panelPos(h);if(!keep||!mol||mol.h!==h){panelAt(norm((h.az||0)+34),5,{eyebrow:'MOLÉCULE 3D',title:h.title||'Molécule',body:'…'},[]);buildMol(h);}
@@ -3257,6 +3260,130 @@ function createPlayer(container,course,opts){
       {label:'Tourner : '+(M.spin?'oui':'non'),variant:'plain',onClick:function(){M.spin=!M.spin;openMol(h,true);}}],h:0.13});
     btn.push(withListen(iTxt,iA,{label:"J'ai compris",variant:'plain',onClick:function(){seen(h);closePanel();}}));
     panelAt(norm((h.az||0)+34),5,{eyebrow:'MOLÉCULE 3D',title:h.title||'Molécule',body:tx+'\n\n'+MOLHINT,note:note,tone:'good'},btn,true);if(panelEnt)panelEnt._h=h.id;
+    if(!keep)autoSay(iTxt,iA);}
+  /* --- Système solaire 3D (type « astro ») : orbites de Kepler, tailles, pesanteur, aires --- */
+  var ASTB=[
+   {k:'sun',n:'Soleil',t:'Étoile',d:1392700,g:27.9,T:'5 500 °C en surface',col:0xffcc55},
+   {k:'mercury',n:'Mercure',t:'Planète tellurique',a:0.3871,e:0.2056,i:7.0,L:252.25,w:77.46,O:48.33,P:0.2408,d:4879,g:0.38,T:'de −180 à 430 °C',lu:'aucune',v:47.4,col:0x9a948c},
+   {k:'venus_atmosphere',n:'Vénus',t:'Planète tellurique',a:0.7233,e:0.0068,i:3.39,L:181.98,w:131.60,O:76.68,P:0.6152,d:12104,g:0.90,T:'464 °C',lu:'aucune',v:35.0,col:0xe8cf96},
+   {k:'earth_daymap',n:'Terre',t:'Planète tellurique',a:1.0,e:0.0167,i:0.0,L:100.46,w:102.94,O:0,P:1.0,d:12756,g:1.0,T:'15 °C',lu:'1',v:29.8,col:0x3a7bd5,x:'La seule planète connue où il y a de la vie : l’eau y existe sous les trois états.'},
+   {k:'mars',n:'Mars',t:'Planète tellurique',a:1.5237,e:0.0934,i:1.85,L:355.45,w:336.04,O:49.56,P:1.8808,d:6792,g:0.38,T:'−65 °C',lu:'2',v:24.1,col:0xc1440e},
+   {k:'jupiter',n:'Jupiter',t:'Planète géante gazeuse',a:5.2026,e:0.0485,i:1.30,L:34.40,w:14.33,O:100.46,P:11.862,d:142984,g:2.53,T:'−110 °C',lu:'plus de 100',v:13.1,col:0xd8ca9d},
+   {k:'saturn',n:'Saturne',t:'Planète géante gazeuse',a:9.5549,e:0.0555,i:2.49,L:49.94,w:92.43,O:113.67,P:29.457,d:120536,g:1.07,T:'−140 °C',lu:'plus de 280',v:9.7,col:0xe3d6a8,ring:1},
+   {k:'uranus',n:'Uranus',t:'Planète géante de glaces',a:19.218,e:0.0463,i:0.77,L:313.23,w:170.96,O:74.01,P:84.01,d:51118,g:0.89,T:'−195 °C',lu:'29',v:6.8,col:0x9fd8e0},
+   {k:'neptune',n:'Neptune',t:'Planète géante de glaces',a:30.11,e:0.0090,i:1.77,L:304.88,w:44.97,O:131.78,P:164.8,d:49528,g:1.14,T:'−200 °C',lu:'16',v:5.4,col:0x4166f5}];
+  var ALUNE={k:'moon',n:'Lune',t:'Satellite naturel de la Terre',d:3474,g:0.17,T:'de −170 à 120 °C',col:0xbbbbbb};
+  var ATEX=null,ATT={},ASTHINT='Pincez avec une main pour attraper le modèle et le tourner ; écartez les deux mains pour l’agrandir. Touchez un astre pour afficher sa fiche.';
+  var AMOIS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  function afr(x,n){return Number(x).toLocaleString('fr-FR',{maximumFractionDigits:n===undefined?2:n});}
+  function astroTexKey(k){if(!ATEX){ATEX={};(course.scenes||[]).forEach(function(s){(s.hotspots||[]).forEach(function(h){if(h.astro&&h.astro.tex)Object.keys(h.astro.tex).forEach(function(q){ATEX[q]=h.astro.tex[q];});});});}
+    if(ATT[k])return ATT[k];var u=ATEX[k];if(!u)return null;var t=new THREE.Texture(),im=new Image();im.onload=function(){t.image=im;t.needsUpdate=true;if(mol)mol.dirty=true;};im.src=u;t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;ATT[k]=t;return t;}
+  function aMat(b,basic){var o={map:astroTexKey(b.k)};if(!o.map)o.color=b.col;var m=basic?new THREE.MeshBasicMaterial(o):new THREE.MeshStandardMaterial(Object.assign(o,{roughness:1,metalness:0}));return m;}
+  function aLabel(t,col){var cv=document.createElement('canvas');cv.width=512;cv.height=112;var g=cv.getContext('2d');g.font='700 64px '+FONT;g.textAlign='center';g.textBaseline='middle';g.lineWidth=14;g.strokeStyle='rgba(0,0,0,0.85)';g.strokeText(t,256,58);g.fillStyle=col||'#ffffff';g.fillText(t,256,58);
+    var sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex(cv),depthTest:false,transparent:true}));sp.renderOrder=20;sp.userData.own=1;return sp;}
+  function aPos(b,t){var M0=(b.L-b.w+360*t/b.P)*Math.PI/180,e=b.e,E=M0;for(var k=0;k<8;k++)E=E-(E-e*Math.sin(E)-M0)/(1-e*Math.cos(E));
+    var xv=b.a*(Math.cos(E)-e),yv=b.a*Math.sqrt(1-e*e)*Math.sin(E),nu=Math.atan2(yv,xv),r=Math.sqrt(xv*xv+yv*yv),th=nu+b.w*Math.PI/180;
+    return{r:r,th:th,h:r*Math.sin(b.i*Math.PI/180)*Math.sin(th-b.O*Math.PI/180)};}
+  function aDist(M,bi,r){var R=0.42,mode=M.scale;if(mode==='reel')return r/30.11*R;if(mode==='reg')return r*((bi)/8*R*0.97)/ASTB[bi].a;return Math.sqrt(r/30.11)*R;}
+  function aRad(M,b){if(b.k==='sun')return 0.032;return(0.0045+0.0042*Math.cbrt(b.d/12756))*M.size;}
+  function aDate(t){var d=new Date(Date.UTC(2000,0,1)+t*365.25*864e5);return(d.getUTCDate()===1?'1er ':d.getUTCDate()+' ')+AMOIS[d.getUTCMonth()]+' '+d.getUTCFullYear();}
+  function aFiche(b,r){var L=[b.t+'.'];
+    if(r!==undefined){L.push('Distance au Soleil : '+afr(r)+' UA, soit '+afr(r*149.6,0)+' millions de km. La lumière du Soleil met '+(r*8.317<60?afr(r*8.317,1)+' minutes':afr(r*8.317/60,1)+' heures')+' pour y arriver.');
+      L.push('Une révolution autour du Soleil : '+(b.P<1?afr(b.P*365.25,0)+' jours':afr(b.P,1)+' an'+(b.P>=2?'s':''))+'. Vitesse sur son orbite : '+afr(b.v,1)+' km/s.');}
+    L.push('Diamètre : '+afr(b.d,0)+' km'+(b.k!=='earth_daymap'?' ('+afr(b.d/12756,b.d>12756*3?0:2)+' fois celui de la Terre)':'')+'. Pesanteur : '+afr(b.g)+' fois celle de la Terre. Température : '+b.T+(b.lu?'. Lunes : '+b.lu:'')+'.');
+    if(b.x)L.push(b.x);return L.join(' ');}
+  function aSel(M,i){M.sel=i;M.dirty=true;var b=M.list[i];if(b){M.note=b.n+'. '+aFiche(b,M.mode==='orbits'&&b.a?M.pos[i].r:undefined);openAstro(M.h,true);say(b.n+'. '+aFiche(b),null,false);}}
+  function buildAstro(h){removeMol();var A=h.astro||{},mode=A.mode||'orbits';
+    var cam=sc.camera,cp=new THREE.Vector3(1e-9,EYE,0);if(cam)cam.getWorldPosition(cp);
+    var P0=dirPos(h.az||0,0,1),hw=world.object3D.localToWorld(new THREE.Vector3(P0.x,EYE,P0.z)),wo=world.object3D.localToWorld(new THREE.Vector3(0,EYE,0));var dir=hw.sub(wo);dir.y=0;if(dir.lengthSq()<1e-6)dir.set(0,0,-1);dir.normalize();
+    var ext=mode==='sizes'?0.5:(mode==='gravity'?0.35:0.45),dist=mode==='sizes'?0.95:(mode==='gravity'?0.75:0.75);
+    var ent=document.createElement('a-entity');ent.object3D.position.copy(cp).addScaledVector(dir,dist);ent.object3D.position.y=cp.y-(mode==='gravity'?0.35:0.25);ent.object3D.rotation.y=Math.atan2(-dir.x,-dir.z);
+    var root=new THREE.Group();ent.setObject3D('mesh',root);sc.appendChild(ent);
+    var M={astro:true,h:h,mode:mode,ent:ent,root:root,s:1,ext:ext,ext0:ext,zoom:1,f:0,ft:0,fmax:0,spin:false,dirty:true,own:[],labels:A.labels!==false,scale:A.scale||'comp',speed:A.speed||0.25,size:A.size||1,t:A.t0||0,play:true,sel:-1,note:null,cap:null,capT:null,items:[],list:[],pos:[]};
+    function own(o){M.own.push(o);return o;}
+    var shGeo=mode==='orbits'||mode==='kepler'?new THREE.CylinderGeometry(ext,ext,0.004,40):new THREE.BoxGeometry(ext*2.2,ext*1.2,0.01);
+    var shield=own(new THREE.Mesh(shGeo,new THREE.MeshBasicMaterial({visible:false})));
+    var shZ=mode==='orbits'||mode==='kepler'?0:-0.09;
+    var sh=child(ent,shield,0,mode==='orbits'||mode==='kepler'?-0.004:(mode==='gravity'?0.3:0),shZ,'atl-click',function(){if(!mol)return;if(mol.mode==='orbits'||mol.mode==='kepler'){mol.play=!mol.play;openAstro(h,true);}});ent._sh=sh;M.shield=sh;
+    root.add(new THREE.AmbientLight(0xffffff,mode==='orbits'||mode==='kepler'?0.35:0.55));
+    if(mode==='orbits'||mode==='kepler'){var pl=new THREE.PointLight(0xfff2dd,2.6,0,0);root.add(pl);}else{var dl=new THREE.DirectionalLight(0xffffff,2.2);dl.position.set(-1,0.4,0.6);root.add(dl);var hl=new THREE.HemisphereLight(0xffffff,0x334455,0.5);root.add(hl);}
+    mol=M;
+    if(mode==='orbits')buildOrbits(M);else if(mode==='sizes')buildSizes(M);else if(mode==='gravity')buildGrav(M);else buildKepler(M);
+    M.cap=planeMesh(capCanvas(' '),0.34);M.cap.renderOrder=15;sc.object3D.add(M.cap);
+    ent._mt=astroTick;ent.setAttribute('atl-moltick','');refreshRays();return M;}
+  function aBody(M,b,i,clickable){var r=aRad(M,b),g=new THREE.Group();var me=new THREE.Mesh(M.own[M.own.push(new THREE.SphereGeometry(1,40,24))-1],M.own[M.own.push(aMat(b,b.k==='sun'))-1]);me.rotation.z=b.k==='uranus'?1.71:(b.k==='earth_daymap'?0.41:0.05);g.add(me);
+    if(b.ring){var rg=new THREE.RingGeometry(1.24,2.27,64,1),uv=rg.attributes.uv,ps=rg.attributes.position;for(var k=0;k<ps.count;k++){var rr=Math.hypot(ps.getX(k),ps.getY(k));uv.setXY(k,(rr-1.24)/1.03,0.5);}
+      var rt=astroTexKey('saturn_ring_alpha'),rm=new THREE.MeshStandardMaterial({map:rt,color:rt?0xffffff:0xd9c9a0,transparent:true,side:THREE.DoubleSide,roughness:1,opacity:rt?1:0.6,depthWrite:false});M.own.push(rg,rm);var ring=new THREE.Mesh(rg,rm);ring.rotation.x=-Math.PI/2+0.47;me.add(ring);}
+    var lb=aLabel(b.n,b.k==='sun'?'#ffe9a8':'#ffffff');M.own.push(lb.material.map,lb.material);g.add(lb);
+    var hit=new THREE.Mesh(M.own[M.own.push(new THREE.SphereGeometry(1,12,8))-1],M.own[M.own.push(new THREE.MeshBasicMaterial({visible:false}))-1]);
+    var e=child(M.ent,hit,0,0,0,clickable?'atl-click':null,clickable?function(){aSel(M,i);}:null);e.object3D.add(g);
+    var it={b:b,e:e,g:g,me:me,lb:lb,hit:hit,r:r};M.items.push(it);M.list.push(b);return it;}
+  function aSetSize(it,r){it.r=r;it.me.scale.setScalar(r);var hr=Math.max(r*1.5,0.022);it.hit.scale.setScalar(hr);it.g.scale.setScalar(1);it.lb.position.set(0,r+0.02,0);var w=0.11;it.lb.scale.set(w,w*112/512,1);}
+  function buildOrbits(M){ASTB.forEach(function(b,i){var it=aBody(M,b,i,true);aSetSize(it,aRad(M,b));
+      if(b.a){var geo=new THREE.BufferGeometry(),pts=new Float32Array(3*181);geo.setAttribute('position',new THREE.BufferAttribute(pts,3));var ln=new THREE.LineLoop(geo,new THREE.LineBasicMaterial({color:b.col,transparent:true,opacity:0.55}));M.own.push(geo,ln.material);M.root.add(ln);it.orb=ln;}});
+    M.selRing=new THREE.Mesh(M.own[M.own.push(new THREE.RingGeometry(1.25,1.45,40))-1],M.own[M.own.push(new THREE.MeshBasicMaterial({color:0xffd23f,side:THREE.DoubleSide,transparent:true,opacity:0.9,depthWrite:false}))-1]);M.selRing.rotation.x=-Math.PI/2;M.selRing.visible=false;M.root.add(M.selRing);
+    aOrbitLines(M);}
+  function aOrbitLines(M){M.items.forEach(function(it,i){if(!it.orb)return;var b=it.b,ps=it.orb.geometry.attributes.position;for(var k=0;k<181;k++){var t=b.P*k/181,p=aPos(b,t),d=aDist(M,i,p.r);ps.setXYZ(k,d*Math.cos(p.th),d/Math.max(p.r,1e-6)*p.h,-d*Math.sin(p.th));}ps.needsUpdate=true;it.orb.geometry.computeBoundingSphere();});}
+  function updOrbits(M){M.items.forEach(function(it,i){var b=it.b;if(!b.a){M.pos[i]={r:0};it.e.object3D.position.set(0,0,0);return;}var p=aPos(b,M.t),d=aDist(M,i,p.r);M.pos[i]=p;it.e.object3D.position.set(d*Math.cos(p.th),d/Math.max(p.r,1e-6)*p.h,-d*Math.sin(p.th));it.lb.visible=M.labels||M.sel===i;});
+    if(M.sel>=0){var it=M.items[M.sel];M.selRing.visible=true;M.selRing.position.copy(it.e.object3D.position);M.selRing.scale.setScalar(Math.max(it.r*1.6,0.012));}else M.selRing.visible=false;}
+  function buildSizes(M){var J=0.1/142984,x=-0.3;M.kS=J;
+    var sun=aBody(M,ASTB[0],0,true);var rs=ASTB[0].d/2*J;aSetSize(sun,rs);sun.p=new THREE.Vector3(-0.36-rs,0,-0.55);sun.lb.position.set(rs*0.5,rs*0.3,rs*0.85);sun.lb.scale.set(0.2,0.044,1);M.sunIt=sun;
+    var L=ASTB.slice(1).concat([ALUNE]);L.sort(function(a,b){return(a.a||1.0026)-(b.a||1.0026);});
+    L.forEach(function(b){var it=aBody(M,b,M.list.length,true);var r=b.d/2*J;aSetSize(it,r);x+=Math.max(r,0.004)+0.012;it.p=new THREE.Vector3(x,0,0);it.lb.position.set(0,-(Math.max(r,0.006)+0.025),0);var w=0.1;it.lb.scale.set(w,w*112/512,1);it.lb.material.depthTest=true;x+=Math.max(r,0.004)+0.012;});
+    var off=-(x-0.3)/2;M.items.forEach(function(it){it.p.x+=off;});M.showSun=true;}
+  function buildGrav(M){M.gb=M.h.astro.body||'mars';M.drop=-1;M.cols=[];
+    [-0.17,0.17].forEach(function(x,c){var grp=new THREE.Group();grp.position.set(x,0,0);M.root.add(grp);
+      var post=new THREE.Mesh(M.own[M.own.push(new THREE.BoxGeometry(0.012,0.5,0.012))-1],M.own[M.own.push(new THREE.MeshStandardMaterial({color:0xdddddd,roughness:0.6}))-1]);post.position.set(-0.07,0.25,0);grp.add(post);
+      for(var k=0;k<=10;k++){var tk=new THREE.Mesh(M.own[M.own.push(new THREE.BoxGeometry(k%5?0.012:0.024,0.003,0.003))-1],post.material);tk.position.set(-0.07+0.012,k*0.05,0);grp.add(tk);}
+      var ground=new THREE.Mesh(M.own[M.own.push(new THREE.CylinderGeometry(0.13,0.13,0.02,40))-1],new THREE.MeshStandardMaterial({color:0x888888,roughness:1}));M.own.push(ground.material);ground.position.y=-0.01;grp.add(ground);
+      var ball=new THREE.Mesh(M.own[M.own.push(new THREE.SphereGeometry(0.022,24,16))-1],M.own[M.own.push(new THREE.MeshStandardMaterial({color:c?0xff7a1a:0x2a8cff,roughness:0.35}))-1]);ball.position.set(0,0.5+0.022,0);grp.add(ball);
+      var lb=aLabel(' ');grp.add(lb);lb.position.set(0,0.62,0);lb.scale.set(0.24,0.0525,1);var tm=aLabel(' ','#ffe9a8');grp.add(tm);tm.position.set(0.09,0.3,0.02);tm.scale.set(0.16,0.035,1);
+      M.cols.push({grp:grp,ground:ground,ball:ball,lb:lb,tm:tm,b:null,txt:'',tt:''});});
+    aGravSet(M,M.gb);}
+  function aBodyByKey(k){if(k==='moon'||k==='lune')return ALUNE;for(var i=0;i<ASTB.length;i++)if(ASTB[i].k===k||ASTB[i].k.indexOf(k)===0||ASTB[i].n.toLowerCase()===String(k).toLowerCase())return ASTB[i];return ASTB[4];}
+  function aSprTxt(sp,t,col){if(sp.userData.t===t)return;sp.userData.t=t;var cv=document.createElement('canvas');cv.width=512;cv.height=112;var g=cv.getContext('2d');g.font='700 56px '+FONT;g.textAlign='center';g.textBaseline='middle';g.lineWidth=12;g.strokeStyle='rgba(0,0,0,0.85)';g.strokeText(t,256,58);g.fillStyle=col||'#ffffff';g.fillText(t,256,58);var old=sp.material.map;sp.material.map=tex(cv);if(old)old.dispose();sp.material.needsUpdate=true;}
+  function aGravSet(M,k){var b=aBodyByKey(k);M.gb=b.k;M.drop=-1;[ASTB[3],b].forEach(function(bb,c){var C=M.cols[c];C.b=bb;var m=C.ground.material;m.map=astroTexKey(bb.k);m.color.set(m.map?0xffffff:bb.col);m.needsUpdate=true;aSprTxt(C.lb,bb.n);C.ball.position.y=0.522;aSprTxt(C.tm,' ');});
+    M.note=aGravNote(b);}
+  function aGravNote(b){var g=b.g,tE=Math.sqrt(2/9.81),tB=Math.sqrt(2/(9.81*g));return 'Sur '+(b.k==='moon'?'la Lune':b.n)+', la pesanteur vaut '+afr(g)+' fois celle de la Terre. Une balle lâchée de 1 m met '+afr(tB)+' s pour tomber, contre '+afr(tE)+' s sur Terre. Un saut de 50 cm sur Terre deviendrait un saut de '+(0.5/g>=1?afr(0.5/g,1)+' m':afr(50/g,0)+' cm')+'.'+(b.t.indexOf('gazeuse')>=0||b.t.indexOf('glaces')>=0?' Attention : cette planète n’a pas de sol solide ; on mesure la pesanteur au sommet des nuages.':(b.k==='sun'?' Le Soleil est une boule de gaz très chaude : impossible de s’y poser !':''));}
+  function buildKepler(M){var a=0.3,e=0.6,b=a*Math.sqrt(1-e*e),c=a*e;M.ka=a;M.ke=e;M.kT=10;M.areas=true;
+    var sun=aBody(M,ASTB[0],0,false);aSetSize(sun,0.03);sun.lb.visible=false;
+    var cm={k:'comet',n:'Astre',col:0x9fe0ff,d:12756};var pl=aBody(M,ASTB[4],1,false);aSetSize(pl,0.016);pl.lb.visible=false;M.kp=pl;
+    var geo=new THREE.BufferGeometry(),pts=[];for(var k=0;k<=128;k++){var E=k/128*Math.PI*2;pts.push(a*Math.cos(E)-c,0,-b*Math.sin(E));}geo.setAttribute('position',new THREE.Float32BufferAttribute(pts,3));var ln=new THREE.Line(geo,new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:0.7}));M.own.push(geo,ln.material);M.root.add(ln);
+    var f2=new THREE.Mesh(M.own[M.own.push(new THREE.SphereGeometry(0.006,12,8))-1],M.own[M.own.push(new THREE.MeshBasicMaterial({color:0x888888}))-1]);f2.position.set(-2*c,0,0);M.root.add(f2);
+    var N=12;M.sect=[];for(var s=0;s<N;s++){var g2=new THREE.BufferGeometry(),P=[0,0.001,0];var n=24;for(var j=0;j<=n;j++){var Mm=(s+j/n)/N*Math.PI*2,EE=Mm;for(var q=0;q<10;q++)EE=EE-(EE-e*Math.sin(EE)-Mm)/(1-e*Math.cos(EE));P.push(a*(Math.cos(EE)-e),0.001,-b*Math.sin(EE));}
+      var idx=[];for(var j2=1;j2<=n;j2++)idx.push(0,j2,j2+1);g2.setAttribute('position',new THREE.Float32BufferAttribute(P,3));g2.setIndex(idx);
+      var mm=new THREE.MeshBasicMaterial({color:s%2?0x4fc3f7:0xffb74d,transparent:true,opacity:0.45,side:THREE.DoubleSide,depthWrite:false});M.own.push(g2,mm);var me=new THREE.Mesh(g2,mm);me.visible=false;M.root.add(me);M.sect.push(me);}
+    var l1=aLabel('Périhélie','#ffe9a8'),l2=aLabel('Aphélie','#ffe9a8'),l3=aLabel('Soleil (foyer)','#ffe9a8');[[l1,a-c+0.05,0.04,0],[l2,-a-c-0.05,0.04,0],[l3,0,0.07,0]].forEach(function(q){M.root.add(q[0]);q[0].position.set(q[1],q[2],q[3]);q[0].scale.set(0.13,0.13*112/512,1);M.own.push(q[0].material.map,q[0].material);});}
+  function updKepler(M){var ph=(M.t/M.kT)%1,Mm=ph*Math.PI*2,e=M.ke,a=M.ka,b=a*Math.sqrt(1-e*e),E=Mm;for(var q=0;q<10;q++)E=E-(E-e*Math.sin(E)-Mm)/(1-e*Math.cos(E));
+    M.kp.e.object3D.position.set(a*(Math.cos(E)-e),0,-b*Math.sin(E));var cur=Math.floor(ph*12);M.sect.forEach(function(s,k){s.visible=M.areas&&(k<cur||M.lap>0);});
+    if(ph<M.lph)M.lap=(M.lap||0)+1;M.lph=ph;}
+  function astroTick(t,dt){var M=mol;if(!M||!M.astro)return;dt=Math.min(dt||16,60);pollCtrls();doManip();
+    if(M.mode==='orbits'){if(M.play)M.t+=dt/1000*M.speed;updOrbits(M);}
+    else if(M.mode==='kepler'){if(M.play)M.t+=dt/1000*M.speed;updKepler(M);}
+    else if(M.mode==='gravity'&&M.drop>=0){M.drop+=dt/1000;var all=true;M.cols.forEach(function(C){var g=9.81*C.b.g,tf=Math.sqrt(2/g),tt=Math.min(M.drop,tf),y=1-0.5*g*tt*tt;C.ball.position.y=0.022+0.5*Math.max(0,y);aSprTxt(C.tm,afr(tt,2)+' s',M.drop>=tf?'#7CFC9A':'#ffe9a8');if(M.drop<tf)all=false;});if(all&&M.drop>3)M.drop=-1;}
+    M.items.forEach(function(it){it.me.rotation.y+=dt*0.0004;if(it.p)it.e.object3D.position.copy(it.p);});
+    var ct=M.mode==='orbits'?aDate(M.t)+(M.play?'':' (pause)'):(M.mode==='kepler'?'Lois de Kepler':(M.mode==='sizes'?'Tailles réelles comparées':'Pesanteur : chute d’une balle de 1 m'));
+    if(ct!==M.capT){M.capT=ct;var old=M.cap.material.map;M.cap.material.map=tex(capCanvas(ct));old.dispose();M.cap.material.needsUpdate=true;}
+    M.ext=M.ext0*M.zoom;var o=M.ent.object3D,cam=sc.camera;M.cap.position.copy(o.position);M.cap.position.y+=(M.mode==='gravity'?0.72:0.2)*M.zoom+0.05;if(cam){cam.getWorldPosition(_a);M.cap.lookAt(_a.x,M.cap.position.y,_a.z);}}
+  function removeAstroOwn(M){M.own.forEach(function(o){if(o&&o.dispose)o.dispose();});M.own=[];}
+  var ASCALE={comp:'Échelle compressée : on prend la racine carrée des distances. Tout est visible d’un coup d’œil, mais les écarts ne sont plus proportionnels.',reel:'Échelle réelle : les distances sont proportionnelles. Les planètes proches du Soleil sont très serrées, Neptune est 30 fois plus loin que la Terre.',reg:'Échelle régulière : les orbites sont espacées de façon égale. C’est pratique pour lire, mais faux pour les distances.'};
+  function astroUnits(add){ASTB.concat([ALUNE]).forEach(function(b){add(b.n+'. '+aFiche(b));if(b.k!=='sun'&&b.k!=='earth_daymap')add(aGravNote(b));});Object.keys(ASCALE).forEach(function(k){add(ASCALE[k]);});}
+  var ASPEEDS=[0.02,0.05,0.1,0.25,0.5,1,2,5,10,20];
+  function openAstro(h,keep){if(!keep||!mol||mol.h!==h){panelAt(norm((h.az||0)+38),5,{eyebrow:'SYSTÈME SOLAIRE 3D',title:h.title||'Système solaire',body:'…'},[]);buildAstro(h);}
+    var M=mol,tx=T(h,'text'),iTxt=(h.title?h.title+'. ':'')+tx,iA=prefs.simple&&h.textS?null:(h.audio||null),btn=[],re=function(){openAstro(h,true);};
+    if(M.mode==='orbits'){
+      btn.push({row:[{label:M.play?'Pause':'Lecture',variant:'primary',onClick:function(){M.play=!M.play;re();}},{label:'Revenir au 1er janvier 2000',variant:'plain',onClick:function(){M.t=0;re();}}],h:0.13});
+      btn.push({row:[['comp','Échelle compressée'],['reel','Échelle réelle'],['reg','Échelle régulière']].map(function(q){return{label:q[1],variant:M.scale===q[0]?'good':'plain',onClick:function(){M.scale=q[0];aOrbitLines(M);M.note=ASCALE[q[0]];re();say(M.note,null,false);}};}),h:0.12});
+      var si=ASPEEDS.indexOf(M.speed);if(si<0)si=3;
+      btn.push({row:[{label:'Moins vite',variant:'plain',onClick:function(){M.speed=ASPEEDS[Math.max(0,si-1)];re();}},{label:afr(M.speed)+' an par seconde',variant:'plain',onClick:function(){}},{label:'Plus vite',variant:'plain',onClick:function(){M.speed=ASPEEDS[Math.min(ASPEEDS.length-1,si+1)];re();}}],h:0.12});
+      btn.push({row:[{label:'Noms : '+(M.labels?'oui':'non'),variant:M.labels?'good':'plain',onClick:function(){M.labels=!M.labels;re();}},{label:'Taille des planètes ×'+M.size,variant:'plain',onClick:function(){M.size=M.size>=4?1:M.size*2;M.items.forEach(function(it){aSetSize(it,aRad(M,it.b));});re();}}],h:0.12});}
+    else if(M.mode==='sizes'){btn.push({row:[{label:'Soleil : '+(M.showSun?'affiché':'masqué'),variant:M.showSun?'good':'plain',onClick:function(){M.showSun=!M.showSun;M.sunIt.e.object3D.visible=M.showSun;re();}},{label:'Noms : '+(M.labels?'oui':'non'),variant:M.labels?'good':'plain',onClick:function(){M.labels=!M.labels;M.items.forEach(function(it){it.lb.visible=M.labels;});re();}}],h:0.13});}
+    else if(M.mode==='gravity'){var ks=['moon','mercury','mars','venus_atmosphere','jupiter','saturn','uranus','neptune'];
+      [ks.slice(0,4),ks.slice(4)].forEach(function(r){btn.push({row:r.map(function(k){var b=aBodyByKey(k);return{label:b.n,variant:M.gb===b.k?'good':'plain',onClick:function(){aGravSet(M,k);re();say(M.note,null,false);}};}),h:0.12});});
+      btn.push({label:'Lâcher les balles',variant:'primary',h:0.14,onClick:function(){M.drop=0;M.cols.forEach(function(C){C.ball.position.y=0.522;});}});}
+    else{btn.push({row:[{label:M.play?'Pause':'Lecture',variant:'primary',onClick:function(){M.play=!M.play;re();}},{label:'Aires : '+(M.areas?'oui':'non'),variant:M.areas?'good':'plain',onClick:function(){M.areas=!M.areas;re();}},{label:M.speed>=1?'Ralentir':'Accélérer',variant:'plain',onClick:function(){M.speed=M.speed>=1?0.5:1;re();}}],h:0.13});}
+    btn.push(withListen(iTxt,iA,{label:"J'ai compris",variant:'plain',onClick:function(){seen(h);closePanel();}}));
+    panelAt(norm((h.az||0)+38),5,{eyebrow:'SYSTÈME SOLAIRE 3D',title:h.title||'Système solaire',body:tx+'\n\n'+ASTHINT,note:M.note,tone:'good'},btn,true);if(panelEnt)panelEnt._h=h.id;
     if(!keep)autoSay(iTxt,iA);}
   function openMenu(){var cam=camAngles(),az=norm(cam.az+worldYaw),sc2=course.scenes||[],b=[];
     var cut=function(t,n){t=String(t||'');return t.length>n?t.slice(0,n-1)+'…':t;};
@@ -3579,9 +3706,9 @@ function renderScenes(){const ul=$('#sceneList');
     <div class="sub">${isVid(s)?'<span class="vtag">VIDÉO</span>':''}<span>${n} point${n>1?'s':''}${q?' · '+q+' activité'+(q>1?'s':''):''}</span><span class="tools"><button class="icon-btn" data-mv="-1" title="Monter" aria-label="Monter la scène">↑</button><button class="icon-btn" data-mv="1" title="Descendre" aria-label="Descendre la scène">↓</button><button class="icon-btn" data-delsc title="Supprimer" aria-label="Supprimer la scène">✕</button></span></div></div></li>`;}).join('')||'<li class="empty">Aucune scène.</li>';
   $('#stageEmpty').hidden=course.scenes.length>0;}
 function cnt(id,val,max){return`<div class="count${val.length>max?' over':''}" id="${id}">${val.length} / ${max}</div>`;}
-const TYPE_LABEL={info:'Information',mol:'Molécule 3D',quiz:'Quiz',vf:'Vrai ou faux',order:"Remettre dans l'ordre",match:'Associer par paires',find:'Trouve-le dans la scène',say:'Répéter à voix haute (micro)',goto:'Lien vers une scène'};
+const TYPE_LABEL={info:'Information',mol:'Molécule 3D',astro:'Système solaire 3D',quiz:'Quiz',vf:'Vrai ou faux',order:"Remettre dans l'ordre",match:'Associer par paires',find:'Trouve-le dans la scène',say:'Répéter à voix haute (micro)',goto:'Lien vers une scène'};
 const hKind=h=>h.type==='quiz'&&h.vf?'vf':h.type;
-function badgeTxt(h){return{mol:'⚛',info:'i',quiz:'?',vf:'V/F',order:'123',match:'⇄',find:'◎',say:'🎤',goto:'➜'}[hKind(h)]||'i';}
+function badgeTxt(h){return{astro:'☉',mol:'⚛',info:'i',quiz:'?',vf:'V/F',order:'123',match:'⇄',find:'◎',say:'🎤',goto:'➜'}[hKind(h)]||'i';}
 const VF={'fr-FR':['Vrai','Faux'],'en-GB':['True','False'],'es-ES':['Verdadero','Falso'],'de-DE':['Richtig','Falsch'],'it-IT':['Vero','Falso']};
 function simpleField(id,val,label){return course.simple?`<div class="field simple"><label for="${id}">${label} · version simplifiée</label><textarea id="${id}" maxlength="450">${esc(val||'')}</textarea></div>`:'';}
 function renderInsp(){const box=$('#insp'),s=scene();
@@ -3611,7 +3738,8 @@ function renderInsp(){const box=$('#insp'),s=scene();
     <div class="row2"><div class="field"><label for="hType">Type</label><select id="hType">${Object.keys(TYPE_LABEL).map(k=>`<option value="${k}"${hKind(h)===k?' selected':''}>${TYPE_LABEL[k]}</option>`).join('')}</select></div>
     <div class="field"><label for="hTitle">Étiquette dans la scène</label><input type="text" id="hTitle" maxlength="50" value="${esc(h.title)}"></div></div>`;
     if(h.type==='mol')html+=`<div class="stage-note">Molécule 3D : ${esc((h.mol&&h.mol.formula)||'H₂O par défaut')} · ${(h.mol&&h.mol.atoms?h.mol.atoms.length:3)} atomes${h.mol&&h.mol.product?' · réaction animée':''}. Le modèle se définit dans le fichier du cours (champ « mol »).</div>`;
-    if(h.type==='info'||h.type==='mol')html+=`<div class="field"><label for="hText">Texte affiché</label><textarea id="hText" maxlength="${LIMITS.text+50}">${esc(h.text)}</textarea>${cnt('cText',h.text||'',LIMITS.text)}</div>${simpleField('hTextS',h.textS,'Texte')}
+    if(h.type==='astro')html+=`<div class="stage-note">Système solaire 3D : mode « ${esc((h.astro&&h.astro.mode)||'orbits')} ». Le modèle se définit dans le fichier du cours (champ « astro »).</div>`;
+    if(h.type==='info'||h.type==='mol'||h.type==='astro')html+=`<div class="field"><label for="hText">Texte affiché</label><textarea id="hText" maxlength="${LIMITS.text+50}">${esc(h.text)}</textarea>${cnt('cText',h.text||'',LIMITS.text)}</div>${simpleField('hTextS',h.textS,'Texte')}
       <div class="field"><label for="hImg">Illustration dans le panneau (facultatif)</label>${h.image?`<img src="${h.image}" alt="Illustration du point" class="ill">`:''}<div class="actions"><label class="btn small" for="hImg">${h.image?'Changer l\'image':'Ajouter une image'}</label>${h.image?'<button type="button" class="btn small danger" id="hImgDel">Retirer</button>':''}</div><input type="file" id="hImg" accept="image/*" hidden></div>`;
     const qField=()=>`<div class="field"><label for="hQ">${h.type==='say'?'Mot ou phrase à répéter (lu par la voix, reconnu au micro)':h.type==='find'?'Consigne (ce que l\'élève doit trouver)':h.type==='order'||h.type==='match'?'Consigne':h.vf?'Affirmation':'Question'}</label><textarea id="hQ" maxlength="${LIMITS.question+30}">${esc(h.question)}</textarea>${cnt('cQ',h.question||'',LIMITS.question)}</div>${simpleField('hQS',h.questionS,h.vf?'Affirmation':'Question')}`;
     const exField=()=>`<div class="field"><label for="hEx">Explication après la réponse</label><textarea id="hEx" maxlength="${LIMITS.expl+30}">${esc(h.explanation)}</textarea>${cnt('cEx',h.explanation||'',LIMITS.expl)}</div>${simpleField('hExS',h.explanationS,'Explication')}`;
@@ -3674,7 +3802,7 @@ $('#simpleToggle').addEventListener('change',e=>{course.simple=e.target.checked;
 let falcCtl=null;
 $('#falcBtn').addEventListener('click',async()=>{if(!sample){toast("Claude n'est pas disponible dans cette vue.");return;}const b=$('#falcBtn'),msg=$('#falcMsg');
   if(falcCtl){falcCtl.abort();return;}
-  const units={};course.scenes.forEach(s=>{if(s.intro)units['s|'+s.id+'|intro']=s.intro;s.hotspots.forEach(h=>{if((h.type==='info'||h.type==='mol')&&h.text)units['h|'+h.id+'|text']=h.text;if(h.type!=='info'&&h.type!=='goto'&&h.question)units['h|'+h.id+'|question']=h.question;if(h.explanation)units['h|'+h.id+'|explanation']=h.explanation;});});
+  const units={};course.scenes.forEach(s=>{if(s.intro)units['s|'+s.id+'|intro']=s.intro;s.hotspots.forEach(h=>{if((h.type==='info'||h.type==='mol'||h.type==='astro')&&h.text)units['h|'+h.id+'|text']=h.text;if(h.type!=='info'&&h.type!=='goto'&&h.question)units['h|'+h.id+'|question']=h.question;if(h.explanation)units['h|'+h.id+'|explanation']=h.explanation;});});
   const keys=Object.keys(units);if(!keys.length){toast('Aucun texte à simplifier dans ce cours.');return;}
   const lang={'fr-FR':'français','en-GB':'anglais','es-ES':'espagnol','de-DE':'allemand','it-IT':'italien'}[course.voix||'fr-FR'];
   const prompt=`Tu adaptes un cours de ${course.matiere||'collège'} (niveau ${course.niveau||'collège'}) pour des élèves à besoins éducatifs particuliers (troubles DYS, élèves allophones, difficultés de lecture), en t'inspirant des règles du FALC (facile à lire et à comprendre).
