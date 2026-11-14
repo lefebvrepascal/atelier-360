@@ -1,0 +1,92 @@
+{
+ "mars_1": {
+  "file": "Mastcam-Z's First 360-Degree Panorama - extended version.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Mastcam-Z%27s_First_360-Degree_Panorama_-_extended_version.jpg",
+  "artist": "<ul><li><a href=\"//commons.wikimedia.org/wiki/File:Mastcam-Z%27s_First_360-Degree_Panorama.jpg\" title=\"File:Mastcam-Z's First 360-Degree Panorama.jpg\">File:Mastcam-Z's_First_360-Degree_Panorama.jpg</a>: NASA/JPL-Caltech/ASU/MSSS</li>\n<li>derivative work: <a href=\"//commons.wikimedia.org/wiki/User:Peter.wieden\" title=\"User:Peter.wieden\">Peter Wieden</a></li></ul>",
+  "license": "Public domain",
+  "size": [
+   36952,
+   18476
+  ]
+ },
+ "mars_2": {
+  "file": "Perseverance - Watson Selfie near Sally's Cove - Sol 1500 - 360° version (54512394173).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Perseverance_-_Watson_Selfie_near_Sally%27s_Cove_-_Sol_1500_-_360%C2%B0_version_(54512394173).jpg",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/semeion/\">semeion.photo</a>",
+  "license": "Public domain",
+  "size": [
+   18000,
+   9000
+  ]
+ },
+ "mars_3": {
+  "file": "Marsrover Perseverance Navcam Sol 1110 (53655610985).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Marsrover_Perseverance_Navcam_Sol_1110_(53655610985).jpg",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/semeion/\">semeion.photo</a>",
+  "license": "Public domain",
+  "size": [
+   16384,
+   8192
+  ]
+ },
+ "espace_1": {
+  "file": "Night sky at La Silla (150121-22-lasilla-360-cc).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Night_sky_at_La_Silla_(150121-22-lasilla-360-cc).jpg",
+  "artist": "ESO/<a rel=\"nofollow\" class=\"external text\" data-mw-original-href=\"http://www.facebook.com/PetrHoralekPhotography\" href=\"https://www.facebook.com/PetrHoralekPhotography\">P. Horálek</a>",
+  "license": "CC BY 4.0",
+  "size": [
+   20000,
+   10000
+  ]
+ },
+ "espace_2": {
+  "file": "A panorama view of the VLT (165309674464e758889a6 eq-ext).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:A_panorama_view_of_the_VLT_(165309674464e758889a6_eq-ext).jpg",
+  "artist": "ESO/G. Brammer",
+  "license": "CC BY 4.0",
+  "size": [
+   8192,
+   4096
+  ]
+ },
+ "espace_3": {
+  "file": "ESO Paranal 360 image (ESO Paranal 360 Marcio Cabral Chile 14-CC).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:ESO_Paranal_360_image_(ESO_Paranal_360_Marcio_Cabral_Chile_14-CC).jpg",
+  "artist": "M. Cabral/ESO",
+  "license": "CC BY 4.0",
+  "size": [
+   15502,
+   7751
+  ]
+ },
+ "espace_4": {
+  "file": "Panorama of Paranal Control Room (cb-cr-night-pan1).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Panorama_of_Paranal_Control_Room_(cb-cr-night-pan1).jpg",
+  "artist": "ESO",
+  "license": "CC BY 4.0",
+  "size": [
+   15128,
+   7564
+  ]
+ },
+ "espace_5": {
+  "file": "360 view of the VLT at Paranal Observatory (ESO Paranal 360 Marcio Cabral Chile 11-CC).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:360_view_of_the_VLT_at_Paranal_Observatory_(ESO_Paranal_360_Marcio_Cabral_Chile_11-CC).jpg",
+  "artist": "M. Cabral/ESO",
+  "license": "CC BY 4.0",
+  "size": [
+   25828,
+   12914
+  ]
+ },
+ "terre_1": {
+  "file": "Land shallow topo 2048.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Land_shallow_topo_2048.jpg",
+  "artist": "Reto Stöckli/NASA GSFC (land surface, shallow water, clouds); Robert Simmon (ocean color, compositing, 3D globes, animation); MODIS Land Group; MODIS Science Data Support Team; MODIS Atmosphere Group; MODIS Ocean Group; USGS EROS Data Center (topography); USGS Terrestrial Remote Sensing Flagstaff Field Center (Antarctica); Defense Meteorological Satellite Program (city lights).",
+  "license": "Public domain",
+  "size": [
+   21600,
+   10800
+  ]
+ }
+}

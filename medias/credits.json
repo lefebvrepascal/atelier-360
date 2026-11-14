@@ -1,0 +1,142 @@
+{
+ "tex_sun": {
+  "file": "Solarsystemscope texture 2k sun.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_sun.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_mercury": {
+  "file": "Solarsystemscope texture 2k mercury.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_mercury.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_venus_atmosphere": {
+  "file": "Solarsystemscope texture 2k venus atmosphere.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_venus_atmosphere.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_venus_surface": {
+  "file": "Solarsystemscope texture 2k venus surface.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_venus_surface.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_earth_daymap": {
+  "file": "Solarsystemscope texture 2k earth daymap.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_earth_daymap.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_earth_clouds": {
+  "file": "Solarsystemscope texture 2k earth clouds.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_earth_clouds.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_moon": {
+  "file": "Solarsystemscope texture 2k moon.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_moon.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_mars": {
+  "file": "Solarsystemscope texture 2k mars.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_mars.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_jupiter": {
+  "file": "Solarsystemscope texture 2k jupiter.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_jupiter.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_saturn": {
+  "file": "Solarsystemscope texture 2k saturn.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_saturn.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_saturn_ring_alpha": {
+  "file": "Solarsystemscope texture 2k saturn ring alpha.png",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_saturn_ring_alpha.png",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   125
+  ]
+ },
+ "tex_uranus": {
+  "file": "Solarsystemscope texture 2k uranus.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_uranus.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_neptune": {
+  "file": "Solarsystemscope texture 2k neptune.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_neptune.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ },
+ "tex_stars_milky_way": {
+  "file": "Solarsystemscope texture 2k stars milky way.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Solarsystemscope_texture_2k_stars_milky_way.jpg",
+  "artist": "Solar System Scope",
+  "license": "CC BY 4.0",
+  "size": [
+   2048,
+   1024
+  ]
+ }
+}
