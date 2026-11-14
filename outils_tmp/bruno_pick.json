@@ -1,0 +1,50 @@
+{
+ "arts": {
+  "phylo000": "Jõesilmud2.jpg",
+  "phylo003": "White shark.jpg",
+  "phylo006": "Rainbow Trout 2529.jpg",
+  "phylo010": "European Common Frog Rana temporaria.jpg",
+  "phylo014": "Lacerta bilineata near Entella river 021.jpg",
+  "phylo017": "Nile crocodile head.jpg",
+  "phylo018": "Common pigeon at Waterlow Park, London 01.jpg",
+  "phylo022": "Домовая мышь (Mus musculus), Москва.jpg",
+  "phylo024": "013 Alpha male chimpanzee at Kibale forest National Park Photo by Giles Laurent.jpg",
+  "phylo032": "Chimpanzee skull 01.jpg",
+  "phylo033": "Australopithecus afarensisIMG 2928-black.jpg",
+  "phylo038": "Homo erectus Peking man skull.jpg",
+  "phylo041": "Replica skulls of Homo neanderthalensis & Homo sapiens, Lee Kong Chian Natural History Museum (101936).jpg",
+  "phylo042": "Berlin Archaeopteryx.jpg",
+  "phylo045": "Tiktaalik roseae life restor.jpg",
+  "phylo027": "Oase 2 skull (Homo sapiens).jpg",
+  "mito001": "Endogenous hMad1.png",
+  "mito006": "Amniocentesis results showing 47, XYY karyotype.png",
+  "mito009": "Células de cebolla aumento total 100X en división celular.jpg",
+  "nutri000": "Iodine-starch test for apples.jpg",
+  "nutri002": "Testing seed for starch.jpg",
+  "nutri003": "CuSO4·5D2O.jpg",
+  "nutri010": "Cross-section histology of small intestinal villi of the terminal ileum.jpg",
+  "molec000": "Structure of Fetal Hemoglobin (HbF).png",
+  "molec005": "Insulin monomer 4INS.png",
+  "molec006": "Microscope images of starch 3.png",
+  "geno001": "Sickle Cell Anemia (5610746554).jpg",
+  "geno002": "Sickle-cell smear 2015-09-10.jpg",
+  "geno012": "Gregor Mendel Monk.jpg",
+  "geno007": "DNA Double Helix by NHGRI.jpg",
+  "eche003": "Human cheek cells from science class.jpg",
+  "eche000": "Epidermis histology 2014.jpg"
+ },
+ "panos": {
+  "pano008": "360° panoramas Estonian University of Life Sciences, research.jpg",
+  "pano021": "The Estonian Academy of Security Sciences - Canteen-cafeteria.jpg",
+  "pano010": "Räpina Aianduskool 09-kasvuhoone pano.jpg"
+ },
+ "ph": [
+  "penguin_museum",
+  "museum_of_ethnography",
+  "rainforest_trail",
+  "newman_cafeteria",
+  "leadenhall_market",
+  "hospital_room",
+  "mossy_forest"
+ ]
+}
