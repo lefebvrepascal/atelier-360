@@ -24,28 +24,9 @@ os.makedirs("medias/tex", exist_ok=True); os.makedirs("medias/panos", exist_ok=T
 credits = {}
 def meta(t, ii):
     m = ii.get("extmetadata", {}); return {"file": t, "page": ii.get("descriptionurl"), "artist": m.get("Artist", {}).get("value", ""), "license": m.get("LicenseShortName", {}).get("value", ""), "size": [ii["width"], ii["height"]]}
-TEX = ["sun", "mercury", "venus atmosphere", "venus surface", "earth daymap", "earth clouds", "moon", "mars", "jupiter", "saturn", "saturn ring alpha", "uranus", "neptune", "stars milky way"]
-for k in TEX:
-    t = "Solarsystemscope texture 2k %s.jpg" % k
-    ii = info(t)
-    if not ii and "ring" in k:
-        t = t[:-4] + ".png"; ii = info(t)
-    if not ii:
-        c = search('Solarsystemscope texture %s' % k, 10)
-        if not c: print("ABSENT", k); continue
-        t, ii = c[0]
-    raw = get(ii["url"]); im = Image.open(io.BytesIO(raw))
-    key = k.replace(" ", "_")
-    if "ring" in k: im.convert("RGBA").save(f"medias/tex/{key}.png", optimize=True)
-    else:
-        im = im.convert("RGB"); s = min(1, 2048/im.width); im = im.resize((round(im.width*s), round(im.height*s)), Image.LANCZOS); im.save(f"medias/tex/{key}.jpg", quality=90)
-    credits["tex_"+key] = meta(t, ii); print("tex", key, t, im.size); time.sleep(0.3)
 QUERIES = {
- "mars": ["Curiosity rover 360 panorama equirectangular", "Mars panorama equirectangular", "Mars 360 panorama Perseverance", "Gale crater panorama 360"],
- "lune": ["Apollo panorama equirectangular", "Moon surface 360 panorama", "Apollo 17 panorama Taurus-Littrow", "Apollo 11 panorama Tranquility base 360"],
- "espace": ["Milky Way 360 panorama equirectangular", "night sky equirectangular panorama stars", "ESO 360 panorama Paranal night"],
- "observatoire": ["observatory dome interior panosphere", "planetarium interior 360 panorama", "Observatoire panosphere"],
- "terre": ["ISS 360 panorama equirectangular", "Earth from space 360 equirectangular"],
+ "lune": ["Apollo 360 panorama", "lunar surface 360 panorama", "Chang'e 360 panorama Moon", "Apollo equirectangular", "Moon 360 VR panorama Apollo 17", "Yutu panorama 360", "Apollo 16 panorama 360", "Apollo 12 panorama 360"],
+ "planetarium": ["planetarium 360 panorama equirectangular", "Cité de l'espace panorama 360", "observatory 360 equirectangular telescope dome"],
 }
 seen = set(); cand = {}
 for grp, qs in QUERIES.items():
