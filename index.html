@@ -3029,12 +3029,14 @@ function createPlayer(container,course,opts){
       var btns=opts2.map(function(x){var o=x.o,k=x.k;var v='plain';if(shown!==null){v=k===h.answer?'good':(k===shown?'bad':'dim');}return{label:(h.vf?'':String.fromCharCode(65+k)+'.  ')+o,variant:v,h:0.15,onClick:shown===null?function(){if(st.answers[h.id]===undefined){st.answers[h.id]=k;setRes(h,k===h.answer,o);}st.visited[h.id]=true;redrawHots();buildHud();openPanel(h,k);}:null};});
       var ok=shown!==null&&shown===h.answer;var good=opts2.filter(function(x){return x.k===h.answer;})[0];
       var qTxt=q+' '+opts2.map(function(x){return(h.vf?'':String.fromCharCode(65+x.k)+'. ')+x.o+'.';}).join(' ');
-      var rTxt=shown!==null?((ok?'Bonne réponse ! ':'Pas tout à fait. La bonne réponse était : '+(good?good.o:'')+'. ')+ex):'';
+      var E=EN(),rTxt=shown!==null?((ok?(E?'Correct! ':'Bonne réponse ! '):(E?'Not quite. The right answer was: ':'Pas tout à fait. La bonne réponse était : ')+(good?good.o:'')+'. ')+ex):'';
       var spT=shown!==null?rTxt:qTxt,spA=shown!==null?null:(prefs.simple&&h.questionS?null:(h.audio||null));
-      btns.push(withListen(spT,spA,shown!==null?{label:'Continuer',variant:'primary',onClick:closePanel}:{label:'Fermer',variant:'plain',onClick:closePanel}));
-      panelAt(az,el,{eyebrow:h.vf?'VRAI OU FAUX':'QUIZ',title:q,note:shown!==null?((ok?'Bonne réponse ! ':'Pas tout à fait. ')+ex):null,tone:ok?'good':'bad'},btns);autoSay(spT,spA);return;}
+      if(shown===null&&h.questionFR)btns.push({label:h._fr?'Back to English':'Aide en français',variant:'plain',h:0.12,onClick:function(){h._fr=!h._fr;openPanel(h);}});
+      btns.push(withListen(spT,spA,shown!==null?{label:E?'Continue':'Continuer',variant:'primary',onClick:closePanel}:{label:E?'Close':'Fermer',variant:'plain',onClick:closePanel}));
+      panelAt(az,el,{eyebrow:h.vf?(E?'TRUE OR FALSE':'VRAI OU FAUX'):'QUIZ',title:q,note:shown!==null?((ok?(E?'Correct! ':'Bonne réponse ! '):(E?'Not quite. ':'Pas tout à fait. '))+ex):(h._fr&&h.questionFR?'🇫🇷 '+h.questionFR:null),tone:shown!==null?(ok?'good':'bad'):'good'},btns);if(!h._fr)autoSay(spT,spA);return;}
     var tx=T(h,'text'),iTxt=(h.title?h.title+'. ':'')+tx,iA=prefs.simple&&h.textS?null:(h.audio||null);
-    var showInfo=function(img){panelAt(az,el,{eyebrow:'INFORMATION',title:h.title||'Information',body:tx,img:img},[withListen(iTxt,iA,{label:EN()?'OK':"J'ai compris",variant:'primary',onClick:function(){seen(h);closePanel();}})]);autoSay(iTxt,iA);};
+    var showInfo=function(img,fr){var bb=[];if(h.textFR)bb.push({label:fr?'Back to English':'Aide en français',variant:'plain',h:0.12,onClick:function(){showInfo(img,!fr);}});bb.push(withListen(iTxt,iA,{label:EN()?'OK':"J'ai compris",variant:'primary',onClick:function(){seen(h);closePanel();}}));
+      panelAt(az,el,{eyebrow:'INFORMATION',title:h.title||'Information',body:tx,img:img,note:fr?'🇫🇷 '+h.textFR:null,tone:'good'},bb);if(!fr)autoSay(iTxt,iA);};
     if(h.image){var im=new Image();im.onload=function(){showInfo(im);};im.onerror=function(){showInfo(null);};im.src=h.image;}else showInfo(null);}
 
   /* --- Remettre dans l'ordre --- */
