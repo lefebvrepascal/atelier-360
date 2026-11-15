@@ -1,0 +1,687 @@
+{
+ "pre": [
+  {
+   "k": "pre000",
+   "q": "Lucy skeleton Australopithecus cast",
+   "title": "Cast of the skeleton of Lucy at MHNG-IMG 1481-white.jpg",
+   "w": 3744,
+   "h": 5616,
+   "lic": "CC BY-SA 3.0 fr",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Rama\" title=\"User:Rama\">Rama</a>"
+  },
+  {
+   "k": "pre001",
+   "q": "Tautavel man skull",
+   "title": "Homme de Tautavel.jpg",
+   "w": 1000,
+   "h": 1100,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<p>The original uploader was <a href=\"https://en.wikipedia.org/wiki/fr:User:Luna04\" class=\"extiw\" title=\"w:fr:User:Luna04\">Luna04</a> at <a href=\"https://en.wikipedia.org/wiki/fr:\" class=\"extiw\" title"
+  },
+  {
+   "k": "pre002",
+   "q": "Chauvet cave horses painting",
+   "title": "Paintings from the Chauvet cave (museum replica).jpg",
+   "w": 1824,
+   "h": 1840,
+   "lic": "Public domain",
+   "artist": "HTO"
+  },
+  {
+   "k": "pre003",
+   "q": "Lascaux painting bull",
+   "title": "A roast lamb Sunday dinner at The Black Bull, Fyfield, Essex, England.jpg",
+   "w": 3589,
+   "h": 3589,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Acabashi\" title=\"User:Acabashi\">Acabashi</a>"
+  },
+  {
+   "k": "pre004",
+   "q": "hand stencil cave painting",
+   "title": "Open hand stencil on ceiling - Google Art Project.jpg",
+   "w": 2449,
+   "h": 3265,
+   "lic": "Public domain",
+   "artist": "<div class=\"fn value\">\nUnknown artist<span style=\"display: none;\">Unknown artist</span>   (Australian)</div>"
+  },
+  {
+   "k": "pre005",
+   "q": "Homo sapiens migration map",
+   "title": "Homo sapiens родина гомінід (Hominidae).jpg",
+   "w": 3648,
+   "h": 5472,
+   "lic": "CC BY-SA 4.0",
+   "artist": "Ruf Korniienko, Grylitska"
+  },
+  {
+   "k": "pre006",
+   "q": "biface acheulean",
+   "title": "Biface Cintegabelle MHNT PRE 2009.0.201.1 V2.jpg",
+   "w": 9000,
+   "h": 5000,
+   "lic": "CC BY-SA 4.0",
+   "artist": ""
+  },
+  {
+   "k": "pre007",
+   "q": "Neanderthal reconstruction",
+   "title": "Reconstruction of Neanderthal at the SUMPHG.jpg",
+   "w": 1920,
+   "h": 2560,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Motekov&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Motekov (page does not exist)\">Motekov</a>"
+  }
+ ],
+ "neo": [
+  {
+   "k": "neo000",
+   "q": "Stonehenge",
+   "title": "Stonehenge Heel Stone.jpg",
+   "w": 2936,
+   "h": 4777,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:DeFacto\" title=\"User:DeFacto\">DeFacto</a>"
+  },
+  {
+   "k": "neo001",
+   "q": "Carnac alignements Ménec",
+   "title": "Carnac 56 Alignement du Ménec 2013.JPG",
+   "w": 9207,
+   "h": 2640,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<p><a href=\"//commons.wikimedia.org/wiki/User:JLPC\" title=\"User:JLPC\">JLPC</a>\n</p>"
+  },
+  {
+   "k": "neo002",
+   "q": "Catalhoyuk reconstruction",
+   "title": "Reconstruction of Neolithic buildings in Çatalhöyük.jpg",
+   "w": 4000,
+   "h": 3000,
+   "lic": "CC BY 3.0 pl",
+   "artist": "Radosław Botev"
+  },
+  {
+   "k": "neo003",
+   "q": "Neolithic polished axe",
+   "title": "Polished axe, basalt - Museo Egizio Turin P 3718 p03.jpg",
+   "w": 4192,
+   "h": 5760,
+   "lic": "CC0",
+   "artist": ""
+  },
+  {
+   "k": "neo004",
+   "q": "Neolithic pottery",
+   "title": "Neolithic pottery from Boeotia, AM of Thebes, 201116.jpg",
+   "w": 5110,
+   "h": 3407,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Zde\" title=\"User:Zde\">Zde</a>"
+  },
+  {
+   "k": "neo005",
+   "q": "Skara Brae house",
+   "title": "Early house at Skara Brae - geograph.org.uk - 7445679.jpg",
+   "w": 4000,
+   "h": 3000,
+   "lic": "CC BY-SA 2.0",
+   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.geograph.org.uk/profile/4582\">Eirian Evans</a> <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedi"
+  },
+  {
+   "k": "neo006",
+   "q": "einkorn wheat",
+   "title": "Triticum monococcum MHNT.BOT.2015.2.37.jpg",
+   "w": 5184,
+   "h": 3456,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<div class=\"fn value\">\n<a href=\"//commons.wikimedia.org/wiki/User:Erc%C3%A9\" title=\"User:Ercé\">Roger Culos</a></div>"
+  },
+  {
+   "k": "neo007",
+   "q": "dolmen France",
+   "title": "Dolmen de Santoche 01.JPG",
+   "w": 3648,
+   "h": 2736,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Sacamol\" title=\"User:Sacamol\">Sacamol</a>"
+  }
+ ],
+ "meso": [
+  {
+   "k": "meso000",
+   "q": "Code of Hammurabi stele Louvre",
+   "title": "P1050763 Louvre code Hammurabi face rwk.JPG",
+   "w": 1215,
+   "h": 2000,
+   "lic": "CC BY 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Mbzt\" title=\"User:Mbzt\">Mbzt</a>"
+  },
+  {
+   "k": "meso001",
+   "q": "cuneiform tablet",
+   "title": "Proto cuneiform tablet OIM A02516.jpg",
+   "w": 861,
+   "h": 822,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<ul><li>Original: <a href=\"//commons.wikimedia.org/wiki/User:Daderot\" title=\"User:Daderot\">Daderot</a></li>\n<li>Derivative work : <a href=\"//commons.wikimedia.org/wiki/User:Zunkir\" title=\"User:Zunkir\""
+  },
+  {
+   "k": "meso002",
+   "q": "Ziggurat of Ur",
+   "title": "Ancient ziggurat at Ali Air Base Iraq 2005.jpg",
+   "w": 2576,
+   "h": 1932,
+   "lic": "CC BY 3.0",
+   "artist": "<a href=\"https://en.wikipedia.org/wiki/User:Hardnfast\" class=\"extiw\" title=\"en:User:Hardnfast\">en:User:Hardnfast</a>"
+  },
+  {
+   "k": "meso003",
+   "q": "Uruk Warka vase",
+   "title": "Warka vase (background retouched).jpg",
+   "w": 2824,
+   "h": 6632,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Neuroforever\" title=\"User:Neuroforever\">Osama Shukir Muhammed Amin FRCP(Glasg)</a>"
+  },
+  {
+   "k": "meso004",
+   "q": "Standard of Ur",
+   "title": "Standard of Ur - War.jpg",
+   "w": 2202,
+   "h": 963,
+   "lic": "Public domain",
+   "artist": "Unknown author<span style=\"display: none;\">Unknown author</span>"
+  },
+  {
+   "k": "meso005",
+   "q": "Ishtar gate Pergamon",
+   "title": "Pergamon museum Ishtar Gate.jpg",
+   "w": 2448,
+   "h": 3264,
+   "lic": "CC0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Sinoulpgc&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Sinoulpgc (page does not exist)\">Sinoulpgc</a>"
+  },
+  {
+   "k": "meso006",
+   "q": "Gilgamesh tablet flood",
+   "title": "British Museum Flood Tablet 1.jpg",
+   "w": 2493,
+   "h": 2686,
+   "lic": "CC BY-SA 4.0",
+   "artist": "Photograph by <a href=\"//commons.wikimedia.org/wiki/User:Mike_Peel\" title=\"User:Mike Peel\">Mike Peel</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://www.mikepeel.net/\">www.mikepeel.net</a>)"
+  },
+  {
+   "k": "meso007",
+   "q": "Mesopotamia map",
+   "title": "Map of Mesopotamia, 1770 BCE .jpg",
+   "w": 2042,
+   "h": 1506,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Khorler&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Khorler (page does not exist)\">Khorler</a>"
+  }
+ ],
+ "gre": [
+  {
+   "k": "gre000",
+   "q": "Parthenon Athens",
+   "title": "Parthenon from south.jpg",
+   "w": 2345,
+   "h": 3519,
+   "lic": "CC BY-SA 2.5",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Thermos\" title=\"User:Thermos\">Thermos</a>"
+  },
+  {
+   "k": "gre001",
+   "q": "Acropolis Athens",
+   "title": "Attica 06-13 Athens 50 View from Philopappos - Acropolis Hill.jpg",
+   "w": 5000,
+   "h": 3125,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<b><span class=\"plainlinks\"><a class=\"external text\" href=\"https://commons.wikimedia.org/wiki/User:A.Savin\">A.Savin</a></span></b>"
+  },
+  {
+   "k": "gre002",
+   "q": "Athenian ostracon",
+   "title": "AGMA Ostrakon Thémistocle 2.jpg",
+   "w": 800,
+   "h": 813,
+   "lic": "CC BY-SA 2.5",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Marsyas\" title=\"User:Marsyas\">Marsyas</a>"
+  },
+  {
+   "k": "gre003",
+   "q": "Pnyx Athens",
+   "title": "Head Pnyx Athena NAMAthens 3718.jpg",
+   "w": 3053,
+   "h": 4587,
+   "lic": "CC0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jebulon\" title=\"User:Jebulon\">Jebulon</a>"
+  },
+  {
+   "k": "gre004",
+   "q": "Olympia stadium",
+   "title": "Olympia arena Detroit.jpg",
+   "w": 4730,
+   "h": 3741,
+   "lic": "CC BY 2.0",
+   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/37603091@N02\">G.G.</a> from Hoxie, Kansas, USA"
+  },
+  {
+   "k": "gre005",
+   "q": "Delphi theatre",
+   "title": "Ancient Greek theatre of Delphi 01.jpg",
+   "w": 3090,
+   "h": 2060,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Bgag\" title=\"User:Bgag\">Bernard Gagnon</a>"
+  },
+  {
+   "k": "gre006",
+   "q": "Greek amphora Achilles",
+   "title": "Combat between Achilles and Memnon, Grave amphora southern Italy, 330 BC.jpg",
+   "w": 2017,
+   "h": 1570,
+   "lic": "CC BY-SA 2.0",
+   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/38483926@N07\">rob koopman</a>"
+  },
+  {
+   "k": "gre007",
+   "q": "trireme Olympias",
+   "title": "The trireme Olympias on 23 February 2019.jpg",
+   "w": 5981,
+   "h": 3987,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:George_E._Koronaios\" title=\"User:George E. Koronaios\">George E. Koronaios</a>"
+  }
+ ],
+ "rom": [
+  {
+   "k": "rom000",
+   "q": "Capitoline Wolf",
+   "title": "Lupa Capitolina, Rome.jpg",
+   "w": 7489,
+   "h": 4876,
+   "lic": "CC0",
+   "artist": ""
+  },
+  {
+   "k": "rom001",
+   "q": "Roman Forum",
+   "title": "Forum romanum 6k (5760x2097).jpg",
+   "w": 5760,
+   "h": 2097,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:BeBo86\" title=\"User:BeBo86\">BeBo86</a>"
+  },
+  {
+   "k": "rom002",
+   "q": "Romulus and Remus Rubens",
+   "title": "Peter Paul Rubens - Romulus and Remus - Google Art Project.jpg",
+   "w": 2890,
+   "h": 2919,
+   "lic": "Public domain",
+   "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Peter_Paul_Rubens\" class=\"extiw\" title=\"w:en:Peter Paul Rubens\"><span title=\"Flemish painter (1577–1640)\">Peter Paul Rubens</span></a></bdi>"
+  },
+  {
+   "k": "rom003",
+   "q": "Etruscan sarcophagus spouses",
+   "title": "Sarcophagus of the Spouses from Villa Giulia in Rome.jpg",
+   "w": 3600,
+   "h": 2700,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Sailko\" title=\"User:Sailko\">Sailko</a>"
+  },
+  {
+   "k": "rom004",
+   "q": "Palatine hill",
+   "title": "Palatine Hill from Circus Maximus Rome.jpg",
+   "w": 4307,
+   "h": 3056,
+   "lic": "CC0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jebulon\" title=\"User:Jebulon\">Jebulon</a>"
+  },
+  {
+   "k": "rom005",
+   "q": "Curia Julia",
+   "title": "Curia Julia.jpg",
+   "w": 1130,
+   "h": 864,
+   "lic": "CC BY-SA 3.0",
+   "artist": "L.VII.C"
+  },
+  {
+   "k": "rom006",
+   "q": "SPQR inscription",
+   "title": "Dura-Europos archival photograph, YUAG negative number y344 -object-id-12004.jpg",
+   "w": 871,
+   "h": 1024,
+   "lic": "CC0",
+   "artist": "<a href=\"https://www.wikidata.org/wiki/Q4233718\" class=\"extiw\" title=\"d:Q4233718\">anonymous</a>"
+  },
+  {
+   "k": "rom007",
+   "q": "Roman senate Maccari",
+   "title": "Cesare Maccari. Appius Claudius Caecus in senate.jpg",
+   "w": 1191,
+   "h": 800,
+   "lic": "Public domain",
+   "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Cesare_Maccari\" class=\"extiw\" title=\"w:en:Cesare Maccari\"><span title=\"Italian painter and sculptor (1840-1919)\">Cesare Maccari</span></a></bdi>"
+  }
+ ],
+ "jud": [
+  {
+   "k": "jud000",
+   "q": "Dead Sea Scrolls Isaiah",
+   "title": "The Great Isaiah Scroll MS A (1QIsa) - Google Art Project.jpg",
+   "w": 63744,
+   "h": 2506,
+   "lic": "Public domain",
+   "artist": "<div class=\"fn value\">\nUnknown artist<span style=\"display: none;\">Unknown artist</span></div>"
+  },
+  {
+   "k": "jud001",
+   "q": "Israel Museum Shrine of the Book",
+   "title": "Shrine of the Book 2.jpg",
+   "w": 2288,
+   "h": 1712,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Deror_avi\" title=\"User:Deror avi\">deror_avi</a>"
+  },
+  {
+   "k": "jud002",
+   "q": "Mesha stele Louvre",
+   "title": "F4171 Louvre stele de Mesha AO5066 rwk.jpg",
+   "w": 3547,
+   "h": 5500,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Mbzt\" title=\"User:Mbzt\">Mbzt</a>"
+  },
+  {
+   "k": "jud003",
+   "q": "Arch of Titus menorah relief",
+   "title": "Arch of Titus Menorah.png",
+   "w": 1575,
+   "h": 879,
+   "lic": "Public domain",
+   "artist": "<ul><li>derivative work: <a href=\"//commons.wikimedia.org/wiki/User:Steerpike\" title=\"User:Steerpike\">Steerpike</a> (<a href=\"//commons.wikimedia.org/wiki/User_talk:Steerpike\" title=\"User talk:Steerpi"
+  },
+  {
+   "k": "jud004",
+   "q": "Torah scroll",
+   "title": "Torah scroll writing.jpg",
+   "w": 5472,
+   "h": 3648,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Liran1977&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Liran1977 (page does not exist)\">Liran1977</a>"
+  },
+  {
+   "k": "jud005",
+   "q": "Synagogue Dura Europos",
+   "title": "Synagogue, Dura Europos (دورا أوروبوس), Syria-Looking west-PHBZ024 2016 0873-Dumbarton Oaks.jpg",
+   "w": 4772,
+   "h": 3207,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<div class=\"fn value\">\nFrank Kidner</div>"
+  },
+  {
+   "k": "jud006",
+   "q": "Lachish relief British Museum",
+   "title": "Lachish Relief, British Museum 14.jpg",
+   "w": 3335,
+   "h": 2208,
+   "lic": "CC BY-SA 4.0",
+   "artist": "Photograph by <a href=\"//commons.wikimedia.org/wiki/User:Mike_Peel\" title=\"User:Mike Peel\">Mike Peel</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://www.mikepeel.net/\">www.mikepeel.net</a>)"
+  },
+  {
+   "k": "jud007",
+   "q": "Western Wall",
+   "title": "PikiWiki Israel 47231 Revealing of the Western Wall .jpg",
+   "w": 3536,
+   "h": 2408,
+   "lic": "CC BY 2.5",
+   "artist": "יהודה גרינברג"
+  }
+ ],
+ "emp": [
+  {
+   "k": "emp000",
+   "q": "Colosseum Rome",
+   "title": "Colosseum in Rome-April 2007-1- copie 2B.jpg",
+   "w": 4827,
+   "h": 2833,
+   "lic": "CC BY-SA 2.5",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Diliff\" title=\"User:Diliff\">Diliff</a>"
+  },
+  {
+   "k": "emp001",
+   "q": "Pont du Gard",
+   "title": "Pont du Gard BLS.jpg",
+   "w": 12648,
+   "h": 4882,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Benh\" title=\"User:Benh\">Benh LIEU SONG</a> (<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/75729488@N03\">Flickr</a>)"
+  },
+  {
+   "k": "emp002",
+   "q": "Maison carrée Nîmes",
+   "title": "Maison Carree in Nimes (16).jpg",
+   "w": 4626,
+   "h": 3248,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Tournasol7\" title=\"User:Tournasol7\">Krzysztof Golik</a>"
+  },
+  {
+   "k": "emp003",
+   "q": "Bavay forum Bagacum",
+   "title": "Forum antique de Bavay (Bagacum) 05.jpg",
+   "w": 5472,
+   "h": 3648,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:FrDr&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:FrDr (page does not exist)\">FrDr</a>"
+  },
+  {
+   "k": "emp004",
+   "q": "Augustus of Prima Porta",
+   "title": "Statue-Augustus.jpg",
+   "w": 1500,
+   "h": 2250,
+   "lic": "Public domain",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Till.niermann\" title=\"User:Till.niermann\">Till Niermann</a>"
+  },
+  {
+   "k": "emp005",
+   "q": "Roman legionary reenactment",
+   "title": "Roman Legionary Reenactor, Butser Roman Villa.jpg",
+   "w": 4000,
+   "h": 6000,
+   "lic": "CC BY 4.0",
+   "artist": "Tim Sheerman-Chase"
+  },
+  {
+   "k": "emp006",
+   "q": "Roman road Via Appia",
+   "title": "Via Appia map.jpg",
+   "w": 1280,
+   "h": 692,
+   "lic": "Public domain",
+   "artist": ""
+  },
+  {
+   "k": "emp007",
+   "q": "Hadrian's Wall",
+   "title": "2018-06-07 Sycamore Gap Tree (Acer pseudoplatanus), next to Hadrian’s Wall UK.jpg",
+   "w": 5445,
+   "h": 2932,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:GRDN711\" title=\"User:GRDN711\">Gordon Leggett</a>"
+  }
+ ],
+ "chr": [
+  {
+   "k": "chr000",
+   "q": "catacomb of Priscilla fresco",
+   "title": "Catacomb of Priscilla - Annunciation.jpg",
+   "w": 1339,
+   "h": 1166,
+   "lic": "Public domain",
+   "artist": "anonymous artist, reproduction by H. F. Jos Liell"
+  },
+  {
+   "k": "chr001",
+   "q": "Chi Rho symbol",
+   "title": "Logo Diakonissenhaus Hof 20230129 HOF08474 RAW-Export.png",
+   "w": 8128,
+   "h": 4568,
+   "lic": "CC BY 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:PantheraLeo1359531\" title=\"User:PantheraLeo1359531\">PantheraLeo1359531</a>"
+  },
+  {
+   "k": "chr002",
+   "q": "Constantine colossal head",
+   "title": "Colossal head of Constantine (M.C. inv. 1072), August 24, 2021.jpg",
+   "w": 5449,
+   "h": 8173,
+   "lic": "Public domain",
+   "artist": "<bdi>D. Benjamin Miller</bdi>"
+  },
+  {
+   "k": "chr003",
+   "q": "Old St Peter's basilica drawing",
+   "title": "Maarten van Heemskerck - Crossing pillar of St. Peter's Basilica and northern transept of the old basilica (Roman Sketchbook), c1532-1536 - Kupferstichkabinett Berlin.jpg",
+   "w": 4000,
+   "h": 2566,
+   "lic": "Public domain",
+   "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Maarten_van_Heemskerck\" class=\"extiw\" title=\"w:en:Maarten van Heemskerck\"><span title=\"Dutch painter (1498–1574)\">Maarten van Heemskerck</span></a></bdi>"
+  },
+  {
+   "k": "chr004",
+   "q": "Silk Road map",
+   "title": "Map of the Silk Road City States in Xinjiang.jpg",
+   "w": 1787,
+   "h": 1297,
+   "lic": "CC0",
+   "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:YesCoolRo&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:YesCoolRo (page does not exist)\">YesCoolRo</a>"
+  },
+  {
+   "k": "chr005",
+   "q": "Han dynasty pottery",
+   "title": "Han Dynasty Pottery House.jpg",
+   "w": 4752,
+   "h": 3168,
+   "lic": "CC0",
+   "artist": "Gary Todd"
+  },
+  {
+   "k": "chr006",
+   "q": "Terracotta army",
+   "title": "51714-Terracota-Army.jpg",
+   "w": 3000,
+   "h": 1987,
+   "lic": "CC BY 2.0",
+   "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/7138083@N04\">xiquinhosilva</a>"
+  },
+  {
+   "k": "chr007",
+   "q": "Great Wall Mutianyu",
+   "title": "Great Wall of China July 2006.JPG",
+   "w": 2288,
+   "h": 1712,
+   "lic": "CC0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Velatrix\" title=\"User:Velatrix\">Velatrix</a>"
+  }
+ ],
+ "pano": [
+  {
+   "k": "pano000",
+   "q": "Louvre panosphere",
+   "title": "Louvre panosphere 20200303.jpg",
+   "w": 12864,
+   "h": 6432,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Domob\" title=\"User:Domob\">Daniel Kraft</a>"
+  },
+  {
+   "k": "pano001",
+   "q": "Louvre panosphere",
+   "title": "Square du Vert-Galant panosphere.jpg",
+   "w": 12842,
+   "h": 6421,
+   "lic": "CC BY-SA 3.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Domob\" title=\"User:Domob\">Daniel Kraft</a>"
+  },
+  {
+   "k": "pano002",
+   "q": "Acropolis 360 panorama",
+   "title": "Athens-acropolis-east-end-2023-05-panorama.jpg",
+   "w": 13056,
+   "h": 6528,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Fuzheado\" title=\"User:Fuzheado\">Fuzheado</a>"
+  },
+  {
+   "k": "pano003",
+   "q": "Acropolis 360 panorama",
+   "title": "Athens-acropolis-propylaia-2023-05-panorama-2x.jpg",
+   "w": 4096,
+   "h": 2048,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Fuzheado\" title=\"User:Fuzheado\">Fuzheado</a>"
+  },
+  {
+   "k": "pano004",
+   "q": "Olympia panorama 360",
+   "title": "USS Olympia and Independence Seaport Museum.jpg",
+   "w": 6144,
+   "h": 3072,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Needsmoreritalin\" title=\"User:Needsmoreritalin\">Chuck Homler (FocusOnWildlife.Me)</a>"
+  },
+  {
+   "k": "pano005",
+   "q": "Colosseum 360 panorama",
+   "title": "Colosseum – Panorama (Greg Zaal and Rico Cilliers via Poly Haven).jpg",
+   "w": 8192,
+   "h": 4096,
+   "lic": "CC0",
+   "artist": "<ul><li>Greg Zaal (Panorama)</li>\n<li>Rico Cilliers (Backplates)</li></ul>"
+  },
+  {
+   "k": "pano006",
+   "q": "Great Wall of China 360 panorama",
+   "title": "Mutianyu – Panorama (Greg Zaal via Poly Haven).jpg",
+   "w": 8192,
+   "h": 4096,
+   "lic": "CC0",
+   "artist": "Greg Zaal"
+  },
+  {
+   "k": "pano007",
+   "q": "Great Wall of China 360 panorama",
+   "title": "Mapillary (wsp us) 2017-05-20 23H40M03S000 (369921910999625 at wP9xKvtP2DVZkkqQUA9m4w with LGE LG-R105).jpg",
+   "w": 5660,
+   "h": 2830,
+   "lic": "CC BY-SA 4.0",
+   "artist": "wsp_us <span class=\"mw-valign-text-top noprint\" typeof=\"mw:File/Frameless\"><a href=\"//commons.wikimedia.org/wiki/File:Mapillary_(wsp_us)_2017-05-20_23H40M03S000_(369921910999625_at_wP9xKvtP2DVZkkqQUA9"
+  },
+  {
+   "k": "pano008",
+   "q": "Xi'an panorama 360",
+   "title": "西交兴庆之航拍全景图 02.jpg",
+   "w": 8192,
+   "h": 4096,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Liuxingy\" title=\"User:Liuxingy\">Liuxingy</a>"
+  },
+  {
+   "k": "pano009",
+   "q": "Xi'an panorama 360",
+   "title": "长安 下河滩村附近107省道、西康铁路下行线路与建设中的西康高铁.jpg",
+   "w": 8192,
+   "h": 4096,
+   "lic": "CC BY-SA 4.0",
+   "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Liuxingy\" title=\"User:Liuxingy\">Liuxingy</a>"
+  }
+ ],
+ "polyhaven": []
+}
