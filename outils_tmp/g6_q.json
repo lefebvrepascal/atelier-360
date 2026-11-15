@@ -1,0 +1,121 @@
+{
+ "arts": {
+  "lil": [
+   "Euralille",
+   "Grand'Place Lille",
+   "Métro de Lille VAL rame",
+   "Métropole européenne de Lille carte communes",
+   "La Piscine Roubaix musée",
+   "Gare Lille Flandres",
+   "Halluin",
+   "Lille Europe TGV Eurostar"
+  ],
+  "sha": [
+   "Pudong skyline night",
+   "Shanghai Tower",
+   "Shanghai Metro map",
+   "Shikumen Shanghai",
+   "Shanghai elevated highway",
+   "Yangshan Deep Water Port",
+   "Shanghai Maglev"
+  ],
+  "vil": [
+   "Vauban Freiburg solar",
+   "Bosco Verticale Milan",
+   "Copenhagen cyclists",
+   "green roof city",
+   "Paris tramway T3",
+   "urban garden rooftop",
+   "heat island map"
+  ],
+  "ama": [
+   "Amazon rainforest aerial",
+   "Meeting of Waters Manaus",
+   "Yanomami village",
+   "Rondonia deforestation satellite",
+   "jaguar Pantanal",
+   "Amazon river boat",
+   "Kayapo"
+  ],
+  "agr": [
+   "Beauce wheat field",
+   "combine harvester wheat",
+   "center pivot irrigation Kansas aerial",
+   "grain elevator prairie Canada",
+   "Pas-de-Calais champs",
+   "tractor field France",
+   "village Beauce"
+  ],
+  "por": [
+   "Port of Dunkirk",
+   "Maasvlakte 2 aerial",
+   "container ship Rotterdam",
+   "ArcelorMittal Dunkerque",
+   "Port of Rotterdam map",
+   "gantry crane container terminal",
+   "Gravelines nuclear power station"
+  ],
+  "tou": [
+   "Promenade des Anglais Nice",
+   "Benidorm skyline",
+   "Baie des Anges Nice",
+   "Cancún hotel zone aerial",
+   "Saint-Tropez port",
+   "La Grande-Motte pyramides",
+   "Nice airport aerial"
+  ],
+  "mon": [
+   "World population density map",
+   "Earth at night NASA Black Marble",
+   "Ganges delta satellite",
+   "Sahara desert satellite",
+   "Lagos Nigeria city",
+   "Tokyo crowd Shibuya",
+   "Siberia taiga aerial"
+  ]
+ },
+ "panos": [
+  "Lille panosphère",
+  "Grand Place Lille 360",
+  "Vieux-Lille panorama 360",
+  "Roubaix panosphère",
+  "Shanghai 360 panorama",
+  "Bund Shanghai equirectangular",
+  "Lujiazui 360",
+  "écoquartier panorama 360",
+  "Copenhagen equirectangular",
+  "Amazon rainforest 360",
+  "Amazonas equirectangular",
+  "Rio Negro 360 panorama",
+  "wheat field equirectangular",
+  "Beauce panorama 360",
+  "Dunkerque panosphère",
+  "port Dunkerque 360",
+  "Rotterdam port 360",
+  "container terminal equirectangular",
+  "Nice panosphère",
+  "Promenade des Anglais 360",
+  "Benidorm 360 panorama",
+  "Cannes panosphère",
+  "Tokyo 360 panorama Shibuya",
+  "Mumbai 360 panorama",
+  "Cairo 360 panorama",
+  "Sahara equirectangular"
+ ],
+ "ph": [
+  "shanghai_bund",
+  "shanghai_riverside",
+  "potsdamer_platz",
+  "modern_buildings_2",
+  "rainforest_trail",
+  "straw_rolls_field_01",
+  "sunflowers",
+  "farm_road",
+  "docklands_01",
+  "small_harbor_01",
+  "spiaggia_di_mondello",
+  "hamburg_canal",
+  "rural_crossroads",
+  "roof_garden"
+ ]
+}
