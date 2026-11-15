@@ -1,0 +1,108 @@
+{
+ "arts": {
+  "chi000": "Grant Park and Michigan Avenue, Chicago, Illinois (14024061807).jpg",
+  "chi003": "Stanley Kubrick, \"L\" elevated railway, Chicago, Illinois, 1949.jpg",
+  "chi005": "1871 Chicago Fire National Bank Life Magazine.jpg",
+  "chi006": "Enterprising Young Merchant Disposing of Relics Opposite the Ruins of the Sherman House; from E. J. Goodspeed, History of Great Fires in Chicago and the West, 1871 (ichi-63818).jpg",
+  "chi007": "Deep Dish Pizza PD.jpg",
+  "chi009": "Willis Tower.jpg",
+  "chi010": "Skyline de Chicago desde el centro, Illinois, Estados Unidos, 2012-10-20, DD 06.jpg",
+  "lc001": "Lewis and Clark track map published 1814 LoC.jpg",
+  "lc002": "Meriwether Lewis-Charles Willson Peale.jpg",
+  "lc004": "William Clark-Charles Willson Peale.jpg",
+  "lc006": "Sacagawea Birthplace (cropped).jpg",
+  "lc009": "Clark Family Collection- Volume 3. Voorhis Journal No. 3, page 72, May 5, 1806.jpg",
+  "lc010": "Geography 028 - Map of the Louisiana Purchase - 1803.jpg",
+  "us45000": "Apollo 11 bootprint.jpg",
+  "us45002": "C-54 dropping candy during Berlin Airlift c1949.jpg",
+  "us45004": "Civil Rights March on Washington, D.C. (Dr. Martin Luther King, Jr. and Mathew Ahmann in a crowd.) - NARA - 542015 - Restoration.jpg",
+  "us45006": "Juggling on the Berlin Wall 1a.jpg",
+  "us45008": "Apollo 11 Crew.jpg",
+  "us45010": "President Barack Obama inauguration ceremony 090120-A-AO884-348.jpg",
+  "sp000": "Abraham Lincoln head on shoulders photo portrait.jpg",
+  "sp002": "Gettysburg Address Bliss copy.jpg",
+  "sp004": "President Kennedy inaugural address (color).jpg",
+  "sp008": "Emmeline Pankhurst speaking to a crowd, c.1910. (22505225148).jpg",
+  "sp010": "Statue of Abraham Lincoln, Lincoln Memorial (2024)-L1005507.jpg",
+  "work000": "Lewis Hine- Girl spinner, 11 years old, Rhodes Manufacturing Co., Lincolnton, North Carolina, 1908 (5631048712).jpg",
+  "work002": "Breaker Boys in Coal Mine South Pittston Pennsylvania by Lewis Hine.jpeg",
+  "work004": "Ford assembly line - 1913.jpg",
+  "work006": "\"Rosie The Riveter\" @ California State Railroad Museum.jpg",
+  "work007": "We Can Do It!.jpg",
+  "work008": "Lifeguard stand, Miami Beach.jpg",
+  "mig000": "Lange-MigrantMother02.jpg",
+  "mig002": "Dust storm approaching Stratford, Texas.jpg",
+  "mig004": "VT Route 66 Shields.jpg",
+  "mig006": "Great Migration.jpg",
+  "mig008": "Sydney Opera House - Dec 2008.jpg",
+  "mig010": "Petermann Ranges (AU), Uluru-Kata Tjuta National Park, Uluru, Kuniya Walk -- 2019 -- 3651.jpg",
+  "cook000": "James-Cook.jpg",
+  "cook002": "\"HMS Endeavour\" replica , Whitby.jpg",
+  "cook005": "Restitution Toi moko from Rautenstrauch-Joest-Museum to Museum of New Zealand Te Papa Tongarewa-6832.jpg",
+  "cook006": "Treaty of Waitangi – Sheet 4 – The Printed Sheet.jpg",
+  "cook009": "Te Paranihi - Māori waka taua (war canoe) from the Otago Museum 06.jpg",
+  "cook010": "Ōrongomai Marae wharenui.jpg",
+  "rights000": "Suffragette parade, Washington, D.C., on March 3, 1913 LCCN2005693330.jpg",
+  "rights002": "Mrs Emmeline Pankhurst, Leader of the Women's Suffragette movement, is arrested outside Buckingham Palace while trying to present a petition to King George V in May 1914. Q81486.jpg",
+  "rights004": "Rosa Parks 1955 2.jpg",
+  "rights005": "Rosa Parks being fingerprinted by Deputy Sheriff D.H. Lackey after being arrested on February 22, 1956, during the Montgomery bus boycott.jpg",
+  "rights006": "Selma to Montgomery Marches.jpg",
+  "rights008": "Edmund Pettus Bridge, Selma, Alabama.jpg",
+  "rights010": "Special Session appeal for 19th Amendment in Vermont, April 1920.jpg"
+ },
+ "panos": {
+  "pano001": "Lincoln Memorial Interior, 360 degrees (acf47c1c-9601-4b1b-9225-cf25f6a89bf9).jpg",
+  "pano002": "Part of the D.C. landscape since 1922, the Lincoln Memorial is on the west end of the National Mall with a clear view all the (dae9a34c-6033-40d1-87cc-5e1664481880).JPG",
+  "pano003": "Archives building Washington DC 360 panorama 2025-08-17 08-32-46 1.jpg",
+  "pano004": "360 panorama National Mall Washington DC 2025-08-17 08-41-44 1.jpg",
+  "pano005": "360 degree panorama Roys Motel Amboy CA 2026-04-05 12-43-59 1.jpg",
+  "pano006": "360 degree panorama Oatman Hotel Oatman AZ 2026-04-05 15-34-08 1.jpg",
+  "pano008": "Photo from Mapillary 2023-12-15 (1396924520919797).jpg",
+  "pano011": "Westminster Bridge panosphere 20250522.jpg",
+  "pnb001": "Wonderland Trail at the Nisqually River 360 (dc21284b-4311-447f-a9d4-9d95f91564b7).jpg"
+ },
+ "ph": [
+  "plains_sunset",
+  "rolling_hills",
+  "river_rocks",
+  "white_cliff_top",
+  "industrial_workshop_foundry",
+  "machine_shop_02",
+  "warm_restaurant",
+  "indoor_pool",
+  "modern_buildings",
+  "lonely_road_afternoon",
+  "dry_cracked_lake",
+  "red_hill_curve",
+  "goegap",
+  "secluded_beach"
+ ],
+ "cats": {
+  "chicago": [
+   "Chicago 360",
+   "spherical panoramas Chicago",
+   "360° panoramas of Chicago"
+  ],
+  "sydney": [
+   "Sydney 360° panoramas",
+   "spherical panoramas Sydney"
+  ],
+  "uluru": [
+   "Uluru panoramas",
+   "Northern Territory 360"
+  ],
+  "nz": [
+   "360° panoramas of New Zealand",
+   "spherical panoramas New Zealand",
+   "Waitangi"
+  ],
+  "selma": [
+   "Selma Alabama",
+   "Edmund Pettus Bridge"
+  ],
+  "montana": [
+   "360° panoramas of Montana",
+   "Missouri River Montana panorama"
+  ]
+ }
+}
