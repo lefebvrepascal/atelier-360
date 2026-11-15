@@ -35,25 +35,21 @@ def commons(qs, pano, n, tag):
             if k >= n: break
         time.sleep(0.2)
     return out
-ARTQ = {
- "chi": ["Chicago skyline 1900s photograph", "Cloud Gate Chicago", "Chicago L train elevated", "Great Chicago Fire 1871 illustration", "Chicago deep dish pizza", "Willis Tower"],
- "lc": ["Lewis and Clark map 1814", "Meriwether Lewis portrait Peale", "William Clark portrait Peale", "Sacagawea statue", "Lewis and Clark journal page", "Louisiana Purchase map"],
- "us45": ["Apollo 11 Aldrin footprint", "Berlin airlift C-54", "March on Washington 1963 crowd", "Fall of Berlin Wall 1989", "Neil Armstrong Apollo 11 portrait", "Barack Obama inauguration 2009 crowd"],
- "sp": ["Abraham Lincoln portrait 1863", "Gettysburg Address Bliss copy", "John F. Kennedy inaugural address 1961", "Martin Luther King March on Washington podium", "Emmeline Pankhurst speaking", "Lincoln Memorial statue"],
- "work": ["Lewis Hine spinner girl", "Lewis Hine breaker boys", "Ford assembly line 1913", "Rosie the Riveter poster", "soda fountain teenager 1950s", "lifeguard tower beach"],
- "mig": ["Dorothea Lange Migrant Mother", "Dust Bowl Texas 1935", "Route 66 shield sign", "Great Migration Chicago 1940s", "Sydney Opera House", "Uluru"],
- "cook": ["James Cook portrait Dance", "HMS Endeavour replica", "Maori hongi greeting", "Treaty of Waitangi document", "Maori waka canoe", "Wharenui meeting house"],
- "rights": ["suffragette parade 1913 Washington", "Emmeline Pankhurst arrest", "Rosa Parks 1955", "Selma to Montgomery march 1965", "Edmund Pettus Bridge", "Women's suffrage 19th amendment"],
-}
-PANOQ = ["Chicago equirectangular", "Chicago 360 panorama Millennium Park", "Cloud Gate 360 panorama", "Chicago river 360",
- "Missouri River panorama 360", "Rocky Mountains equirectangular", "Columbia River Gorge 360 panorama", "Montana 360 panorama prairie",
- "Lincoln Memorial 360 panorama", "National Mall equirectangular", "World War II Memorial Washington 360", "Washington DC 360 panorama",
- "diner interior 360 panorama", "factory equirectangular", "textile mill interior 360",
- "Route 66 360 panorama", "Arizona desert equirectangular", "Sydney 360 panorama", "Uluru 360 panorama", "Australian outback equirectangular",
- "New Zealand 360 panorama", "Bay of Islands panorama 360", "Waitangi 360", "Milford Sound 360 panorama",
- "Edmund Pettus Bridge 360", "Montgomery Alabama 360 panorama", "Parliament Square London 360 panorama", "Westminster equirectangular"]
+ARTQ = {}
+PANOQ = ["Chicago panosphere", "Chicago 360°", "Navy Pier panorama equirectangular", "Millennium Park panosphere", "Chicago Riverwalk 360", "Mapillary Chicago",
+ "Glacier National Park panosphere", "Yellowstone panosphere", "Rocky Mountain National Park 360", "Lemhi Pass", "Cape Disappointment panorama", "Great Falls Missouri River",
+ "Uluru panosphere", "Sydney Harbour panosphere", "Circular Quay 360", "Sydney Opera House 360°", "Melbourne panosphere",
+ "Waitangi Treaty Grounds", "Rotorua panosphere", "Auckland panosphere", "Tongariro 360", "New Zealand panosphere beach",
+ "Selma Alabama panorama", "Montgomery Alabama panosphere", "diner panosphere", "Ellis Island 360"]
 res = {}
 for tag, qs in ARTQ.items(): res[tag] = commons(qs, False, 2, tag); print(tag, len(res[tag]))
-res["pano"] = commons(PANOQ, True, 2, "pano"); print("pano", len(res["pano"]))
-res["polyhaven"] = []
+res["pano"] = commons(PANOQ, True, 2, "pnb"); print("pano", len(res["pano"]))
+ph = get("https://api.polyhaven.com/assets?t=hdris")
+d = json.loads(ph) if ph else {}
+phs = []
+for k, v in d.items():
+    txt = " ".join([k, v.get("name", "")] + v.get("tags", []) + v.get("categories", [])).lower()
+    if any(w in txt for w in ("mountain", "desert", "coast", "beach", "canyon", "prairie", "river", "lake", "diner", "factory", "industrial", "cliff", "bay", "valley", "plain", "savanna", "road", "highway", "city", "urban", "skyscraper", "harbor", "port")):
+        if thumb(f"https://cdn.polyhaven.com/asset_img/thumbs/{k}.png?width=512&height=256", f"medias/cand/ph_{k}.jpg"): phs.append(k)
+res["polyhaven"] = phs; print("ph", len(phs))
 json.dump(res, open("medias/cand/cand.json", "w"), ensure_ascii=False, indent=1)
