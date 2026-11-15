@@ -1,0 +1,444 @@
+{
+ "lil00": {
+  "q": "Euralille",
+  "file": "Euralille 1.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Kallerna\" title=\"User:Kallerna\">kallerna</a>"
+ },
+ "lil01": {
+  "q": "Grand'Place Lille",
+  "file": "Lille gd place.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Velvet\" title=\"User:Velvet\">Velvet</a>"
+ },
+ "lil02": {
+  "q": "Métro de Lille VAL rame",
+  "file": "VAL 206 - Lille - 5.JPG",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Floflo62\" title=\"User:Floflo62\">Floflo62</a>"
+ },
+ "lil03": {
+  "q": "Métropole européenne de Lille carte communes",
+  "file": "Carte des communes de la LMCU.png",
+  "license": "CC BY-SA 3.0",
+  "artist": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/fr:User:Revas\" class=\"extiw\" title=\"w:fr:User:Revas\">Revas</a> at <a href=\"https://en.wikipedia.org/wiki/fr:\" class=\"extiw\" title=\"w:fr"
+ },
+ "lil04": {
+  "q": "La Piscine Roubaix musée",
+  "file": "Roubaix piscine 1 bis.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Velvet\" title=\"User:Velvet\">Velvet</a>"
+ },
+ "lil05": {
+  "q": "Gare Lille Flandres",
+  "file": "Lille gare lille flandres facade.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Velvet\" title=\"User:Velvet\">Velvet</a>"
+ },
+ "lil06": {
+  "q": "Halluin",
+  "file": "Halluin la Becque de neuville (2).JPG",
+  "license": "CC BY-SA 4.0",
+  "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q97949455\" class=\"extiw\" title=\"d:Q97949455\"><span title=\"French photographer and Wikimedian\">Pierre André Leclercq</span></a></bdi>"
+ },
+ "lil07": {
+  "q": "Lille Europe TGV Eurostar",
+  "file": "TGV PBA Eurostar pour Lille-Europe à Chambéry (mars 2025).JPG",
+  "license": "CC BY-SA 4.0",
+  "artist": "Florian Pépellin"
+ },
+ "sha00": {
+  "q": "Pudong skyline night",
+  "file": "Pudong skyline at night from Huangpu River 20260417 (4).jpg",
+  "license": "CC0",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:DvTor8303&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:DvTor8303 (page does not exist)\">DvTor8303</a>"
+ },
+ "sha01": {
+  "q": "Shanghai Tower",
+  "file": "Shanghai - Shanghai Tower - 0001.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<bdi><a href=\"//commons.wikimedia.org/wiki/User:DerFussi\" title=\"User:DerFussi\">Stefan Fussan</a></bdi>"
+ },
+ "sha02": {
+  "q": "Shanghai Metro map",
+  "file": "Type 1 \"Watermelon\" Train of Line 2 leaving Yuandong Avenue Station, Shanghai Metro, Aug 11 2023.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:A_Chinese_ID\" title=\"User:A Chinese ID\">A Chinese ID</a>"
+ },
+ "sha03": {
+  "q": "Shikumen Shanghai",
+  "file": "20090518 Shanghai Shikumen Museum 6867.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Jakubhal\" title=\"User:Jakubhal\">Jakub Hałun</a>"
+ },
+ "sha04": {
+  "q": "Shanghai elevated highway",
+  "file": "Line 5 elevated to Pingzhuang Highway.png",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:%E4%B8%AD%E6%97%A5%E9%9F%A9%E8%B6%8A%E7%9A%84%E6%B1%89%E5%AD%97&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:中日韩越的汉字 (page does not ex"
+ },
+ "sha05": {
+  "q": "Yangshan Deep Water Port",
+  "file": "Port of Shanghai, Yangshan Deep-water Harbour Zone, 02.jpg",
+  "license": "Public domain",
+  "artist": "The original uploader was <a href=\"https://en.wikipedia.org/wiki/User:Alex_Needham\" class=\"extiw\" title=\"wikipedia:User:Alex Needham\">Alex Needham</a> at <a href=\"https://en.wikipedia.org/wiki/\" class"
+ },
+ "sha06": {
+  "q": "Shanghai Maglev",
+  "file": "Shanghai Maglev 2.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Kallerna\" title=\"User:Kallerna\">kallerna</a>"
+ },
+ "vil00": {
+  "q": "Vauban Freiburg solar",
+  "file": "Solar PV Freiburg Baden-Wuerttemburg0017.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Paul_Gipe\" title=\"User:Paul Gipe\">Paul Gipe</a>"
+ },
+ "vil01": {
+  "q": "Bosco Verticale Milan",
+  "file": "Milano - edificio via Quadronno 24 - 01.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Arbalete\" title=\"User:Arbalete\">Arbalete</a>"
+ },
+ "vil02": {
+  "q": "Copenhagen cyclists",
+  "file": "Copenhagen Cyclists (19200075809).jpg",
+  "license": "CC BY 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/87296837@N00\">Tony Webster</a> from Brooklyn, New York"
+ },
+ "vil03": {
+  "q": "green roof city",
+  "file": "Chicago-City-Hall-Green-Roof 01.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Conservation_Design_Forum&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Conservation Design Forum (page does not exist)\">Conservation D"
+ },
+ "vil04": {
+  "q": "Paris tramway T3",
+  "file": "Rame-tramway-paris-T3.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Pline\" title=\"User:Pline\">Pline</a>"
+ },
+ "vil05": {
+  "q": "urban garden rooftop",
+  "file": "Rooftop farm at the Essex (65787p).jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Rhododendrites\" title=\"User:Rhododendrites\">Rhododendrites</a>"
+ },
+ "vil06": {
+  "q": "heat island map",
+  "file": "Be'er Sheva heat island at night.png",
+  "license": "CC BY 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Xmidrashnik&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Xmidrashnik (page does not exist)\">Xmidrashnik</a>"
+ },
+ "ama00": {
+  "q": "Amazon rainforest aerial",
+  "file": "Amazon rainforest (Satellite picture).jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Alexander_Gerst\" class=\"extiw\" title=\"w:en:Alexander Gerst\"><span title=\"German ESA astronaut and geophysicist\">Alexander Gerst</span></a></bdi>"
+ },
+ "ama01": {
+  "q": "Meeting of Waters Manaus",
+  "file": "Meeting of Waters (Manaus).jpg",
+  "license": "CC0",
+  "artist": "Ana Claudia Jatahy - MTUR"
+ },
+ "ama03": {
+  "q": "Rondonia deforestation satellite",
+  "file": "Fires and Deforestation on the Amazon Frontier, Rondonia, Brazil - August 12, 2007.jpg",
+  "license": "Public domain",
+  "artist": "Jesse Allen and Robert Simmon"
+ },
+ "ama04": {
+  "q": "jaguar Pantanal",
+  "file": "Jaguar (Panthera onca palustris) female Piquiri River 2.JPG",
+  "license": "CC BY-SA 4.0",
+  "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q54800218\" class=\"extiw\" title=\"d:Q54800218\"><span title=\"Scottish wildlife photographer\">Charles J. Sharp</span></a></bdi>"
+ },
+ "ama05": {
+  "q": "Amazon river boat",
+  "file": "Amazon River banner.jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/43423301@N07\">M M</a> from Switzerland"
+ },
+ "ama06": {
+  "q": "Kayapo",
+  "file": "CDH - Comissão de Direitos Humanos e Legislação Participativa.jpg",
+  "license": "CC BY 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/49143546@N06\">Senado Federal</a>"
+ },
+ "agr00": {
+  "q": "Beauce wheat field",
+  "file": "Beauce France 1.jpg",
+  "license": "Public domain",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Urban&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Urban (page does not exist)\">Urban</a>"
+ },
+ "agr01": {
+  "q": "combine harvester wheat",
+  "file": "Combine in wheat field.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Dako99\" title=\"User:Dako99\">Dan Kollmann</a>"
+ },
+ "agr02": {
+  "q": "center pivot irrigation Kansas aerial",
+  "file": "Concentric Circle Farmland (50902375916).jpg",
+  "license": "CC BY-SA 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/30552029@N00\">formulanone</a>"
+ },
+ "agr03": {
+  "q": "grain elevator prairie Canada",
+  "file": "The grain elevator in Rouleau, Saskatchewan..JPG",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Techgod\" title=\"User:Techgod\">John Kaminski</a>"
+ },
+ "agr04": {
+  "q": "Pas-de-Calais champs",
+  "file": "Polincove (Pas-de-Calais, Fr) église Saint-Léger plaque mémorial de guerre.JPG",
+  "license": "CC0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Havang(nl)\" title=\"User:Havang(nl)\">Havang(nl)</a>"
+ },
+ "agr05": {
+  "q": "tractor field France",
+  "file": "Boy plowing with a tractor at sunset in Don Det, Laos.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Basile_Morin\" title=\"User:Basile Morin\">Basile Morin</a>"
+ },
+ "agr06": {
+  "q": "village Beauce",
+  "file": "France - Bassin parisien - Beauce - Village de Beauce méridionale (MédiHAL 1266361).jpg",
+  "license": "Licence Ouverte",
+  "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Emmanuel_de_Martonne\" class=\"extiw\" title=\"w:en:Emmanuel de Martonne\"><span title=\"French geographer (1873–1955)\">Emmanuel de Martonne</span></a></bdi>"
+ },
+ "por00": {
+  "q": "Port of Dunkirk",
+  "file": "Dunkerque musee BA isabey port dunkerque.JPG",
+  "license": "Public domain",
+  "artist": "<bdi><a href=\"https://en.wikipedia.org/wiki/en:Eug%C3%A8ne_Isabey\" class=\"extiw\" title=\"w:en:Eugène Isabey\"><span title=\"French painter (1803-1886)\">Eugène Isabey</span></a></bdi>"
+ },
+ "por01": {
+  "q": "Maasvlakte 2 aerial",
+  "file": "Maasvlakte-22OKT2022-1.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Milliped\" title=\"User:Milliped\">Milliped</a>"
+ },
+ "por02": {
+  "q": "container ship Rotterdam",
+  "file": "Eco mistral, Container Ship, IMO 1020643, Port of Rotterdam pic1.jpg",
+  "license": "CC0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Alfvanbeem\" title=\"User:Alfvanbeem\">Alfvanbeem</a>"
+ },
+ "por03": {
+  "q": "ArcelorMittal Dunkerque",
+  "file": "ECSC Financial report 1987 Dunkerque Cokerie coke car.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"https://en.wikipedia.org/wiki/European_Coal_and_Steel_Community\" class=\"extiw\" title=\"en:European Coal and Steel Community\">European Coal and Steel Community</a>"
+ },
+ "por04": {
+  "q": "Port of Rotterdam map",
+  "file": "AIDAperla in Rotterdam - September 2019.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<bdi>Martin Falbisoner</bdi>"
+ },
+ "por05": {
+  "q": "gantry crane container terminal",
+  "file": "Container cranes at the MPET- MSC PSA European Terminal in Port of Antwerp (Kieldrecht, Belgium) during the sunset civil twilight (DSCF3919).jpg",
+  "license": "CC BY 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Trougnouf\" title=\"User:Trougnouf\">Trougnouf</a>"
+ },
+ "por06": {
+  "q": "Gravelines nuclear power station",
+  "file": "Gravelines Nuclear Power Station-7886.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<bdi><a href=\"https://www.wikidata.org/wiki/Q108103612\" class=\"extiw\" title=\"d:Q108103612\"><span title=\"Wikipedian and OpenStreetMap mapper from Cologne, Open Data activist\">Raimond Spekking</span></a"
+ },
+ "tou00": {
+  "q": "Promenade des Anglais Nice",
+  "file": "Nice-night-view-with-blurred-cars 1200x900.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"https://en.wikipedia.org/wiki/User:William_M._Connolley\" class=\"extiw\" title=\"en:User:William M. Connolley\">W. M. Connolley</a>"
+ },
+ "tou01": {
+  "q": "Benidorm skyline",
+  "file": "Skyline Benidorm - 18 Planta - Port Benidorm Hotel & Spa.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:TaronjaSatsuma\" title=\"User:TaronjaSatsuma\">Francesc Fort</a>"
+ },
+ "tou02": {
+  "q": "Baie des Anges Nice",
+  "file": "Nice Baie des anges 02.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Cayambe\" title=\"User:Cayambe\">Cayambe</a>"
+ },
+ "tou03": {
+  "q": "Cancún hotel zone aerial",
+  "file": "Cancun aerial photo by safa.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "Safa in la  but  uploaded by <a href=\"//commons.wikimedia.org/wiki/User:Mardetanha\" title=\"User:Mardetanha\">Mardetanha</a>"
+ },
+ "tou04": {
+  "q": "Saint-Tropez port",
+  "file": "Port of Saint-Tropez 1.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Arnaud_25\" title=\"User:Arnaud 25\">Arnaud 25</a>"
+ },
+ "tou05": {
+  "q": "La Grande-Motte pyramides",
+  "file": "La Grande Motte Marina, France (39992016053).jpg",
+  "license": "CC BY 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/158652122@N02\">Mike McBey</a>"
+ },
+ "tou06": {
+  "q": "Nice airport aerial",
+  "file": "Aerial view of Nice airport 01.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Ariadacapo\" title=\"User:Ariadacapo\">Olivier Cleynen</a>"
+ },
+ "mon00": {
+  "q": "World population density map",
+  "file": "World Population Density Map 2020.png",
+  "license": "CC BY 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Petnog&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Petnog (page does not exist)\">Petnog</a>"
+ },
+ "mon01": {
+  "q": "Earth at night NASA Black Marble",
+  "file": "Blue Marble Western Hemisphere.jpg",
+  "license": "Public domain",
+  "artist": "NASA images by Reto Stöckli, based on data from NASA and NOAA. Instrument: Terra - MODIS"
+ },
+ "mon02": {
+  "q": "Ganges delta satellite",
+  "file": "Ganges Delta ESA22274217.jpeg",
+  "license": "Attribution",
+  "artist": "European Space Agency"
+ },
+ "mon03": {
+  "q": "Sahara desert satellite",
+  "file": "Sahara satellite hires.jpg",
+  "license": "Public domain",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/NASA\" title=\"NASA\">NASA</a>"
+ },
+ "mon04": {
+  "q": "Lagos Nigeria city",
+  "file": "2014 Tinubu Square Lagos Nigeria 14640600637.jpg",
+  "license": "CC BY 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/73542590@N00\">Jeremy Weate</a> from Abuja, Nigeria"
+ },
+ "mon05": {
+  "q": "Tokyo crowd Shibuya",
+  "file": "Street crowd reflecting in the polyhedral mirrors of the station Tokyu Plaza Omotesando, Harajuku, Tokyo, Japan.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Basile_Morin\" title=\"User:Basile Morin\">Basile Morin</a>"
+ },
+ "mon06": {
+  "q": "Siberia taiga aerial",
+  "file": "Nad Sibirju 01.jpg",
+  "license": "CC BY 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/mmordfin/\">Matt Mordfin</a>"
+ },
+ "gp000": {
+  "q": "Shanghai 360 panorama",
+  "file": "Shanghai bund – Panorama (Greg Zaal via Poly Haven).jpg",
+  "license": "CC0",
+  "artist": "Greg Zaal"
+ },
+ "gp001": {
+  "q": "Shanghai 360 panorama",
+  "file": "Shanghai riverside - Panorama (Alex Radosnov via Poly Haven).jpg",
+  "license": "CC0",
+  "artist": "<ul><li>Alex Radosnov (<a rel=\"nofollow\" class=\"external free\" href=\"https://polyhaven.com/all?a=Alex%20Radosnov\">https://polyhaven.com/all?a=Alex%20Radosnov</a> / <a rel=\"nofollow\" class=\"external fr"
+ },
+ "gp002": {
+  "q": "Copenhagen equirectangular",
+  "file": "In times like this... (360° equirectangular) (49659694937).jpg",
+  "license": "CC BY 2.0",
+  "artist": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/10259776@N00\">Stig Nygaard</a>"
+ },
+ "gp003": {
+  "q": "Nice panosphère",
+  "file": "Zürich Schanzengraben panosphere 20220503.jpg",
+  "license": "CC BY-SA 3.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Domob\" title=\"User:Domob\">Daniel Kraft</a>"
+ },
+ "gp004": {
+  "q": "Mumbai 360 panorama",
+  "file": "Nmacc-mumbai-2023-03-27-boardroom-301-panorama-large.jpg",
+  "license": "CC0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Fuzheado\" title=\"User:Fuzheado\">Fuzheado</a>"
+ },
+ "gp005": {
+  "q": "Mumbai 360 panorama",
+  "file": "Pano-20230403-Taj-Mumbai-Grandstaircase.jpg",
+  "license": "CC BY-SA 4.0",
+  "artist": "<a href=\"//commons.wikimedia.org/wiki/User:Fuzheado\" title=\"User:Fuzheado\">Fuzheado</a>"
+ },
+ "shanghai_bund": {
+  "file": "shanghai_bund",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "shanghai_riverside": {
+  "file": "shanghai_riverside",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "potsdamer_platz": {
+  "file": "potsdamer_platz",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "modern_buildings_2": {
+  "file": "modern_buildings_2",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "rainforest_trail": {
+  "file": "rainforest_trail",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "straw_rolls_field_01": {
+  "file": "straw_rolls_field_01",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "sunflowers": {
+  "file": "sunflowers",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "farm_road": {
+  "file": "farm_road",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "docklands_01": {
+  "file": "docklands_01",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "small_harbor_01": {
+  "file": "small_harbor_01",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "spiaggia_di_mondello": {
+  "file": "spiaggia_di_mondello",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "hamburg_canal": {
+  "file": "hamburg_canal",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "rural_crossroads": {
+  "file": "rural_crossroads",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ },
+ "roof_garden": {
+  "file": "roof_garden",
+  "license": "CC0",
+  "artist": "Poly Haven"
+ }
+}
