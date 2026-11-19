@@ -1,0 +1,21 @@
+++ curl -s -o /tmp/a.html -w '%{http_code}' https://atelier360-sacre-coeur.netlify.app/
++ echo 'accueil: 200'
+accueil: 200
++ grep -c cours/le-muscle-a-l-effort-energie-et-circulation-sangui/ /tmp/a.html
+1
++ grep -o '<h2[^>]*>[^<]*</h2>' /tmp/a.html
+++ curl -s -o /tmp/c.html -w '%{http_code} %{size_download}' https://atelier360-sacre-coeur.netlify.app/cours/le-muscle-a-l-effort-energie-et-circulation-sangui/
++ echo 'cours: 200 8124993'
+cours: 200 8124993
+++ curl -s -o /dev/null -w '%{http_code}' https://atelier360-sacre-coeur.netlify.app/cours/le-muscle-a-l-effort-energie-et-circulation-sangui/audio/voix.js
++ echo 'voix: 200'
+voix: 200
++ curl -sI -H 'Origin: https://atelier360-sacre-coeur.netlify.app' https://atelier360-medias.netlify.app/le-muscle-a-l-effort-energie-et-circulation-sangui/sang-360-dd7w.mp4
++ grep -i -E '^HTTP|content-length|access-control-allow-origin'
+HTTP/2 200 
+access-control-allow-origin: *
+access-control-expose-headers: Content-Length, Content-Range, Accept-Ranges
+content-length: 30317520
+++ curl -s -o /dev/null -w '%{http_code}' https://atelier360-sacre-coeur.netlify.app/cours/le-muscle-et-l-effort/
++ echo 'ancien cours: 200'
+ancien cours: 200
